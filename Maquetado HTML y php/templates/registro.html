@@ -7,7 +7,8 @@
     <title>Registro</title>
 </head>
 <body>
-    <form>
+    <h1 align="center">Registro</h1>
+    <form action="../dynamics/respuestaRegistro.php" method="post">
         <fieldset>
             <legend>Registro a plataforma de estudio</legend>
             <lable for="nombre">Nombre: </lable>
@@ -24,13 +25,13 @@
             <br><br>
             <label for="telefono">Numero de teléfono</label>
             <input type="number" id="telefono" name="telefono">
-            <br><br>
-            <input type="checkbox" id="noMostrar" nombre="noMostrar">
+            <input type="checkbox" id="noMostrar" name="noMostrar" value="no" checked>
             <label for="noMostrar">No mostrar (recomendado)</label>
-            <br><br>
-            <input type="checkbox" id="mostrar" nombre="mostrar">
+            <input type="checkbox" id="mostrar" name="mostrar" value="si">
             <label for="mostrar">Mostrar</label>
-
+            <br/><br/>
+            <button type="submit">Enviar</button>
+            <button type="reset">Borrar</button>
         </fieldset>
     </form>
 </body>
