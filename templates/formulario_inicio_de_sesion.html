@@ -4,35 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../statics/styles/styles.css">
+    <title>Inicio de sesion</title>
 </head>
 <body>
-    <form>
-        <fieldset>
-            <legend>Inicio de sesión</legend>
-            <label for="correoelectronico">Correo electrónico: </label>
-            <input type="email" id="correoelectronico" name="correoelectronico"required><br><br>
-            <label for="numerocuenta">Número de cuenta: </label>
-            <input type="number" id="numerocuenta" name="numerocuenta" required><br><br>
-            <label for="rfc">RFC (si es profesor o profesora): </label>
-            <input type="text" id="rfc" name="RFC" required><br><br>
-            <label for="contrasena">Contraseña: </label>
-            <input type="password" id="contrasena" name="contrasena"required><br><br>
-
-            <button type="submit">Enviar</button>
-            <>
-            
-
-            
-
-
-
-
-
-        </fieldset>
-
-
-    </form>
+    <!-- Header -->
+    <header id="header">
+        <div id="divHeader">
+            <div id="escudoEnp6">
+                <img id="imgEnp6" src="../statics/img/escudop6.png" alt="Escudo ENP 6">
+            </div>
+            <!-- <img id="titulo" src="../statics/img/Aa.jpeg" alt="ranita a"> -->
+            <!-- <div id="nombrePag"> -->
+                <!-- <p class="titulo">CoyoRoom.com</p> -->
+            <!-- </div> -->
+            <div id="escudoEnp">
+                <img id="imgEnp" src="..//statics/img/escudoENP.png" alt="Escudo ENP 6">
+            </div>
+        </div>
+    </header>
+    <div id="fondo_form">
+        <div id="divForm" style="justify-content: center">
+            <form id="formulario">
+                <div id="nombreReg">
+                    <p id="TitRegistro">Inicio de sesión</p>
+                </div>
+                <label for="correoelectronico" class="campo">Correo electrónico: </label>
+                <input type="email" id="correoelectronico" name="correoelectronico" class="input" required>
+                <br><br>
+                <label for="numerocuenta" class="campo">Número de cuenta: </label>
+                <input type="number" id="numerocuenta" name="numerocuenta" class="input" required>
+                <br><br>
+                <label for="rfc" class="campo">RFC (si es profesor o profesora): </label>
+                <input type="text" id="rfc" name="RFC" class="input" required>
+                <br><br>
+                <label for="contrasena" class="campo">Contraseña: </label>
+                <input type="password" id="contrasena" name="contrasena" class="input" required>
+                <div  id="divBtn">
+                    <button class="btn" type="submit">Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
-<>

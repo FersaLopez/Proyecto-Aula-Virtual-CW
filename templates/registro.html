@@ -25,10 +25,11 @@
     </header>
     <!-- Formulario -->
     <div id="fondo_form">
-        <form action="../dynamics/respuestaRegistro.php" method="post" id="formulario">
-            <div id="nombreReg">
-                <p id="TitRegistro">Registro a plataforma de estudio</p>
-            </div>
+        <div id="divForm" style="justify-content: left"> <!--desde aqui se cambia el lado en caso de ser registro de profesor-->
+            <form action="../dynamics/respuestaRegistro.php" method="post" id="formulario">
+                <div id="nombreReg">
+                    <p id="TitRegistro">Registro a plataforma de estudio</p>
+                </div>
                 <lable for="nombre" class="campo">Nombre: </lable>
                 <input type="text" id="nombre" name="nombre" class="input" required>
                 <br><br>
@@ -41,20 +42,18 @@
                 <label for="ncuenta" class="campo">Numero de cuenta:</label>
                 <input type="number" id="ncuenta" name="ncuenta" class="input" required>
                 <br><br>
-                <label for="telefono"class="campo">Numero de teléfono</label>
+                <label for="telefono" class="campo">Numero de teléfono</label>
                 <input type="number" id="telefono" name="telefono" class="input" required>
-                <!-- <div id="mostrarSi"> -->
                     <input type="checkbox" id="noMostrar" name="noMostrar" value="no" checked>
-                    <label for="noMostrar" class="checar">No mostrar (recomendado)</label>
+                    <label for="noMostrar" class="mensaje">No mostrar (recomendado)</label>
                     <input type="checkbox" id="mostrar" name="mostrar" value="si">
-                    <label for="mostrar" class="checar">Mostrar</label>
-                <!-- </div> -->
+                    <label for="mostrar" class="mensaje">Mostrar</label>
                 <div id="divBtn">
                     <button class="btn" type="submit">Enviar</button>
                     <button class="btn" type="reset">Borrar</button>
                 </div>
-        </form>
+            </form>
+        </div>
     </div>
-    
 </body>
 </html>
