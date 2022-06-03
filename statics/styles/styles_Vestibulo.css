@@ -20,11 +20,20 @@
 /* =ELEMENTS
 ---------------------------------------------------------------------------------------------------------------------------------*/
 body{
-    background-color: #ffcfbf;    
+    /*background-color: #fff8ce;    */
+}
+nav{
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    align-self: center;
+    align-content: center;        
 }
 /* =OBJECT
 ---------------------------------------------------------------------------------------------------------------------------------*/
-/*.*/
+.nav_Vestibulo{
+    padding: 2em;
+}
 
 
 
