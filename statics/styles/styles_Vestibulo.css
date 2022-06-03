@@ -1,0 +1,35 @@
+/* =SETTINGS
+---------------------------------------------------------------------------------------------------------------------------------*/
+/*@font-face {
+    font-family: "Fuego";
+    src: url(../fonts/charbb_reg.ttf);
+}
+@font-face {
+    font-family: "VECTOR";
+    src: url(../fonts/Newton\ Howard\ Font.ttf);
+}
+@font-face {
+    font-family: "Texto";
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: "Titulos";
+    src: url(../fonts/Fresh\ Fruit.ttf);
+}*/
+/*TOOLS = funciones a nivel global, GENERIC = estilos de nivel global, ELEMENTS = etiquetas HTML?, OBJECT = clases, COMPONENTS = id?, UTILITIES = !important, ?*/
+/* =ELEMENTS
+---------------------------------------------------------------------------------------------------------------------------------*/
+body{
+    background-color: #ffcfbf;    
+}
+/* =OBJECT
+---------------------------------------------------------------------------------------------------------------------------------*/
+/*.*/
+
+
+
+
+
+/* =COMPONENTS
+---------------------------------------------------------------------------------------------------------------------------------*/
+/*#*/
