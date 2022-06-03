@@ -4,35 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../statics/styles/styles.css">
     <title>Registro</title>
 </head>
 <body>
-    <h1 align="center">Registro</h1>
-    <form action="../dynamics/respuestaRegistro.php" method="post">
-        <fieldset>
-            <legend>Registro a plataforma de estudio</legend>
-            <lable for="nombre">Nombre: </lable>
-            <input type="text" id="nombre" name="nombre">
-            <br><br>
-            <lable for="apellidos">Apellidos: </lable>
-            <input type="text" id="apellidos" name="apellidos">
-            <br><br>
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" name="correo">
-            <br><br>
-            <label for="ncuenta">Numero de cuenta:</label>
-            <input type="number" id="ncuenta" name="ncuenta">
-            <br><br>
-            <label for="telefono">Numero de teléfono</label>
-            <input type="number" id="telefono" name="telefono">
-            <input type="checkbox" id="noMostrar" name="noMostrar" value="no" checked>
-            <label for="noMostrar">No mostrar (recomendado)</label>
-            <input type="checkbox" id="mostrar" name="mostrar" value="si">
-            <label for="mostrar">Mostrar</label>
-            <br/><br/>
-            <button type="submit">Enviar</button>
-            <button type="reset">Borrar</button>
-        </fieldset>
-    </form>
+    <!-- Header -->
+    <header id="header">
+        <div id="divHeader">
+            <div id="escudoEnp6">
+                <img id="imgEnp6" src="../statics/img/escudop6.png" alt="Escudo ENP 6">
+            </div>
+            <!-- <img id="titulo" src="../statics/img/Aa.jpeg" alt="ranita a"> -->
+            <!-- <div id="nombrePag"> -->
+                <!-- <p class="titulo">CoyoRoom.com</p> -->
+            <!-- </div> -->
+            <div id="escudoEnp">
+                <img id="imgEnp" src="..//statics/img/escudoENP.png" alt="Escudo ENP 6">
+            </div>
+        </div>
+    </header>
+    <!-- Formulario -->
+    <div id="fondo_form">
+        <form action="../dynamics/respuestaRegistro.php" method="post" id="formulario">
+            <div id="nombreReg">
+                <p id="TitRegistro">Registro a plataforma de estudio</p>
+            </div>
+                <lable for="nombre" class="campo">Nombre: </lable>
+                <input type="text" id="nombre" name="nombre" class="input" required>
+                <br><br>
+                <lable for="apellidos" class="campo">Apellidos: </lable>
+                <input type="text" id="apellidos" name="apellidos" class="input" required>
+                <br><br>
+                <label for="correo" class="campo">Correo:</label>
+                <input type="email" id="correo" name="correo" class="input" required>
+                <br><br>
+                <label for="ncuenta" class="campo">Numero de cuenta:</label>
+                <input type="number" id="ncuenta" name="ncuenta" class="input" required>
+                <br><br>
+                <label for="telefono"class="campo">Numero de teléfono</label>
+                <input type="number" id="telefono" name="telefono" class="input" required>
+                <!-- <div id="mostrarSi"> -->
+                    <input type="checkbox" id="noMostrar" name="noMostrar" value="no" checked>
+                    <label for="noMostrar" class="checar">No mostrar (recomendado)</label>
+                    <input type="checkbox" id="mostrar" name="mostrar" value="si">
+                    <label for="mostrar" class="checar">Mostrar</label>
+                <!-- </div> -->
+                <div id="divBtn">
+                    <button class="btn" type="submit">Enviar</button>
+                    <button class="btn" type="reset">Borrar</button>
+                </div>
+        </form>
+    </div>
+    
 </body>
 </html>
