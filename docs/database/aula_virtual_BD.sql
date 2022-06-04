@@ -52,14 +52,15 @@ CREATE TABLE GRUPO(
 );
 
 /*Esta es la tabla TIPO_ASIGN*/
+-- Le añadí un AUTO_INCREMENT
 CREATE TABLE TIPO_ASIGN(
-    ID_TIPO_ASIGN TINYINT PRIMARY KEY, 
+    ID_TIPO_ASIGN TINYINT PRIMARY KEY AUTO_INCREMENT, 
     tipo_asign CHAR(25)
 );
 
 /*Esta es la tabla ESTADO_ENTREGA*/
-CREATE TABLE(
-    ID_ESTADO_ENTREGA TINYINT PRIMARY KEY, 
+CREATE TABLE ESTADO_ENTREGA(
+    ID_ESTADO_ENTREGA TINYINT PRIMARY KEY AUTO_INCREMENT, 
     estado CHAR(50) 
 );
 
@@ -229,6 +230,13 @@ CREATE TABLE LINKS_ASIGNACION(
     ID_AULA CHAR(50), 
     FOREIGN KEY(ID_AULA) REFERENCES AULA(ID_AULA)
 );
+
+/* -------------------------------------------------------------------------------------------------*/
+
+
+
+
+
 
 
 
