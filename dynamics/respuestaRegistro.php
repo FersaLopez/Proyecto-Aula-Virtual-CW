@@ -24,7 +24,7 @@
         <p>'. $ncuenta.'</p>
         <br/>
         <h3>Teléfono:</h3>
-        ';
+    ';
         if($noMostrar == "no" && $mostrar == "No especifico")
         {
             echo '----';
@@ -43,7 +43,8 @@
             echo 'No se eligió respuesta';
             $i = 0;
         }
-        echo '
+    echo
+    '
         <br/>
         <h3>No mostrar:</h3>
         <p>'. $noMostrar.'</p>
