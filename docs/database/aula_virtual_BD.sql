@@ -65,13 +65,8 @@ CREATE TABLE GRUPO(
 /*Esta es la tabla TIPO_ASIGN*/
 -- Le añadí un AUTO_INCREMENT
 CREATE TABLE TIPO_ASIGN(
-<<<<<<< HEAD
     ID_TIPO_ASIGN TINYINT PRIMARY KEY, 
     tipo_asign VARCHAR(10)
-=======
-    ID_TIPO_ASIGN TINYINT PRIMARY KEY AUTO_INCREMENT, 
-    tipo_asign CHAR(25)
->>>>>>> 31bc9587c84a2bdff41eca3f243d9499dca05ccf
 );
 
 /*Esta es la tabla ESTADO_ENTREGA*/
@@ -247,7 +242,6 @@ CREATE TABLE LINKS_ASIGNACION(
     FOREIGN KEY(ID_AULA) REFERENCES AULA(ID_AULA)
 );
 
-<<<<<<< HEAD
 CREATE TABLE ARCH_ADJ_ASIGN(
     ID_ARCH_ADJ_ASIGN INT PRIMARY KEY AUTO_INCREMENT, 
     nombre CHAR(100), 
@@ -256,15 +250,6 @@ CREATE TABLE ARCH_ADJ_ASIGN(
     ID_ASIGN INT, 
     FOREIGN KEY(ID_ASIGN) REFERENCES ASIGNACION(ID_ASIGN)
 ); 
-=======
-/* -------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
->>>>>>> 31bc9587c84a2bdff41eca3f243d9499dca05ccf
 
 
 CREATE TABLE COMENT_PRIV_ASIGN(
@@ -321,8 +306,8 @@ CREATE TABLE USER_HAS_JUEGO(
     fecha_juego DATETIME 
 );
 
-CREATE TABLE ARCH_ADJ_CAMMAT(
-    ID_ARCH_ADJ_CAMMAT 
-);
+-- CREATE TABLE ARCH_ADJ_CAMMAT(
+--     ID_ARCH_ADJ_CAMMAT 
+-- );
 
 
