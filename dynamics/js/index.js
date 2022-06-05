@@ -5,7 +5,18 @@ window.addEventListener("load", ()=>{
     const hidden_input = document.getElementById("tipo_U");
 
     console.log("NoPAPU");
-    let tipoBoton = 1; /*1 = alumno, 2 profesor, 3 mod, 4 admin*/
+    let tipoBoton = 1;/*1 = alumno, 2 profesor, 3 mod, 4 admin*/
+    hidden_input.value = 1;
+    tipoBtn.children[0].style.border = "4px solid #eeb02d";
+    if(tipoBtn.children[0].style.display == "none")
+    {
+        tipoBoton = 3;    
+        tipoBtn.children[2].style.border = "4px solid #eeb02d";
+        hidden_input.value = 3;
+
+    }
+
+     
     tipoBtn.addEventListener("click", (evento) =>{
         console.log(evento.target);
         if(evento.target.id == "btn_alumno")
@@ -44,10 +55,58 @@ window.addEventListener("load", ()=>{
 
     
 
+    const form = document.getElementById("form_user");
+    const ident = document.getElementById("identIdent");
+    const contra = document.getElementById("contrasena");
 
+    form.addEventListener("reset", (evento) =>{
+        evento.preventDefault();
+        ident.value = "";
+        contra.value = "";
+        if(tipoBtn.children[2].style.display == "none")
+        {
+            tipoBoton = 1;
+            hidden_input.value = 1;
+            tipoBtn.children[0].style.border = "4px solid #eeb02d";
+            tipoBtn.children[1].style.border = "none";
+        }
+        else if(tipoBtn.children[0].style.display == "none")
+        {
+            console.log("WHAT")
+            tipoBoton = 3;
+            hidden_input.value = 3;
+            tipoBtn.children[2].style.border = "4px solid #eeb02d";
+            tipoBtn.children[3].style.border = "none";
+        }
+
+        console.log(tipoBoton);
+    });
+
+    
     contenedor.addEventListener("click", (evento) =>{
                 
         console.log(hidden_input.value);
+        /*
+        if(evento.target.id == "reset")
+        {
+            if(tipoBtn.children[2].style.display == "none")
+            {
+                tipoBoton = 1;
+                tipoBtn.children[0].style.border = "4px solid #eeb02d";
+                tipoBtn.children[1].style.border = "none";
+            }
+            else if(tipoBtn.children[0].style.display == "none")
+            {
+                tipoBoton = 3;
+                hidden_input.value = 3;
+                tipoBtn.children[2].style.border = "4px solid #eeb02d";
+                tipoBtn.children[3].style.border = "none";
+            }
+            console.log(tipoBoton);
+
+            
+            
+        }*/
 
         //if(evento.target.id == "enviar_alumnos")
     });
