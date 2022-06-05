@@ -28,10 +28,10 @@
             <article></article>
         </section>        
         <div id="div_tipoUser">
-            <div id="btn_alumno" class="btn_eleccion">Alumno</div>
-            <div id="btn_docente" class="btn_eleccion">Docente</div>
-            <div id="btn_moder" class="btn_eleccion" >Moderador</div> <!--style="display : none" -->
-            <div id="btn_admin" class="btn_eleccion" >Admin</div><!--style="display : none" -->
+            <div id="btn_alumno" class="btn_eleccion"  style="display : none">Alumno</div>
+            <div id="btn_docente" class="btn_eleccion" style="display : none" >Docente</div>
+            <div id="btn_moder" class="btn_eleccion" >Moderador</div> 
+            <div id="btn_admin" class="btn_eleccion" >Admin</div>
         </div>
         
         
@@ -39,8 +39,8 @@
             <section id="styleBox_trans"></section>
             <section id="conten_forms">
                 <div id="div_formAlum" class="form_iniSesiones">
-                    <form id="form_alumnos" action="./validacion_Acceso.php" method="POST">
-                        <input id="tipo_U" name="tipo_User" type="number" value="1" readonly style="display: none">
+                    <form id="form_user" action="./validacion_Acceso.php" method="POST">
+                        <input id="tipo_U" name="tipo_User" type="number" readonly style="display: none">
                         <label id="lab_identIdent" class="campo">Número de cuenta:
                             <input id="identIdent" type="text" name="identIdent" class="input" required>
                         </label>
@@ -50,7 +50,7 @@
                         </label>                        
                         <div class="divBtn">
                             <button id="enviar_alumnos" class="btn" type="submit">Ingresar</button>
-                            <button type="reset">Borrar</button>
+                            <button id="reset" type="reset">Borrar</button>
                         </div>
                     </form>
                 </div>
