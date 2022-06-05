@@ -1,0 +1,140 @@
+*{
+    color: white;
+}
+header h1{
+    color: #eeb02d;
+    text-align: center;
+}
+body{
+    background-color:#181818;
+    /* background-color:#ffab2f; */
+    /* background-color: #14002a; */
+}
+.btn_eleccion{    
+    padding: 25px 50px;
+    border: none;
+    border-radius: 15px;    
+
+    border: 4px solid #3f3f3f;
+    background-color: #3f3f3f;
+    color: aliceblue;
+    font-weight: bolder;
+    text-align: center;
+    
+}
+button{
+    padding: 8px;
+    border: none;
+    border-radius: 15px;    
+    
+    text-align: center;
+    background-color: #3f3f3f;
+    color: aliceblue;
+    font-weight: bolder;
+}
+.divBtn{
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    
+    margin-top: 6vw;
+    margin-bottom: 5px;    
+    
+    
+}
+.btn_eleccion:hover, button:hover{
+    background-color: #eeb02d;
+    color: black;
+}
+
+.form_iniSesiones{        
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: none;
+    border-radius: 15px;    
+    margin: 15%;
+    
+    text-align: center;    
+
+    /* background-color: #141414; */    
+    background-color: #14002a;
+    z-index: 3;    
+
+    padding: 3.5vw;
+
+    /*
+    margin-top: 105px;
+    margin-bottom: 105px;
+    margin-left: 8vw;
+    margin-right: 8vw; 
+*/
+}
+
+.form_iniSesiones > form > label{
+    margin-top: 2.5vw ;
+    margin-bottom: 1.5vw;
+}
+.form_iniSesiones > form > label > input, .form_iniSesiones > form > input{
+    color: #181818;
+}
+/* #btn_alumno{
+    background-color: #000000;
+    color: aliceblue;
+    font-weight: bolder;
+    text-align: center;
+
+} */
+#div_tipoUser{
+    /*height: 100px;*/
+    padding-left: 200px;
+    padding-right: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;    
+    gap: 15px;
+
+}
+#contenedor{
+    /*width: auto;*/
+    position: relative;
+    height: 700px;
+    margin: 50px;
+    border: none;
+    border-radius: 15px;    
+
+    background-image: url(https://m.media-amazon.com/images/I/810bFwdImdL._AC_SY355_.jpg);/*Moverle Xd*/
+    /*Imagen de profesor u alumno*/    
+    background-color:antiquewhite;    
+    z-index: 1;
+}
+ 
+#div_formAlum{
+    position: relative;
+    grid-column-start: 2;/*-----------------> ANIMACION (YADID)*/
+}
+
+#div_docentes{
+    /* position: absolute; */
+}
+#conten_forms{
+    width: 100%;
+    height: 100%;
+    
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+#styleBox_trans{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 2;
+}
+
+#center_line{
+    width: 50%;
+}

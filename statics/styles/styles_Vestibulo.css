@@ -19,12 +19,31 @@
 /*TOOLS = funciones a nivel global, GENERIC = estilos de nivel global, ELEMENTS = etiquetas HTML?, OBJECT = clases, COMPONENTS = id?, UTILITIES = !important, ?*/
 /* =ELEMENTS
 ---------------------------------------------------------------------------------------------------------------------------------*/
-body{
-    background-color: #ffcfbf;    
+/*body{
+    /*background-color: #fff8ce;    
+}*/
+nav{
+    /* display: flex;
+    flex-direction: row;    
+    align-items: center;
+    align-self: center;
+    align-content: center;                 */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+main > div{
+    padding-bottom: 800px;
+}
+
+main section{    
+    padding-bottom: 800px;
 }
 /* =OBJECT
 ---------------------------------------------------------------------------------------------------------------------------------*/
-/*.*/
+.nav_Vestibulo{
+    padding: 2em;
+}
 
 
 
@@ -32,4 +51,6 @@ body{
 
 /* =COMPONENTS
 ---------------------------------------------------------------------------------------------------------------------------------*/
-/*#*/
+#center_line{
+    width: 50%;
+}

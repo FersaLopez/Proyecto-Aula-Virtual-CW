@@ -60,23 +60,30 @@ body{
 
 #fondo_form{
     background-color: #070038;
-    margin-top: 2.5vw;
-    margin-left: 6vw;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    margin-left: 7vw; 
+    margin-right: 7vw;
     opacity: 0.85;
-    height: 75vh;
-    width: 87vw;
 }
 
 #formulario{
-    padding: 10px;
-    /* float right para profesores */
-    float: left;
-    margin-top: 7vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    padding-top: 0.7vw;
+    padding-bottom: 0.7vw;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    margin-top: 105px;
+    margin-bottom: 105px;
+    margin-left: 8vw;
+    margin-right: 8vw; 
     background-color: #D5DBDB;
     border: none;
     border-radius: 15px;
+}
+
+#divForm{
+    display: flex;
+    
 }
 
 #nombreReg{
@@ -104,7 +111,7 @@ body{
     height: 3.3vh;
 }
 
-.checar{
+.mensaje{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 10pt;
 }
