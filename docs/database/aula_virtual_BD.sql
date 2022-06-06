@@ -225,8 +225,7 @@ CREATE TABLE LINKS_ASIGNACION(
     ID_AULA CHAR(50), 
     FOREIGN KEY(ID_AULA) REFERENCES AULA(ID_AULA)
 );
-/*------------------------------------------------------------------------------------------------------*/
-
+/**/
 
 CREATE TABLE ARCH_ADJ_ASIGN(
     ID_ARCH_ADJ_ASIGN INT PRIMARY KEY AUTO_INCREMENT, 
@@ -355,6 +354,7 @@ CREATE TABLE PCMMT_HAS_REPORT(
 );
 
 
+
 CREATE TABLE ESTADO_PFORO(
     ID_ESTADO_PFORO TINYINT PRIMARY KEY AUTO_INCREMENT, 
     estado_foro VARCHAR(10)
@@ -409,6 +409,8 @@ CREATE TABLE PFORO_HAS_REPORT(
     motivo TEXT
 );
 
+/*------------------------------------------------------------------------------------------------------*/
+/*ERRRRROR*/
 CREATE TABLE ARCH_PFORO(
     ID_ARCH_PFORO INT PRIMARY KEY AUTO_INCREMENT, 
     ID_PUB_FORO INT, 
