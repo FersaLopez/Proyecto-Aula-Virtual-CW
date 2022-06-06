@@ -1,5 +1,7 @@
 <?php
-    require "../config/config.php";    
+
+/*
+require "../config/config.php";    
     require "../config/common_queries.php";    
 
     $con = connect();
@@ -14,7 +16,7 @@
 
     //echo $ID_U." + ".$ID_TU." + ".$tipo_U." + ".$id_grado." + ".$apodo;
 
-    
+  */  
 
     session_id("sesion-act");
     session_name("AULA_CW");

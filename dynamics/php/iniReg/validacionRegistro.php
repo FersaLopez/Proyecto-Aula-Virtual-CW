@@ -15,8 +15,8 @@
     $contra = (isset($_POST["password"]) && $_POST["password"] != "")? $_POST["password"] : false;
     
     $apodo = (isset($_POST["apodo"]))? $_POST["apodo"] : false;
-    //$correo = (isset($_POST["correo"]))? $_POST["correo"] : false;
-    $correo = $_GET["correo"];
+    $correo = (isset($_POST["correo"]))? $_POST["correo"] : false;
+    //$correo = $_GET["correo"];
 
     $identf = (isset($_POST["num_ident"]) && $_POST["num_ident"] != "")? $_POST["num_ident"] : false;
 
@@ -47,7 +47,7 @@
             $apodoo = $datos["apodo"];
             $name = $datos["nombre"];
 
-            echo $id_TU."<br>".$tipo_user."<br>".$id_grado."<br>".$apodoo;
+            echo $id_TU."<br>".$tipo_user."<br>".$id_grado."<br>".$apodoo.$name;
             
         
             // session_unset();
@@ -65,38 +65,7 @@
             $_SESSION["apodo"] = $apodoo;
             $_SESSION["ID_TU"] = $id_TU;
             $_SESSION["tipo_U"] = $tipo_user;
-            $_SESSION["grado"] = $id_grado;
-
-            /*
-            
-            echo "
-                <script>
-                    console.log('XD');                
-                    let datosFormNuevo = new FormData();                    
-                    //console.log(buscador.dataset.id);
-                    datosFormNuevo.append('id_U', $ID);
-                    datosFormNuevo.append('id_TU', $id_TU);                    
-                    datosFormNuevo.append('tipo_U', '$tipo_user');
-                    datosFormNuevo.append('id_grado', $id_grado);
-                    datosFormNuevo.append('apodo', '$apodoo');
-                    datosFormNuevo.append('nombre', '$name');
-
-                    console.log(datosFormNuevo);
-                    fetch('./TUNEL_Asignacion_varSession.php', {
-                        method:'POST', 
-                        body: datosFormNuevo,
-                    }).then((response)=>{
-                        console.log(response);
-                        //return response.json();
-                    })/*.then((datosJSON) =>{
-                        if(datosJSON.ok == true){
-                            alert('Todo bien');
-                        }else{
-                            alert(datosJSON.texto);
-                        }
-                    })
-                </script>
-                ";*/
+            $_SESSION["grado"] = $id_grado;    
 
         }
         else
@@ -104,8 +73,8 @@
 
     }
     
-    verRedRegistroCorrecto(true, $con, $correo);
-/*
+    //verRedRegistroCorrecto(true, $con, $correo);
+
     if($con && $tipo_U != false && $nombre != false && $contra != false && $identf != false)
     {        
         // echo $tipo_U;   
@@ -208,5 +177,5 @@
 
 
     }
-*/
+
 ?>

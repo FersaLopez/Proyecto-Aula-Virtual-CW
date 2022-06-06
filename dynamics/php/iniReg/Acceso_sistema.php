@@ -28,10 +28,10 @@
             <article></article>
         </section>        
         <div id="div_tipoUser">
-            <div id="btn_alumno" class="btn_eleccion"  style="display : none">Alumno</div>
-            <div id="btn_docente" class="btn_eleccion" style="display : none" >Docente</div>
-            <div id="btn_moder" class="btn_eleccion" >Moderador</div> 
-            <div id="btn_admin" class="btn_eleccion" >Admin</div>
+            <div id="btn_alumno" class="btn_eleccion" >Alumno</div>
+            <div id="btn_docente" class="btn_eleccion" >Docente</div>
+            <div id="btn_moder" class="btn_eleccion" style="display : none">Moderador</div> 
+            <div id="btn_admin" class="btn_eleccion" style="display : none">Admin</div>
         </div>
         
         
