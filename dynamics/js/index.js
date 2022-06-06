@@ -25,6 +25,10 @@ window.addEventListener("load", ()=>{
 
             evento.target.parentElement.children[1].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";
+            evento.target.parentElement.children[2].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";
+            evento.target.parentElement.children[3].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";
         }
         else if(evento.target.id == "btn_docente")
         {
@@ -32,6 +36,11 @@ window.addEventListener("load", ()=>{
 
             evento.target.parentElement.children[0].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";
+            evento.target.parentElement.children[2].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";
+            evento.target.parentElement.children[3].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";            
+            
 
             // evento.target.parentElement.children[3].style.display = "grid" <-------------------Para cuando se muestren los admins y moders
         }
@@ -39,13 +48,21 @@ window.addEventListener("load", ()=>{
         {
             tipoBoton = 3;
 
-            evento.target.parentElement.children[3].style.border = "none";
+            evento.target.parentElement.children[0].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";
+            evento.target.parentElement.children[1].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";
+            evento.target.parentElement.children[3].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";            
         }
         else if(evento.target.id == "btn_admin")
         {
             tipoBoton = 4;
 
+            evento.target.parentElement.children[0].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";
+            evento.target.parentElement.children[1].style.border = "none";
+            evento.target.style.border = "4px solid #eeb02d";
             evento.target.parentElement.children[2].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";
         }

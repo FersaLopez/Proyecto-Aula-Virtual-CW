@@ -1,0 +1,324 @@
+/* =SETTINGS
+---------------------------------------------------------------------------------------------------------------------------------*/
+/*@font-face {
+    font-family: "Fuego";
+    src: url(../fonts/charbb_reg.ttf);
+}
+@font-face {
+    font-family: "VECTOR";
+    src: url(../fonts/Newton\ Howard\ Font.ttf);
+}
+@font-face {
+    font-family: "Texto";
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: "Titulos";
+    src: url(../fonts/Fresh\ Fruit.ttf);
+}*/
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    /* --var-proporcionBarra: 0em; */
+
+    --var-tamañoBarra: 5em;
+    --var-tamañoIconNavbar: 5em;
+
+    --var-colorFontNegro: black;
+    --var-colorFontBlanco: white;
+    
+    --var-colorFondoOscuro: #2B2D42;
+    --var-colorFooterOscuro: #242325;
+    --var-colorAmarillo1: #FDCA40;
+    --var-colorNaranja: #F79824;
+    
+    
+    --var-colorCal: #4c2a85;
+    --var-colorAulas: #6B7FD7;
+    --var-colorPerfil: #C8C8C8;
+    --var-colorJuegos: #F72C25;
+    --var-colorForo: #fdc440;
+    --var-colorDescubre: #a9E5BB;
+}
+
+* {
+    box-sizing: border-box;
+    color:aliceblue;
+    font-family: sans-serif;
+}
+/*TOOLS = funciones a nivel global, GENERIC = estilos de nivel global, ELEMENTS = etiquetas HTML?, OBJECT = clases, COMPONENTS = id?, UTILITIES = !important, ?*/
+/*
+---------------------------------------------------------------------------------------------------------------------------------
+=> ELEMENTS <=
+---------------------------------------------------------------------------------------------------------------------------------*/
+
+body{
+    margin: 0;    
+    min-height: 100%;
+    background-color: #2B2D42;
+}
+
+header{    
+    background-color: #320E3B;
+    background-color: #242325;    
+}
+main{
+    min-height: 800px;
+    display: grid;
+    grid-template-columns: var(--var-proporcionBarra) auto;    
+    grid-template-columns: var(--var-tamañoBarra) auto;    
+}
+footer{
+    min-height: 25vh;
+}
+h1{
+    text-align: center;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------
+ => OBJECT <=
+---------------------------------------------------------------------------------------------------------------------------------*/
+.contenedorUniversal{
+    display: grid;
+    /*gap: 10px;/****/
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+.barraSuperior{
+    grid-area: header;
+    background-color: #544d5a;
+}
+.main{    
+    position: relative;
+    grid-area: main;    
+    
+}
+.footer{
+    grid-area: footer;
+    background-color: black;
+    position: sticky;    
+}
+.barraLateral{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.aside{
+    min-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.aside_ul{
+    position: sticky;
+    display: flex;
+    padding-left: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    flex-direction: column;
+    gap: 1vh;            
+}
+
+.aside_ul_EXTRA{
+    display: flex;
+    padding-left: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    flex-direction: column-reverse;
+    gap: 1vh;
+}
+.aside_li, .aside_li_EXTRA{
+    color: #242325;
+    
+    list-style-type: none;    
+
+}
+.aside_li_cuadros{    
+    min-height: 7vh
+    
+}
+.aside_li_cuadros:hover, .aside_li_EXTRA:hover{
+    background-color: #faaf18;
+
+}
+
+
+
+.nav_TextContent{
+    text-align: center;
+    justify-content: center;
+    text-align: center;    
+    padding: 3vh;
+
+    background-color: #2B2D42;
+    border: none;
+    border-radius: 15px;    
+}
+.nav_IconContent{
+    padding: 3vh 0vw;
+    width: var(--var-proporcionBarra);        
+    width: var(--var-tamañoIconNavbar);        
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 15px;    
+}
+.nav_IconContent:hover{
+    transform: scale(1.1);
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------
+ => COMPONENTS <=
+---------------------------------------------------------------------------------------------------------------------------------*/
+#nav_sup{    
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* gap: 2vw; */
+
+    border-bottom: 3px solid #F7B32B;
+    
+    background-color: #242325;
+    /* border: 3px solid #2B2D42; */
+
+}
+
+
+#left_sect{
+    /* max-width: 15%; */
+    /* min-height: 100%; */
+    
+    background-color: #FDCA40;      
+    background-color: #F7B32B;
+    background-color: #F79824;
+    background-color: var(--var-colorAmarillo1);
+}
+#left_sect > * {
+    color: #242325;
+}
+
+#right_sect{
+    display: grid;  
+    grid-template: 
+        "multiblock"
+        "efemerides" 
+        "title_ana"
+        "avisos" 
+        "noticias"
+        "anuncios"
+        "ayuda"
+        "clubes"        
+                    ;    
+}
+#title_ANA{
+    grid-area: title_ana;    
+}
+#multiBlock{
+    grid-area: multiblock;
+}
+#sec_efemerides{    
+    grid-area: efemerides;
+}
+#sec_avisos{
+    grid-area: avisos;
+}
+#sec_noticias{
+    grid-area: noticias;
+}
+#sec_anuncios{
+    grid-area: anuncios;
+}
+#sec_ayuda{
+    grid-area: ayuda;
+}
+#sec_clubes{
+    grid-area: clubes;
+}
+
+#calendario{
+    grid-area: calendario;
+    background-color: var(--var-colorCal);      
+}
+#aulas{
+    grid-area: Aulas;
+    background-color: var(--var-colorAulas);
+    height: auto;    
+}
+
+#perfil{
+    grid-area: Perfil;
+    background-color: var(--var-colorPerfil);    
+}
+
+#juegos{
+    grid-area: Juegos;
+    background-color: var(--var-colorJuegos);
+}
+
+#foro{
+    grid-area: Foro;
+    background-color: var(--var-colorForo);
+}
+
+#descubre{
+    grid-area: Descubre;
+    background-color: var(--var-colorDescubre);
+}
+
+#aulas>span, #perfil>span, #juegos>span, #descubre>span, #foro>span{
+    color: var(--var-colorFontNegro);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.sec_multiBlock{
+    min-height: 100vh;
+    padding: 4% 5%;
+    display: grid;
+
+    gap: 2%;
+
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); */
+    /* grid-template-areas: 
+        "calendario calendario calendario"
+        "Aulas Perfil Juegos"
+        "Aulas Foro Descubre"; */
+    grid-template: 
+        "calendario calendario calendario" 25vh
+        "Aulas Perfil Juegos" 
+        "Aulas Foro Descubre" 
+                                ;
+
+    /* min-height: 50vh; */
+}
+
+.multiBlocks{
+    border: none;
+    border-radius: 15px;    
+    border-bottom: 10px solid #242325 ;
+    border-right: 10px solid #c8c8c8;
+
+    text-align: center;
+    
+
+}
+.multiBlocks:hover{
+    transform: scale(1.01);
+}
+
+
+
+div.secciones_Lobby{
+    min-height: 100vh;
+    padding: 7% 10%;
+}
