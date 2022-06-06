@@ -20,8 +20,28 @@ html{
     scroll-behavior: smooth;
 }
 :root{
-    --var-proporcionBarra: 5em;
+    /* --var-proporcionBarra: 0em; */
+
+    --var-tamañoBarra: 5em;
+    --var-tamañoIconNavbar: 5em;
+
+    --var-colorFontNegro: black;
+    --var-colorFontBlanco: white;
+    
+    --var-colorFondoOscuro: #2B2D42;
+    --var-colorFooterOscuro: #242325;
+    --var-colorAmarillo1: #FDCA40;
+    --var-colorNaranja: #F79824;
+    
+    
+    --var-colorCal: #4c2a85;
+    --var-colorAulas: #6B7FD7;
+    --var-colorPerfil: #C8C8C8;
+    --var-colorJuegos: #F72C25;
+    --var-colorForo: #fdc440;
+    --var-colorDescubre: #a9E5BB;
 }
+
 * {
     box-sizing: border-box;
     color:aliceblue;
@@ -47,9 +67,13 @@ main{
     min-height: 800px;
     display: grid;
     grid-template-columns: var(--var-proporcionBarra) auto;    
+    grid-template-columns: var(--var-tamañoBarra) auto;    
 }
 footer{
     min-height: 25vh;
+}
+h1{
+    text-align: center;
 }
 
 /*
@@ -90,6 +114,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 .aside_ul{
     position: sticky;
@@ -140,6 +165,7 @@ footer{
 .nav_IconContent{
     padding: 3vh 0vw;
     width: var(--var-proporcionBarra);        
+    width: var(--var-tamañoIconNavbar);        
     background-color: whitesmoke;
     border: none;
     border-radius: 15px;    
@@ -152,8 +178,8 @@ footer{
 ---------------------------------------------------------------------------------------------------------------------------------
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
-#nav_sup{
-    
+#nav_sup{    
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -181,25 +207,41 @@ footer{
 }
 
 #right_sect{
-    display: grid;    
-    gap: 4vh;
+    display: grid;  
+    grid-template: 
+        "multiblock"
+        "efemerides" 
+        "title_ana"
+        "avisos" 
+        "noticias"
+        "anuncios"
+        "ayuda"
+        "clubes"        
+                    ;    
 }
-:root{
-    --var-colorFontNegro: black;
-    --var-colorFontBlanco: white;
-
-    --var-colorFondoOscuro: #2B2D42;
-    --var-colorFooterOscuro: #242325;
-    --var-colorAmarillo1: #FDCA40;
-    --var-colorNaranja: #F79824;
-
-    
-    --var-colorCal: #4c2a85;
-    --var-colorAulas: #6B7FD7;
-    --var-colorPerfil: #C8C8C8;
-    --var-colorJuegos: #F72C25;
-    --var-colorForo: #fdc440;
-    --var-colorDescubre: #a9E5BB;
+#title_ANA{
+    grid-area: title_ana;    
+}
+#multiBlock{
+    grid-area: multiblock;
+}
+#sec_efemerides{    
+    grid-area: efemerides;
+}
+#sec_avisos{
+    grid-area: avisos;
+}
+#sec_noticias{
+    grid-area: noticias;
+}
+#sec_anuncios{
+    grid-area: anuncios;
+}
+#sec_ayuda{
+    grid-area: ayuda;
+}
+#sec_clubes{
+    grid-area: clubes;
 }
 
 #calendario{
