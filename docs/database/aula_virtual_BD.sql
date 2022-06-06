@@ -32,10 +32,17 @@ CREATE TABLE PRIVACIDAD(
     privacidad CHAR(25)
 ); 
 
+/*Esta es la tabla Tipo_mat (tipo de materia)*/
+/*Esta también se debe añadir al archivo de draw.io*/
+
 /*Esta es la tabla MATERIAS*/
 CREATE TABLE MATERIAS(
     ID_MATERIAS TINYINT PRIMARY KEY, 
-    materias CHAR(50)
+    materias CHAR(50), 
+    ID_GRADO TINYINT, 
+    FOREIGN KEY(ID_GRADO) REFERENCES GRADO(ID_GRADO),
+    ID_TIPO_MAT TINYINT, 
+    FOREIGN KEY(ID_TIPO_MAT) REFERENCES TIPO_MAT(ID_TIPO_MAT) 
 ); 
 
 CREATE TABLE TIPO_MAT(
@@ -64,8 +71,8 @@ CREATE TABLE GRUPO(
 /*Esta es la tabla TIPO_ASIGN*/
 -- Le añadí un AUTO_INCREMENT
 CREATE TABLE TIPO_ASIGN(
-    ID_TIPO_ASIGN TINYINT PRIMARY KEY AUTO_INCREMENT, 
-    tipo_asign CHAR(25)
+    ID_TIPO_ASIGN TINYINT PRIMARY KEY, 
+    tipo_asign VARCHAR(10)
 );
 
 /*Esta es la tabla ESTADO_ENTREGA*/
@@ -84,9 +91,10 @@ CREATE TABLE TIPO_USER(
 /*Esta tiene una FK*/
 CREATE TABLE TIPO_AULA(
     ID_TIPO_AULA TINYINT PRIMARY KEY, 
+    tipo CHAR(50),
     ID_PRIV TINYINT,
     FOREIGN KEY(ID_PRIV) REFERENCES PRIVACIDAD(ID_PRIV),
-    tipo CHAR(15)
+    
 );
 
 /*Esta es la tabla AULA*/
@@ -126,14 +134,15 @@ CREATE TABLE USUARIO(
     apellido_materno CHAR(50), 
     num_identificador CHAR(13) UNIQUE, /*Change*/
     correo CHAR(80) UNIQUE, 
-    ruta_foto CHAR(50), 
+    ruta_foto CHAR(50),     
     estado_unico CHAR(50),
-    telefono INT
+    telefono INT,
+    password CHAR(30)
 );
 
 /*Esta es la tabla Aula has Usuario*/
 /*Tiene FKs */
-CREATE TABLE AULA_HAS_USUARIO(/-------------------------------------------------
+CREATE TABLE AULA_HAS_USUARIO(
     ID_AHU INT PRIMARY KEY AUTO_INCREMENT,
     ID_USUARIO INT, 
     FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO),
@@ -168,15 +177,12 @@ CREATE TABLE USUARIO_HAS_INSIGNIAS(/--------------------------------------------
 );
 
 
-
-
-
 -- Estas son las tablas que debes añadir al archivo de draw.io
 CREATE TABLE BLOQUE(
     ID_BLOQUE TINYINT PRIMARY KEY, 
-    ruta_foto CHAR(100), 
-    titulo CHAR(60) UNIQUE NOT NULL,
-    descripcion CHAR(200) UNIQUE NULL,  
+    ruta_foto CHAR(255), 
+    titulo CHAR(200) UNIQUE NOT NULL,
+    descripcion MEDIUMTEXT,  
     ID_AULA CHAR(50),
     FOREIGN KEY(ID_AULA) REFERENCES AULA(ID_AULA)
 );
@@ -184,17 +190,16 @@ CREATE TABLE BLOQUE(
 
 CREATE TABLE TEMA(
     ID_TEMA TINYINT PRIMARY KEY AUTO_INCREMENT, 
-    titulo CHAR(60) UNIQUE, 
-    descripcion CHAR(200), 
+    titulo CHAR(100) UNIQUE, 
+    descripcion MEDIUMTEXT, 
     ID_BLOQUE TINYINT, 
     FOREIGN KEY(ID_BLOQUE) REFERENCES BLOQUE(ID_BLOQUE) 
 );
 
-
-CREATE TABLE ASIGNACION(/-------------------------------------------------
+CREATE TABLE ASIGNACION(
     ID_ASIGN INT PRIMARY KEY AUTO_INCREMENT, 
-    titulo CHAR(60), 
-    indicaciones CHAR(200),
+    titulo CHAR(100), 
+    indicaciones CHAR(255),
     ID_USUARIO INT, 
     FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO),
     puntos INT, 
@@ -204,14 +209,14 @@ CREATE TABLE ASIGNACION(/-------------------------------------------------
     FOREIGN KEY(ID_BLOQUE) REFERENCES BLOQUE(ID_BLOQUE), 
     ID_TEMA TINYINT, 
     FOREIGN KEY(ID_TEMA) REFERENCES TEMA(ID_TEMA), 
-    -- rubrica
+    rubrica MEDIUMTEXT 
     ID_AULA CHAR(50),
     FOREIGN KEY(ID_AULA) REFERENCES AULA(ID_AULA),
     ID_TIPO_ASIGN TINYINT, 
     FOREIGN KEY(ID_TIPO_ASIGN) REFERENCES TIPO_ASIGN(ID_TIPO_ASIGN)
 );
 
-CREATE TABLE USER_HAS_ASIGNACION(/-------------------------------------------------
+CREATE TABLE USER_HAS_ASIGNACION(
     ID_UHA INT PRIMARY KEY AUTO_INCREMENT, 
     ID_USUARIO INT, 
     FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO), 
@@ -225,29 +230,90 @@ CREATE TABLE USER_HAS_ASIGNACION(/----------------------------------------------
 );
 
 CREATE TABLE ARCH_ENTREGA(
-    ID_ARCH_ENTREGA INT PRIMARY KEY AUTO_INCREMENT, 
-    nombre CHAR(50), 
-    ruta_archivo CHAR(100), 
-    tipo_extension CHAR(100), 
+    ID_ARCH_ENTREGA PRIMARY KEY AUTO_INCREMENT, 
+    nombre CHAR(250), 
+    ruta_archivo CHAR(250),         
+    tipo_extension CHAR(100),     
     ID_UHA INT, 
     FOREIGN KEY(ID_UHA) REFERENCES USER_HAS_ASIGNACION(ID_UHA)
 );
 
 CREATE TABLE LINKS_ASIGNACION(
     ID_LINKASIGN INT PRIMARY KEY AUTO_INCREMENT, 
-    link CHAR(100), 
+    link CHAR(250), 
     ID_AULA CHAR(50), 
     FOREIGN KEY(ID_AULA) REFERENCES AULA(ID_AULA)
 );
-
-/* -------------------------------------------------------------------------------------------------*/
-
+/*--------------------------------------------------------------------------------------*/
 
 
+CREATE TABLE ARCH_ADJ_ASIGN(
+    ID_ARCH_ADJ_ASIGN INT PRIMARY KEY AUTO_INCREMENT, 
+    nombre CHAR(100), 
+    ruta_arch CHAR(250), 
+    tipo_arch CHAR(50), 
+    ID_ASIGN INT, 
+    FOREIGN KEY(ID_ASIGN) REFERENCES ASIGNACION(ID_ASIGN)
+); 
 
 
+CREATE TABLE COMENT_PRIV_ASIGN(
+    ID_COMENT_PRIV_ASIGN INT PRIMARY KEY AUTO_INCREMENT, 
+    ID_USUARIO INT, 
+    FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO), 
+    ID_UHA INT, 
+    FOREIGN KEY(ID_UHA) REFERENCES USER_HAS_ASIGNACION(ID_UHA),
+    comentario TEXT, 
+    fecha_coment DATETIME NOT NULL 
+);
 
+CREATE TABLE COMENT_ASIGN(
+    ID_COMENT_ASIGN INT PRIMARY KEY AUTO_INCREMENT, 
+    ID_USUARIO INT, 
+    FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO),
+    ID_ASIGN INT, 
+    FOREIGN KEY(ID_ASIGN) REFERENCES ASIGNACION(ID_ASIGN),
+    comentario TEXT, 
+    fecha_coment DATETIME NOT NULL
+);
 
+CREATE TABLE TIPO_JUEGO(
+    ID_TIPO_JUEGO SMALLINT PRIMARY KEY AUTO_INCREMENT, 
+    juego CHAR(75), 
+    descripcion TEXT
+);
+
+CREATE TABLE JUEGO(
+    ID_JUEGO SMALLINT PRIMARY KEY AUTO_INCREMENT, 
+    ID_TIPO_JUEGO SMALLINT, 
+    FOREIGN KEY(ID_TIPO_JUEGO) REFERENCES TIPO_JUEGO(ID_TIPO_JUEGO), 
+    ID_TEMA TINYINT, 
+    FOREIGN KEY(ID_TEMA) REFERENCES TEMA(ID_TEMA),
+    ID_AULA CHAR(50), 
+    FOREIGN KEY(ID_AULA) REFERENCES AULA(ID_AULA),
+    ID_BLOQUE TINYINT, 
+    FOREIGN KEY(ID_BLOQUE) REFERENCES BLOQUE(ID_BLOQUE)
+    nombre CHAR(50), 
+    descripcion TEXT, 
+    fecha_asignacion DATETIME,
+    fecha_entrega DATETIME, 
+    puntos INT 
+);
+
+CREATE TABLE USER_HAS_JUEGO(
+    ID_UHJ INT PRIMARY KEY AUTO_INCREMENT, 
+    ID_JUEGO SMALLINT, 
+    FOREIGN KEY(ID_JUEGO) REFERENCES JUEGO(ID_JUEGO), 
+    ID_USUARIO INT, 
+    FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO), 
+    puntos_obt INT,
+    posicion SMALLINT, 
+    fecha_juego DATETIME 
+);
+
+-- CREATE TABLE ARCH_ADJ_CAMMAT(
+--     ID_ARCH_ADJ_CAMMAT 
+-- );
 
 
 

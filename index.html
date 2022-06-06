@@ -9,54 +9,102 @@
         <meta name="keywords" content="Aula Virtual, ENP6, COYO-ROOM"><!---->
         <title>COYO-ROOM</title><!---->
         <!-- Añadir icono -->
+        <script src="https://kit.fontawesome.com/a6b650041d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./statics/styles/styles_Vestibulo.css">
         <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->        
 
     </head>
     <body>
-        <header> 
-            <h1>COYO-ROOM</h1>           
-            <nav>
+        <div id="coyoroom">   
+            <p id="titCoyo">COYO-ROOM</p> 
+        </div>
+        <header id="nav"> 
+            
+            <nav id="nav">
                 <div class="nav_Vestibulo"><a href="#bienvenida">Bienvenida</a></div>
                 <div class="nav_Vestibulo"><a href="#info">Información</a></div>
-                <div class="nav_Vestibulo"><a href="#Calendario_Pub">Calendario Público</a></div>
+                <div class="nav_Vestibulo"><a href="#USER_beneficios">Beneficios</a></div>
                 <!-- <div class="nav_Vestibulo"><a href="./dynamics/php/Formularios_inicio_sesion/inicio_sesion.php">USUARIO</a></div>             -->
-                <div class="nav_Vestibulo"><a href="./dynamics/php/iniReg/Acceso_sistema.php">USUARIO</a></div>            
-                <div class="nav_Vestibulo"><a href="#USUARIO_ben">Beneficios</a></div>
+                <div class="nav_Vestibulo"><a href="./dynamics/php/testFiles/Acceso_sistema.php">USUARIO</a></div>  
+                <div class="nav_Vestibulo"><a href="#Calendario_Pub">Calendario Público</a></div>   
+                <div class="nav_Vestibulo"><a href="#foro_publi">Foro Público</a></div>       
                 <div class="nav_Vestibulo"><a href="#Ayud_Soport">Ayuda y Soporte</a></div>
-                <div class="nav_Vestibulo"><a href="#foro_publi">Foro Público</a></div>
             </nav>        
         </header>
         <div id="center_line" class="org_lines"></div>
         <main>                        
             <div id="bienvenida">
-                <h1>Bienvenida</h1>
+                <p class="apartado">Bienvenida</p>
+                <div class="parrafos">
+                    <p>El equipo de desarrollo <i> &lt;MetaHackers&gt; </i>ofrece a la comunidad de la Escuela Nacional Preparatoria 6 el sistema de aula virtual Coyo-room.com implementado por los alumnos César Daniel Servín Jiménez, Yadid Sebastián López Montes, Fernando Samuel López Morales e Ilse Andrea Baños Mancilla.</p>
+                    <p>Dicho sistema tiene el propósito de facilitar la interacción entre el estudiante y el docente a través de herramientas tecnológicas y fomentar la participación de estudiantes en los diversos eventos académicos, culturales y sociales que ofrece la escuela.</p>
+                    <a href="#coyoroom" class="boton"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
             </div>
+
             <div id="info">
-                <h1>Información sobre el Sitio</h1>
+                <p class="apartado">Información sobre el Sitio</p>
+                <div class="parrafos">
+                    <p>Para poder poder hacer uso del sistema se debe pertenecer a la UNAM. Docentes y estudiantes podrán hacer uso de este sitio mediante la publicación y entrega de tareas y el uso de clases privadas y públicas. Moderadores y administradores también podrán hacer uso del aula y se encargarán de supervisar el funcionamiento del foro de preguntas y el calendario (ambos públicos o privados). </p>
+                    <a href="#coyoroom" class="boton"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
             </div>
-            <div id="Calendario_Pub">
-                <h1>Calendario Público</h1>
-            </div>            
-            <section id="USUARIO_ben">
+                        
+            <!-- <section id="USUARIO_ben"> -->
                 <!-- <article></article>
                 <article></article> -->
             
-                <div id="USER_btn">
-                    <h1>USUARIO</h1>
+                <!-- <div id="USER_btn">
+                    <h1>Beneficios del usuario</h1>
+                </div> -->
+            <div id="USER_beneficios">
+                <p class="apartado">Beneficios del usuario</p>
+                <div class="parrafos">
+                    <table>
+                        <tr> <!--columna-->
+                            <td>Foro de preguntas (público y privado)</td>
+                            <td>Publicación de tareas y materiales</td>
+                            <td>Entrega y calificación de tareas</td>
+                        </tr>
+                        <tr> <!--columna-->
+                            <td>Juegos educativos</td>
+                            <td>Calendario (público y privado)</td>
+                            <td>Creación de clases </td>
+                        </tr>
+                        <tr> <!--columna-->
+                            <td>Recordatorio de clases en vivo ¿</td>
+                            <td>Apodos ¿?</td>
+                            <td>Las esas weas </td>
+                        </tr>
+                    </table>
+                    <a href="#coyoroom" class="boton"><i class="fa-solid fa-chevron-up"></i></a>
                 </div>
-                <div id="USER_beneficios">
-
-                </div>
-            </section>
-            <div id="Ayud_Soport">
-                <h1>Ayuda y Soporte</h1>
             </div>
+            <!-- </section> -->
+
+            <div id="Calendario_Pub">
+                <p class="apartado">Calendario Público</p>
+                <div class="parrafos">
+                    <a href="#coyoroom" class="boton"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
+            </div>  
+
             <div id="foro_publi">
-                <h1>Foro Público</h1>
-
+                <p class="apartado">Foro Público</p>
+                <div class="parrafos">
+                    <a href="#coyoroom" class="boton"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
             </div>
-        </main>        
+
+            <div id="Ayud_Soport">
+                <p class="apartado">Ayuda y Soporte</p>
+                <div class="parrafos">
+                    <p> Contacta a <i>&lt;MetaHackers&gt;</i>: holafersa@gmail.com</p>
+                    <a href="#coyoroom" class="boton"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
+            </div>    
+        </main>      
+
         <footer>
             <div id="ftr_equipoDesarr" class="footer_Vestibulo">
                 <div id="ftr_imgEquipoDesarr" class="footer_Vestibulo">
