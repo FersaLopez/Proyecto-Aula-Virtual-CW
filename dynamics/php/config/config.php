@@ -2,7 +2,7 @@
     define("DBHOST", "localhost");
     define("DBUSER", "root");
     define("PASSWORD", "");
-    define("DB", "pruebaula_cw");
+    define("DB", "aula_cw");
 
     function connect()
     {
