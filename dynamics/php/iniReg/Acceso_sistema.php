@@ -14,8 +14,9 @@
     <meta name="keywords" content="Aula Virtual, ENP6, COYO-ROOM"><!---->
     <title>Acceso al Sistema</title>            
     <!-- Añadir icono -->
-    <link rel="stylesheet" href="../../../statics/styles/AccesoSistema.css">
-    <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->        
+    <!-- <link rel="stylesheet" href="../../../statics/styles/AccesoSistema.css"> -->
+    <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->     
+    <link rel="stylesheet" href="../../../statics/styles/style_Acceso_Sistema.css">   
 </head>
 <body id="body">
     <header>
@@ -37,23 +38,23 @@
         
         <div id="contenedor">            
             <section id="styleBox_trans"></section>
-            <section id="conten_forms">
-                <div id="div_formAlum" class="form_iniSesiones">
-                    <form id="form_user" action="./validacion_Acceso.php" method="POST">
-                        <input id="tipo_U" name="tipo_User" type="number" readonly style="display: none">
-                        <label id="lab_identIdent" class="campo">Número de cuenta:
-                            <input id="identIdent" type="text" name="identIdent" class="input" required>
-                        </label>
-                        <br><br>
-                        <label id="lab_contra" class="campo">Contraseña:
-                            <input id="contrasena" type="password" name="contrasena" class="input" required>
-                        </label>                        
-                        <div class="divBtn">
-                            <button id="enviar_alumnos" class="btn" type="submit">Ingresar</button>
-                            <button id="reset" type="reset">Borrar</button>
-                        </div>
-                    </form>
-                </div>
+            <!-- <section id="conten_forms"> -->
+            <div id="div_formAlum" class="form_iniSesiones">
+                <form id="form_user" action="./validacion_Acceso.php" method="POST">
+                    <input id="tipo_U" name="tipo_User" type="number" readonly style="display: none">
+                    <label id="lab_identIdent" class="campo">Número de cuenta:
+                        <input id="identIdent" type="text" name="identIdent" class="input" required>
+                    </label>
+                    <br><br>
+                    <label id="lab_contra" class="campo">Contraseña:
+                        <input id="contrasena" type="password" name="contrasena" class="input" required>
+                    </label>                        
+                    <div class="divBtn">
+                        <button id="enviar_alumnos" class="btn" type="submit">Ingresar</button>
+                        <button id="reset" type="reset">Borrar</button>
+                    </div>
+                </form>
+            </div>
                 
 
 
@@ -72,10 +73,15 @@
                         </div>
                     </form>
                 </div> -->
-            </section>                        
+            <!-- </section> -->
 
         </div>
-        
+        <div class="transition">
+            <div class="objetos"></div>
+            <div class="objetos"></div>
+            <div class="objetos"></div>
+            <div class="objetos"></div>
+        </div>
         
         <div></div>
     </main>    

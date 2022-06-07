@@ -87,7 +87,6 @@ button{
     color: aliceblue;
     font-weight: bolder;
     text-align: center;
-
 } */
 #div_tipoUser{
     /*height: 100px;*/
@@ -115,20 +114,25 @@ button{
  
 #div_formAlum{
     position: relative;
-    grid-column-start: 2;/*-----------------> ANIMACION (YADID)*/
+    /*grid-column-start: 2;/*-----------------> ANIMACION (YADID)*/
 }
 
 #div_docentes{
     /* position: absolute; */
 }
 #conten_forms{
-    width: 100%;
+    position: relative;
+    width: 50%;
     height: 100%;
-    
-    
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
+    margin-left: 50%;
+    transition-property: all;
+    transition-duration: 1s;
+    /*grid-template-columns: 1fr 1fr;
+    gap: 35px; */
+}
+#btn_docente:hover > #conten_forms{
+    margin-left: 10%;
 }
 #styleBox_trans{
     position: absolute;
@@ -140,4 +144,24 @@ button{
 
 #center_line{
     width: 50%;
+}
+.transition{
+    position: absolute;
+    width: 100%;
+    padding: 2%;
+    margin: 20px;
+    background-color: #eeb02d;
+}
+.objetos{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+    background-color:cornflowerblue;
+    left: 0;
+    transition-property: left;
+    transition-duration: 1s;
+}
+.transition:hover > .objetos{
+    left: 80%;
 }
