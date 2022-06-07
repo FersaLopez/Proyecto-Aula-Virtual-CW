@@ -19,11 +19,11 @@
 
     <header class="barraSuperior">
         <nav id="nav_sup">
-            <a href="">
-                <div class="nav_IconContent">
-                    B
-                </div>
-            </a>
+            <!-- <a href=""> -->
+            <div class="nav_IconContent" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" >
+                   multi
+            </div>
+            <!-- </a> -->
             <a href="">
                 <div class="nav_TextContent">
                     En clase
@@ -49,48 +49,105 @@
     
     <main class="main">
         <section id="left_sect" class="barraLateral" class="aside"> 
-            <div id="latprueba">                       
+            <div id="latprueba">  
+
+                <!-- expansión del menú -->
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    
+                    <div id="menuDiv">
+                      <ul class="aside_ul2" >
+                        <a href="./lobby.html">
+                            <li class="aside_li">
+                                <div class="aside_li_cuadros">Menú principal</div>
+                            </li>
+                        </a>             
+                        <a href="">
+                            <li class="aside_li">
+                                <div class="aside_li_cuadros">Mis aulas</div>
+                            </li>
+                        </a>     
+                        <a href="">
+                            <li class="aside_li">
+                                <div class="aside_li_cuadros">Cámara de materiales</div>
+                            </li>
+                        </a>  
+                        <a href="">
+                            <li class="aside_li">
+                                <div class="aside_li_cuadros">Foro</div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="aside_li">
+                                <div class="aside_li_cuadros">Mis juegos</div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="aside_li">
+                                <div class="aside_li_cuadros">Calendario</div>
+                            </li>                    
+                        </a>
+                      </ul>
+                      <ul class="aside_ul_EXTRA" >
+                        <a href="">
+                            <li class="aside_li_EXTRA">
+                                <div class="aside_li_cuadros">Biblioteca</div> <!--BiblioTeca -->
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="aside_li_EXTRA">
+                                <div class="aside_li_cuadros">Aulas</div>
+                            </li>                                     
+                        </a>
+                      </ul>
+                    </div> <!--cierra div menu-->
+            
+                </div> 
+                
                 <ul class="aside_ul" >
                     <a href="./lobby.html">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">multi</div> <!--MULTI BLOCK -->
+                            <div class="aside_li_cuadros">m</div> <!--MULTI BLOCK -->
                         </li>
                     </a>             
                     <a href="">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">aulas</div><!--AULAS-->
+                            <div class="aside_li_cuadros">a</div><!--AULAS-->
                         </li>
                     </a>     
                     <a href="">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">cammat</div><!--CAMMAT-->
+                            <div class="aside_li_cuadros">c</div><!--CAMMAT-->
                         </li>
                     </a>  
                     <a href="">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">foro</div><!--FORO-->
+                            <div class="aside_li_cuadros">f</div><!--FORO-->
                         </li>
                     </a>
                     <a href="">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">Juegos</div><!--JUEGOS-->
+                            <div class="aside_li_cuadros">J</div><!--JUEGOS-->
                         </li>
                     </a>
                     <a href="">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">Calen</div><!--CALENDARIO-->
+                            <div class="aside_li_cuadros">C</div><!--CALENDARIO-->
                         </li>                    
                     </a>
                 </ul>
                 <ul class="aside_ul_EXTRA" >
                     <a href="">
                         <li class="aside_li_EXTRA">
-                            <div class="aside_li_cuadros">biblio</div> <!--BiblioTeca -->
+                            <div class="aside_li_cuadros">b</div> <!--BiblioTeca -->
                         </li>
                     </a>
                     <a href="">
                         <li class="aside_li_EXTRA">
-                            <div class="aside_li_cuadros">aulas</div><!--AULAS-->
+                            <div class="aside_li_cuadros">a</div><!--AULAS-->
                         </li>                                     
                     </a>
                 </ul>  
@@ -109,18 +166,7 @@
                 <div id="descubre" class="multiBlocks"><a href=""><span>Descubre</span></a></div>
                 
             </div>
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling &amp; backdrop</button>
-    
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <p>Try scrolling the rest of the page to see this option in action.</p>
-      </div>
-    </div>
-</div>
+
             </div>
             <div id="sec_efemerides" class="secciones_Lobby">
                 <h1>Efemerides</h1>
