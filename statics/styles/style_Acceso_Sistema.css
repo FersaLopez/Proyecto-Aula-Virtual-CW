@@ -57,13 +57,13 @@ button{
     gap: 15px;
 
 }
-/* ================ Sobrado para imagen ================== */
+/* ================ Sombrado para imagen ================== */
 #styleBox_trans{
     position: absolute;
-    width: 84vw;
-    height: 89vh;
-    top: 45%;
-    left: 8%;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.55);
     z-index: 1;
@@ -93,7 +93,4 @@ button{
     padding: 3.5vw;
     transition-property: left;
     transition-duration: 1s;
-}
-#contenedor:hover > .form_iniSesiones{
-    left: 60%;
 }
