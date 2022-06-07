@@ -46,34 +46,15 @@
             <section id="aula_tools" class="Aulas_toolsAula">
 
             </section>
-            <section class="Aulas_AulaBlocks">
-                <div class="AulaBlock">
+            <section id="aula_Blocks" class="Aulas_AulaBlocks">
+                <!-- <div class="AulaBlock">
                     <h4 class="AulaBlock_tipo">Tipo Aula</h4>
                     <h3 class="AulaBlock_nombre">NOMBRE MATERIA</h3>
                     <div class="AulaBlock_footer">
                         <span class="AulaBlock_profesor">Profesor</span>
                         <span class="AulaBlock_grado">Grado</span>
                     </div>
-                </div>                
-
-                <div class="AulaBlock">
-                    <h4 class="AulaBlock_tipo">ETE</h4>
-                    <h3 class="AulaBlock_nombre">CM</h3>
-                    <div class="AulaBlock_footer">
-                        <span class="AulaBlock_profesor">Carlos Alf</span>
-                        <span class="AulaBlock_grado">5</span>
-                    </div>
-                </div>
-
-                <div class="AulaBlock">
-                    <h4 class="AulaBlock_tipo">Tipo Aula</h4>
-                    <h3 class="AulaBlock_nombre">NOMBRE MATERIA</h3>
-                    <div class="AulaBlock_footer">
-                        <span class="AulaBlock_profesor">Profesor</span>
-                        <span class="AulaBlock_grado">Grado</span>
-                    </div>
-                </div>
-
+                </div>                -->
                 
                 
             </section>
