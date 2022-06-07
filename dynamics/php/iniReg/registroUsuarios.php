@@ -12,42 +12,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aula Virtual para alumnos de la Escuela Nacional Preparatoria Plantel 6: 'Antonio Caso'"><!---->    
     <meta name="keywords" content="Aula Virtual, ENP6, COYO-ROOM"><!---->
+    <link rel="stylesheet" href="../../../statics/styles/styles_InicioCuentas.css">
     <title>Acceso al Sistema</title>            
     <!-- Añadir icono -->
     <!-- <link rel="stylesheet" href="../../../statics/styles/AccesoSistema.css"> -->
     <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->        
 </head>
 <body id="body">
-    <header>
-    <?php
+    <div id='fondo_form'>
+
+<?php
+
         if($_GET["user"] == 1)
         {
-            echo "<h1>Registro de Estudiantes</h1>";
+            echo "
+                <div id='divForm' style='justify-content: left'>
+                    <div id='formulario'>
+                        <div id='nombreReg'>
+                            <p id='TitRegistro'>Registro de alumno</p>
+            ";
         }
         else if($_GET["user"] == 2)
         {
-            echo "<h1>Registro de Docentes</h1>";
+            echo "
+                <div id='divForm' style='justify-content: right'>
+                    <div id='formulario'>
+                        <div id='nombreReg'>
+                            <p id='TitRegistro'>Registro de docente</p>
+            ";
         }
         else if($_GET["user"] == 3)
         {
-            echo "<h1>Registro de Moderadores</h1>";
+            echo "
+                <div id='divForm' style='justify-content: center'>
+                    <div id='formulario'>
+                        <div id='nombreReg'>
+                            <p id='TitRegistro'>Registro de moderador</p>
+            ";
         }
         else if($_GET["user"] == 4)
         {
-            echo "<h1>Registro de Administradores</h1>";
+            echo "
+                <div id='divForm' style='justify-content: center'>
+                    <div id='formulario'>
+                        <div id='nombreReg'>
+                            <p id='TitRegistro'>Registro de administrador</p>
+            ";
         }
-
-
-
     ?>
-    
-        <nav></nav>
+                        </div>
+
+        <!-- <nav></nav>
     </header>        
     <main class="padre">
         <section>
             <article></article>
             <article></article>
-        </section>        
+        </section>         -->
 
         <!-- <div id="div_tipoUser">
             <div id="btn_alumno" class="btn_eleccion">Alumno</div>
@@ -57,10 +78,7 @@
         </div> -->
         
         
-        <div id="contenedor">            
-            <section id="styleBox_trans"></section>            
-            <section id="sect_estud" class="conten_forms">
-                <form action="./validacionRegistro.php" id="form_estud" method="POST">                    
+        <form action="./validacionRegistro.php" id="form_estud" method="POST" >                    
                     <?php
                         $tipo_U = $_GET["user"];
                         echo "<input type='number' name='tipo_U' id='tipo_U' style='display: none' readonly value='$tipo_U'>";                    
@@ -95,8 +113,8 @@
                                 <br><br>
                                 ";
                     ?>
-                    <label class="Campo">Contraseña:
-                        <input id="password" name="password" type="password">
+                    <label class="campo">Contraseña:
+                        <input id="password" name="password" type="password" class="input">
                     </label><br/><br/>
                     <label class='campo'>Correo: 
                         <input id='correo' name='correo' type='email' class='input' required>
@@ -136,35 +154,18 @@
                     <label for="noMostrar" class="mensaje">No mostrar (recomendado)</label>
                     <input type="checkbox" id="mostrar" name="mostrar" value="si">
                     <label for="mostrar" class="mensaje">Mostrar</label> -->
-                    <button class="btn" type="submit">Enviar</button>
-                    <button class="btn" type="reset">Borrar</button>
+                    <div id="divBtn">
+                        <button class="btn" type="submit">Crear</button>
+                        <a href="./Acceso_sistema.php" class="btn" >Regresar</a>
+                    </div>
                 </form>
+            </div>
+        </div>    
+    </div>
 
-
-
-                <!-- <div id="div_formAlum" class="form_iniSesiones">
-                    <form id="form_alumnos" action="./validacion_Acceso.php" method="POST">
-                        <input id="tipo_U" name="tipo_User" type="number" value="1" readonly style="display: none">
-                        <label id="lab_identIdent" class="campo">Número de cuenta:
-                            <input id="identIdent" type="text" name="identIdent" class="input" required>
-                        </label>
-                        <br><br>
-                        <label id="lab_contra" class="campo">Contraseña:
-                            <input id="contrasena" type="password" name="contrasena" class="input" required>
-                        </label>                        
-                        <div class="divBtn">
-                            <button id="enviar_alumnos" class="btn" type="submit">Ingresar</button>
-                            <button type="reset">Borrar</button>
-                        </div>
-                    </form>
-                </div>                 -->
-            </section>                  
-
-        </div>
         
-        
-        <div></div>
-    </main>    
+        <!-- <div></div> -->
+    <!-- </main>     -->
     <footer>
 
     </footer>
