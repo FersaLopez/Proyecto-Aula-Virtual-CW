@@ -18,7 +18,6 @@
     font-family: "Titulos";
     src: url(../fonts/Fresh\ Fruit.ttf);
 }*/
-
 :root{
     /* --var-proporcionBarra: 0em; */
 
@@ -51,18 +50,7 @@
 ---------------------------------------------------------------------------------------------------------------------------------*/
 /*<>*/
 
-h1.h1_workSpace{
-    /* background-color: rgba(0, 0, 0, 0.3); */
-    margin: 0;
-    padding-top: 6vh;
-    padding-bottom: 6vh;
-    
-    background-color: var(--var-colorAzulPadre);
-}
 
-input, textarea, select, button, option{
-    color: #14002a;
-}
 
 /*
 ---------------------------------------------------------------------------------------------------------------------------------
@@ -70,99 +58,19 @@ input, textarea, select, button, option{
 ---------------------------------------------------------------------------------------------------------------------------------*/
 /*.*/
 
-
 div.secciones_workSpace{    
     min-height: 100vh;
     padding: 7% 10%;
 
     background-color: rgba(0, 0, 0, 0.3);
 }
-.Aulas_toolsAula{
-    display: flex;    
-    justify-content: space-evenly;    
-    align-items: center;
-    text-align: center;
-    
-    min-height: 80px;/**/
-    background-color: #490ead;
-}
-.Aulas_toolsAula>div{
-    min-height: 65px;
-    width: 65px;   
-    border: none;
-    border-radius: 15px;    
-    justify-content: center;
-    
 
-    align-items: center;
-    align-self: center;
-    align-content: center;
-
-    background-color: aliceblue;
-    color: #14002a;
-}
-.Aulas_AulaBlocks
-{
-    padding: 3%;
-    /* background-color: #6B7FD7; */
-    min-height: 200px;
-    display: flex;
-    flex-direction: row;    
-    flex-wrap: wrap;
-
-    gap: 2.5%;        
-    justify-content: center;
-
-}
-
-.AulaBlock{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    margin: 2.5%;
-    border: none;
-    border-radius: 15px;    
-    text-align: center;    
-    
-    /* background-color: #a9E5BB; */
-    background-color: #fdc440;
-    /* background-color: #F79824;  */
-    min-height: 30vh;
-    width: 350px;
-
-}
-.AulaBlock>*, .AulaBlock>*>*{
-    color: #14002a;
-    margin: 0;
-}
-.AulaBlock:hover{
-    transform: scale(1.01);
-}
-
-.AulaBlock_footer{
-    display: flex;
-    justify-content: space-between;
-}
-h4.AulaBlock_tipo{
-    margin-top: 1vw;
-}
-h3.AulaBlock_nombre{
-    /* margin-bottom: 1vw; */
-}
-.AulaBlock_profesor{
-    margin-left: 1vw;    
-    margin-bottom: 1vw;
-}
-.AulaBlock_grado{
-    margin-right: 1vw;
-    margin-bottom: 1vw;
-}
 
 /*
 ---------------------------------------------------------------------------------------------------------------------------------
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
+
 
 #right_sect{
     display: grid;  
@@ -174,13 +82,3 @@ h3.AulaBlock_nombre{
          
                     ;    */
 }
-
-#wS_Aulas{
-    padding: 5% 5%;    
-}
-
-#aula_tools>div:hover{
-    transform: scale(1.1);
-}
-
-
