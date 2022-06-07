@@ -144,22 +144,33 @@ a{
     padding-left: 0;
     padding-left: 10%;
     padding-right: 10%;
+    margin-top: 170px;    
     flex-direction: column-reverse;
     gap: 1vh;
 }
 .aside_li, .aside_li_EXTRA{
     color: #242325;
-    
+    padding-left: 0%;
     list-style-type: none;    
-
 }
+
+.aside_li:hover{
+    transform: scale(1.1);
+    padding-left: 10px;
+}
+
 .aside_li_cuadros{    
     min-height: 7vh;
     min-width: 7vh;
+    color: black;
+
     
 }
 .aside_li_cuadros:hover, .aside_li_EXTRA:hover{
-    background-color: #faaf18;
+    color: white;
+    transform: scale(1.1);
+    padding-left: 10px;
+
 
 }
 
@@ -231,7 +242,7 @@ a{
 #right_sect{
     display: grid;  
     gap: 4vh;
-    /* margin-top: 1.5em; */
+    margin-top: 1.5em;
     grid-template: 
         "multiblock"
         "efemerides" 
@@ -354,3 +365,34 @@ div.secciones_Lobby{
     position: fixed;
     z-index: 1;
 }
+
+.offcanvas-body{
+    position: relative;
+    top:900px;
+}
+
+
+.textMenuExp{
+    position: relative;
+    top: 50px;
+    color: #14002a;
+}
+
+#menuDiv{
+    background-color: var(--var-colorAmarillo1);
+    height: 100%;
+}
+
+
+.aside_ul2{
+    position: sticky;
+    display: flex;
+    padding-left: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* margin-top: 90px; */
+    flex-direction: column;
+    gap: 1vh;       
+    padding-top: 10%;     
+}
+
