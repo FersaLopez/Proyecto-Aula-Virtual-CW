@@ -3,6 +3,8 @@ window.addEventListener("load", ()=>{
     const tipoBtn = document.getElementById("div_tipoUser");
     const contenedor = document.getElementById("contenedor");
     const hidden_input = document.getElementById("tipo_U");
+    const formulario = document.getElementById("div_formAlum");
+    const cunata_or_rfc = document.getElementById("cuenta_or_rfc");
 
     console.log("NoPAPU");
     let tipoBoton = 1;/*1 = alumno, 2 profesor, 3 mod, 4 admin*/
@@ -29,6 +31,8 @@ window.addEventListener("load", ()=>{
             evento.target.style.border = "4px solid #eeb02d";
             evento.target.parentElement.children[3].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";
+            formulario.style.left = "0%";
+            cunata_or_rfc.innerHTML = "Número de cuenta:";
         }
         else if(evento.target.id == "btn_docente")
         {
@@ -40,8 +44,9 @@ window.addEventListener("load", ()=>{
             evento.target.style.border = "4px solid #eeb02d";
             evento.target.parentElement.children[3].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";            
-            
-
+            console.log(formulario);
+            formulario.style.left = "60%";
+            cunata_or_rfc.innerHTML = "RFC:";
             // evento.target.parentElement.children[3].style.display = "grid" <-------------------Para cuando se muestren los admins y moders
         }
         else if(evento.target.id == "btn_moder")
@@ -53,7 +58,9 @@ window.addEventListener("load", ()=>{
             evento.target.parentElement.children[1].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";
             evento.target.parentElement.children[3].style.border = "none";
-            evento.target.style.border = "4px solid #eeb02d";            
+            evento.target.style.border = "4px solid #eeb02d";
+            formulario.style.left = "0%";
+            cunata_or_rfc.innerHTML = "RFC:";     
         }
         else if(evento.target.id == "btn_admin")
         {
@@ -65,6 +72,8 @@ window.addEventListener("load", ()=>{
             evento.target.style.border = "4px solid #eeb02d";
             evento.target.parentElement.children[2].style.border = "none";
             evento.target.style.border = "4px solid #eeb02d";
+            formulario.style.left = "60%";
+            cunata_or_rfc.innerHTML = "RFC:";
         }
         console.log(tipoBoton);
         hidden_input.value = tipoBoton;
