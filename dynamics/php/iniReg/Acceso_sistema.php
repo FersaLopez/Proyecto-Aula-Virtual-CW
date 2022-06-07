@@ -35,19 +35,19 @@
             <div id="btn_admin" class="btn_eleccion" >Admin</div>
         </div>
         
-        <section id="styleBox_trans"></section>
         <div id="contenedor">
             <!-- <section id="conten_forms"> -->
+            <section id="styleBox_trans"></section>
             <div id="div_formAlum" class="form_iniSesiones">
                 <form id="form_user" action="./validacion_Acceso.php" method="POST">
                     <input id="tipo_U" name="tipo_User" type="number" readonly style="display: none">
-                    <label id="lab_identIdent" class="campo">Número de cuenta:
+                    <label id="lab_identIdent" class="campo"><span id="cuenta_or_rfc">Número de cuenta:</span>
                         <input id="identIdent" type="text" name="identIdent" class="input" required>
                     </label>
                     <br><br>
                     <label id="lab_contra" class="campo">Contraseña:
                         <input id="contrasena" type="password" name="contrasena" class="input" required>
-                    </label>                        
+                    </label>                     
                     <div class="divBtn">
                         <button id="enviar_alumnos" class="btn" type="submit">Ingresar</button>
                         <button id="reset" type="reset">Borrar</button>
