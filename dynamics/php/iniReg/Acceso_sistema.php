@@ -35,9 +35,8 @@
             <div id="btn_admin" class="btn_eleccion" >Admin</div>
         </div>
         
-        
-        <div id="contenedor">            
-            <section id="styleBox_trans"></section>
+        <section id="styleBox_trans"></section>
+        <div id="contenedor">
             <!-- <section id="conten_forms"> -->
             <div id="div_formAlum" class="form_iniSesiones">
                 <form id="form_user" action="./validacion_Acceso.php" method="POST">
@@ -54,8 +53,7 @@
                         <button id="reset" type="reset">Borrar</button>
                     </div>
                 </form>
-            </div>
-                
+            </div>    
 
 
                 <!-- <div id="div_docentes" class="form_iniSesiones"> -->
