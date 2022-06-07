@@ -1,3 +1,10 @@
+<?php
+    session_id("sesion-act");
+    session_name("AULA_CW");
+
+
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../../../statics/styles/template_Gates.css">
-    <!--link a right section-->    
+    <link rel="stylesheet" href="../../../../statics/styles/styles_aulas.css">
 </head>
 <body>
     <section id="right_sect" class="workSpace">
         <!-- AQUI VAN LAS DIFERENTES SECCIONES -->
-        <!-- <?php
+        <?php
             $ID = $_SESSION["ID_U"];
             $name = $_SESSION["nombre"];
             $apodo = $_SESSION["apodo"];
@@ -29,9 +36,33 @@
                         <input id='userH_grado' disabled value='$id_grado'>            
                     </div>
                 ";        
-        ?> -->
+        ?>
 
-        <div class="secciones_workSpace">
+
+        </div>
+        <h1 class="h1_workSpace">AULAS</h1>
+        <div id="wS_Aulas" class="secciones_workSpace" ><!--style="display: none;"-->
+            
+            <section id="aula_tools" class="Aulas_toolsAula">
+
+            </section>
+            <section id="aula_Blocks" class="Aulas_AulaBlocks">
+                <!-- <div class="AulaBlock">
+                    <h4 class="AulaBlock_tipo">Tipo Aula</h4>
+                    <h3 class="AulaBlock_nombre">NOMBRE MATERIA</h3>
+                    <div class="AulaBlock_footer">
+                        <span class="AulaBlock_profesor">Profesor</span>
+                        <span class="AulaBlock_grado">Grado</span>
+                    </div>
+                </div>                -->
+                
+                
+            </section>
+
+
+        </div>
+
+        <div id="sec_form_CreacionAula" class="secciones_workSpace">
 
         </div>
 
@@ -39,11 +70,9 @@
 
         </div>
 
-        <div class="secciones_workSpace">
 
-        </div>
-
-
-    </section>        
+    </section>
+    <script src="../../../js/AULAS/aulasMainGate.js">        
+    </script>        
 </body>
 </html>
