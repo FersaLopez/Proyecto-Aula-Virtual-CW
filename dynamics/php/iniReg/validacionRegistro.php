@@ -20,6 +20,39 @@
 
     $identf = (isset($_POST["num_ident"]) && $_POST["num_ident"] != "")? $_POST["num_ident"] : false;
 
+    function esNumeroDeCuenta($identf)
+    {
+        $extension_cuenta = strlen($identf);
+        $num_cuenta = str_split($identf);
+        $es_cuenta;
+        if($extension_cuenta == 9 && $num_cuenta[0] == 1 || $num_cuenta[0] == 3)
+        {
+            $es_cuenta = true;
+        }
+        else
+        {
+            $es_cuenta = false;
+        }
+        //Separa identf en llaves, si la primera es 3 o 1 y tiene una extensión de 9 dígitos es un número de cuenta aparentemente, sino
+        //puede haber un mensaje que diga: no es un número de cuenta intenta con uno válido.
+        //Ver especificaciones para RFC.
+        return $es_cuenta;
+    }
+    function esRFC($identf)
+    {
+        $extension_RFC = strlen($identf);
+        $seraRFC;
+        if($extension_RFC == 12 || $extension_RFC == 13)
+        {
+            $seraRFC = true;
+        }
+        else
+        {
+            $seraRFC = false;
+        }
+        return $seraRFC;
+    }
+
     function verRedRegistroCorrecto($query, $con, $correo)
     {
         if($query == true)
@@ -85,6 +118,11 @@
         
         if($tipo_U == 1)
         {
+            if(esNumeroDeCuenta($identf) == false)
+            {
+                $verif_Creacion = false;
+                $mensaje_error = "No es número de cuenta, ingresa uno válido";
+            }
             if(mysqlExistRegistroAll($apodo, $con, "usuario", "apodo", true) != NULL)
             {
                 $verif_Creacion = false;
@@ -117,6 +155,11 @@
         }
         else if($tipo_U == 3 || $tipo_U == 4)
         {
+            if(esRFC($identf) == false)
+            {
+                $verif_Creacion = false;
+                $mensaje_error = "El RFC no cuenta con el formato de 12 o 13 caracteres de un RFC, ingrese uno válido";
+            }
             if(mysqlExistRegistroAll($apodo, $con, "usuario", "apodo", true) != NULL)
             {
                 $verif_Creacion = false;
@@ -149,6 +192,11 @@
         }
         else if($tipo_U == 2)
         {            
+            if(esRFC($identf) == false)
+            {
+                $verif_Creacion = false;
+                $mensaje_error = "El RFC no cuenta con el formato de 12 o 13 caracteres de un RFC, ingrese uno válido";
+            }
             if(mysqlExistRegistroAll($identf, $con, "usuario", "num_identificador", true) != NULL)
             {
                 $verif_Creacion = false;
