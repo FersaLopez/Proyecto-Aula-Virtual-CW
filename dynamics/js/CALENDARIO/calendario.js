@@ -12,8 +12,8 @@ let aBisiesto = document.getElementById("abis");
 
 
 //arreglar problemas con dia de la semana 1 y 7
-diaMes.value = 25
-diaSem.value =1
+// diaMes.value = 25
+// diaSem.value =1
 // mes.value= 2
 // year.value = 2025
 // // aBisiesto = year
