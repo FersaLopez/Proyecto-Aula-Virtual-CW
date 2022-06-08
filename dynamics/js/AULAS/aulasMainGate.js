@@ -10,7 +10,7 @@ window.addEventListener("load", ()=>{
     const sec_form_CreacionAula = document.getElementById("sec_form_CreacionAula");
         
     const aulaTools = document.getElementById("aula_tools");
-    const aula_Blocks = document.getElementById("aula_Blocks");
+    const aula_Blocks = document.getElementById("aula_Blocks");    
     
     // console.log("idU = "+inputH_id.value);
     // console.log(inputH_name.value);
@@ -35,41 +35,26 @@ window.addEventListener("load", ()=>{
             for(aula of datosJSON.datos)
             {
                 let div = document.createElement("div")
-                div.className = "AulaBlock"
-                div.innerHTML = "<h4 class='AulaBlock_tipo'>"+aula.tipoAula+"</h4>";
-                div.innerHTML += "<h3 class='AulaBlock_nombre'>"+aula.nombreAula+"</h3>";
+                div.classList = "AulaBlock coincidencia"
+                div.id = aula.idAula;
+                div.dataset.id = aula.idAula;
+                div.innerHTML = "<h4 data-id='"+aula.idAula+"' class='coincidencia AulaBlock_tipo'>"+aula.tipoAula+"</h4>";
+                div.innerHTML += "<h3 data-id='"+aula.idAula+"' class='coincidencia AulaBlock_nombre'>"+aula.nombreAula+"</h3>";
                 let grado = "";
                 if(aula.id_grado != null)
                 {
                     grado = aula.id_grado;
-                }
-                div.innerHTML += "<div class='AulaBlock_footer'>"+"<span class='AulaBlock_profesor'>"+aula.nombreDocente+"</span>"+"<span class='AulaBlock_grado'>"+grado+"</span>"+"</div>";
+                }                
 
-                // div.innerHTML += "<div class='AulaBlock_footer'>"+
-                // "<span class='AulaBlock_profesor'>"+aula.nombreDocente+"</span>"+
-                // "<span class='AulaBlock_grado'>"+grado+"</span>"+
-                // "</div>";
+                div.innerHTML += "<div data-id='"+aula.idAula+"' class='coincidencia AulaBlock_footer'>"+
+                "<span data-id='"+aula.idAula+"' class='coincidencia AulaBlock_profesor'>"+aula.nombreDocente+
+                "</span>"+"<span data-id='"+aula.idAula+"' class='coincidencia AulaBlock_grado'>"+grado+"</span>"+
+                "</div>";
 
                 aula_Blocks.appendChild(div);
-            }
-            
-
-
-            /*
-            if(datosJSON.ok == true){
-                alert("Todo bien");
-            }else{
-                alert(datosJSON.texto);
-            }*/
+            }                        
         })            
-
-
-
-    }
-    
-
-    //buscarRegistrosClases();
-    
+    }            
     function refreshValues()
     {
         sec_form_CreacionAula.innerHTML = "";
@@ -78,14 +63,10 @@ window.addEventListener("load", ()=>{
         
         wS_Aulas.style.display = "block";
         
-        buscarRegistrosClases();
-
-
-        
-
+        buscarRegistrosClases();        
     }
 
-    let formAula = 0;
+    let formAula = 0;    
 
     function crearAula()
     {        
@@ -159,6 +140,11 @@ window.addEventListener("load", ()=>{
         });
 
     }
+    
+
+
+    buscarRegistrosClases();
+
 
 
     sec_form_CreacionAula.addEventListener("change", (evento) =>{
@@ -176,15 +162,7 @@ window.addEventListener("load", ()=>{
                 inp_privacidad_auto.value = datosJSON.priv;
     //            inp_privacidad_auto.value = tipo.privacidad;
             });
-        }
-        // else if(evento.target.id == "select_materia")
-        // {
-
-        // }
-
-
-
-        
+        }                
     });
 
     sec_form_CreacionAula.addEventListener("click", (evento) =>{
@@ -221,6 +199,7 @@ window.addEventListener("load", ()=>{
                         }).then((datosJSON) =>{
                             if(datosJSON.ok == true){
                                 alert("Todo bien");
+                                refreshValues();    
                             }else{
                                 alert(datosJSON.texto);
                             }
@@ -228,9 +207,7 @@ window.addEventListener("load", ()=>{
                     }else{
                         alert(datosJSON.texto);
                     }
-                })            
-                refreshValues();    
-
+                })                            
             }
         }
     });
@@ -243,7 +220,6 @@ window.addEventListener("load", ()=>{
     {
         aulaTools.innerHTML = "<div id='btnf_añadirAula'>+</div><div id='btnf_CrearAula'>++</div><div id='btnf_EliminarAula'>-</div>";     
     }
-
 
 
     aulaTools.addEventListener("click", (evento) =>{
@@ -259,6 +235,29 @@ window.addEventListener("load", ()=>{
         else if(evento.target.id == "btnf_EliminarAula")
         {
             console.log("ELIMINAR");
+        }
+    });
+
+    aula_Blocks.addEventListener("click", (evento) =>{
+        console.log(evento.target);
+        //console.log(evento.target.classList);
+        if(evento.target.classList.value.includes("coincidencia"))        
+        {
+            
+            
+            let bloqueAulaEspecifico = document.getElementById(evento.target.dataset.id);
+            console.log(bloqueAulaEspecifico);
+
+            let tipoAula = bloqueAulaEspecifico.children[0].innerHTML; //--------------------------------------------> TRUCAZO PARA EVITAR ERRORES
+            // let nombreAula = bloqueAulaEspecifico.children[1].innerHTML;
+            // let nombreProfesor = bloqueAulaEspecifico.children[2].children[0].innerHTML;
+            // let grado = bloqueAulaEspecifico.children[2].children[1].innerHTML;
+            //window.location="./insideAula.php?aula="+evento.target.dataset.id+"&nombre="+nombreAula+"&tipo="+tipoAula+"&profesor="+nombreProfesor+"&grado="+grado;
+            window.location="./insideAula.php?aula="+evento.target.dataset.id;
+            
+            //console.log("lol")
+
+
         }
     });
 

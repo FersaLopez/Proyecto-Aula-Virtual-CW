@@ -75,15 +75,7 @@
             echo "¡Bienvenido Docente! <br/>";
 
         }
-        else if($tipo_U == 3)
-        {
-            echo "¡Bienvenido Moderador! <br/>";
-        }
-
-        else if($tipo_U == 4)
-        {
-            echo "¡Bienvenido Admin! <br/>";
-        }*/
+        
     }
     else
     {

@@ -8,12 +8,12 @@ let mes = document.getElementById("5")
 let year = document.getElementById("6");
 let aBisiesto = document.getElementById("abis");
 
-
-
 //variables para probar funcionamiento
 
-// diaMes.value = 28
-// diaSem.value = 5
+
+//arreglar problemas con dia de la semana 1 y 7
+// diaMes.value = 25
+// diaSem.value =1
 // mes.value= 2
 // year.value = 2025
 // // aBisiesto = year
@@ -25,6 +25,7 @@ const calendario = document.getElementById("calendario");
 const textFecha = document.getElementById("textFecha");
 let gridCalen = document.getElementById("gridCalen")
 let fila6 = document.getElementById("fila6")
+// const agregarEvento = document.getElementById("agregarEvento")
 
 dibujarCalendario();
 
@@ -86,15 +87,18 @@ function dibujarCalendario(){
         
     }
     
-
-
-
-
 // function inicioSemana()
 // {
     let diaInicio 
-    if(diaMes)
+    if(diaMes.value == diaSem.value)
     {
+        diaInicio = diaMes.value
+    }
+    // else if(diaMes == 7)
+    // {
+    //     diaInicio = 1
+    // }
+    else{
         let contG =0;
         let contDiaMes = diaMes.value;
         if(diaSem)
@@ -103,7 +107,6 @@ function dibujarCalendario(){
             do
             {
                 //va recorriendo los dias hasta llegar al dia 1 sentido contratio
-                // console.log("inicio contG" + contG)
                 contDiaSem--;
                 //cada que llega al lunes 
                 if(contDiaSem==0){
@@ -112,11 +115,9 @@ function dibujarCalendario(){
                     //se suma el contador para saber cuantas veces se reinició la cuenta
                     contG += 1;
                 }
-                // console.log("prueba"+contDiaSem)
                 contDiaMes--
                 // contG--
-            }while(contDiaMes)
-            // console.log("contG"+contG)
+            }while(contDiaMes >0)
              diaInicio = contDiaSem - contG +1
             if(diaInicio == 8)
             {
@@ -183,16 +184,19 @@ function dibujarCalendario(){
     let contDiasAntes
     let ponerDiasFilas
     let ponerID = 1
-    let ultimaFila = 0
     // if(diasAntes){
     //     console.log(100)
         contDiasAntes = diasAntes;
         //dibuja los dias antes de que empiece el mes
+        if(diasAntes != 0)
+        {
         do
         {
+            if(diasAntes)
             fila6.innerHTML +="<div class='diasNulos'></div>";
             contDiasAntes--
         }while(contDiasAntes)
+    }
         //dibuja los primeros dias del mes de la primer fila
         contDiasAntes= 7 - diaInicio + 1
         do
