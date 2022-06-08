@@ -2,9 +2,6 @@
     require "../config/config.php";    
     require "../config/common_queries.php";    
     require "seguridad.php";
-
-    
-  
    
     $tipo_U = (isset($_POST["tipo_User"]) && $_POST["tipo_User"] != "")? $_POST["tipo_User"] : false;
     //echo $tipo_U;
@@ -53,7 +50,7 @@
         else{
             echo "Inicie sesión con la contraseña correcta";
         }
-
+    }
         /*
         if($tipo_U == 1)
         {
@@ -76,7 +73,7 @@
 
         }
         
-    }
+    
     else
     {
         echo "Algo salio Mal";
