@@ -63,9 +63,9 @@
 
         <?php
             $cont = 0;
+            //configuracion de la zona 
             date_default_timezone_set("America/Mexico_city");
             $zona = date_default_timezone_get();
-            // echo $zona;
 
             //recibe la fecha actual
             $fecha= getdate();
