@@ -29,7 +29,7 @@
                 $res2 = mysqli_query($con, $sql2);
                 $row2 = mysqli_fetch_assoc($res2);
                 //$row = mysqli_fetch_array($res);        
-                $datos = array("nombreAula"=>$row['nombre'], "nombreDocente"=>$row2['nombre'], "tipoAula"=>$row['tipo'], "id_grado"=>$row['ID_GRADO']);
+                $datos = array("nombreAula"=>$row['nombre'], "idAula"=>$row['ID_AULA'], "nombreDocente"=>$row2['nombre'], "tipoAula"=>$row['tipo'], "id_grado"=>$row['ID_GRADO']);
                 $resultados[] = $datos;
             }
     
