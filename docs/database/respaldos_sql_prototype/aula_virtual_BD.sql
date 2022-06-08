@@ -124,6 +124,7 @@ CREATE TABLE USUARIO(
     estado_unico CHAR(50),
     telefono INT,
     password CHAR(30)
+    
 );
 
 
