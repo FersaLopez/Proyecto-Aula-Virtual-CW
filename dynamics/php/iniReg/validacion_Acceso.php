@@ -73,6 +73,7 @@
             
 
 
+            header("location: ../pageGates/lobby.php");
         }    
 
         /*
