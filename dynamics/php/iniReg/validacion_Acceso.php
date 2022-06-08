@@ -2,7 +2,7 @@
     require "../config/config.php";    
     require "../config/common_queries.php";    
     require "seguridad.php";
-   
+    $con = connect();
     $tipo_U = (isset($_POST["tipo_User"]) && $_POST["tipo_User"] != "")? $_POST["tipo_User"] : false;
     //echo $tipo_U;
     if($con && $tipo_U != false)
@@ -10,14 +10,12 @@
 
         $ident = (isset($_POST["identIdent"]) && $_POST["identIdent"] != "")? $_POST["identIdent"] : false;
         $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"] != "")? $_POST["contrasena"] : false;
-        // $hash_base='f206b7a2b1eb5d85ef066154f07392';
-        
         
         if(mysqlExistRegistroAll($ident, $con, "usuario", "num_identificador") == NULL)
         {
             header("location: ./registroUsuarios.php?user=$tipo_U");
         }
-        else if(mysqlExistRegistroAll($ident, $con, "usuario", "num_identificador") != NULL && verificar_contra_pimienta($contrasena, $sal, $hash_base))
+        else
         {
             $sql = "SELECT ID_USUARIO, ID_TIPO_USER, tipo_usuario, ID_GRADO, apodo, nombre, password FROM USUARIO NATURAL JOIN TIPO_USER WHERE num_identificador = '$ident'";
             $query = mysqli_query($con, $sql);
@@ -42,15 +40,13 @@
                 $_SESSION["ID_TU"] = $id_TU;
                 $_SESSION["tipo_U"] = $tipo_user;
                 $_SESSION["grado"] = $id_grado; 
-                header("location: ../pageGates/lobby.php");
-            
-
-            
+                header("location: ../pageGates/lobby.php");  
         }    
-        else{
-            echo "Inicie sesión con la contraseña correcta";
-        }
     }
+    else{
+        echo "Algo salió mal";
+    }
+    
         /*
         if($tipo_U == 1)
         {
