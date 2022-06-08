@@ -41,6 +41,8 @@
             $_SESSION["ID_TU"] = $id_TU;
             $_SESSION["tipo_U"] = $tipo_user;
             $_SESSION["grado"] = $id_grado;
+
+            header("location: ../pageGates/lobby.php");
         }    
         /*
         if($tipo_U == 1)

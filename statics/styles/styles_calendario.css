@@ -1,0 +1,96 @@
+:root{
+    /* --var-proporcionBarra: 0em; */
+
+    --var-fondoCal: #1A5276;
+  
+}
+
+.workSpace{
+    box-sizing: border-box;
+}
+
+#calendario{
+    /* box-sizing: border-box; */
+    display: block;     
+    justify-content: space-evenly;    
+    align-items: center;
+    /* width: 80%; */
+    /* text-align: center; */
+    background-color: var(--var-fondoCal) ;
+    margin: 3em auto;
+    padding: 0.5em;
+    width: fit-content;
+    /* max-width: 100wv; */
+}
+
+#textFecha{
+    text-align: center;
+    padding: 1em;
+    font-size: 20pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: var(--var-fondoCal) ;
+}
+
+#gridCalen{
+    margin: 1em; 
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px ;
+    gap:10px;   
+}
+
+.diaSem{
+    display: block;
+    text-align: center;
+    background-color: #5B2C6F;
+    padding: 1em;
+}
+
+input, textarea, select, button, option{
+    color: #14002a;
+}
+
+.dias{
+    display: block;
+    text-align: center;
+    background-color: black;
+    padding: 1em;
+    margin-top: 1em;
+    height: 80px;
+}
+
+.hoy{
+    display: block;
+    text-align: center;
+    background-color: #7B241C;
+    padding: 1em;
+    margin-top: 1em;
+    height: 80px;
+    
+}
+
+.diasNulos{
+    display: block;
+    text-align: center;
+    background-color: var(--var-fondoCal);
+    padding: 1em;
+    margin-top: 1em;
+    height: 80px;
+}
+
+
+/* .a{
+    margin: 1em; 
+    display: grid;
+    grid-template-columns: 170px 170px 170px 170px 170px 170px 170px ;
+    gap:10px;
+} */
+
+.gridDias{
+    /* margin: 1em;  */
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px ;
+    gap:10px;   
+}
+
+
