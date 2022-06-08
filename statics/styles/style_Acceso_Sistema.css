@@ -1,0 +1,96 @@
+*{
+    color: white;
+}
+header h1{
+    color: #eeb02d;
+    text-align: center;
+}
+body{
+    background-color: #2B2D42;
+}
+.btn_eleccion{    
+    padding: 25px 50px;
+    border: none;
+    border-radius: 15px;    
+    border: 4px solid #3f3f3f;
+    background-color: #14002a;
+    color: aliceblue;
+    font-weight: bolder;
+    text-align: center;
+}
+button{
+    padding: 8px;
+    border: none;
+    border-radius: 15px;    
+    
+    text-align: center;
+    background-color: #3f3f3f;
+    color: aliceblue;
+    font-weight: bolder;
+}
+.divBtn{
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    
+    margin-top: 6vw;
+    margin-bottom: 5px;    
+}
+.btn_eleccion:hover, button:hover{
+    background-color: #eeb02d;
+    color: black;
+}
+.form_iniSesiones > form > label{
+    margin-top: 2.5vw ;
+    margin-bottom: 1.5vw;
+}
+.form_iniSesiones > form > label > input, .form_iniSesiones > form > input{
+    color: #181818;
+}
+#div_tipoUser{
+    height: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;    
+    gap: 15px;
+
+}
+/* ================ Sombrado para imagen ================== */
+#styleBox_trans{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+/* =========================Form========================== */
+#contenedor{
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+    padding: 2%;
+    margin: 100px;
+    border-radius: 15px;    
+    background-image: url(https://m.media-amazon.com/images/I/810bFwdImdL._AC_SY355_.jpg);    
+    background-color:antiquewhite;
+}
+.form_iniSesiones{        
+    top: 20%;
+    width: 25vw;
+    height: 40vh;
+    left: 0;
+    position: relative;
+    border: none;
+    border-radius: 15px; 
+    text-align: center; 
+    background-color: #14002a;
+    z-index: 3;
+    padding: 3.5vw;
+    transition-property: left;
+    transition-duration: 1s;
+}

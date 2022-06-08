@@ -116,6 +116,18 @@
                     <label class="campo">Contraseña:
                         <input id="password" name="password" type="password" class="input">
                     </label><br/><br/>
+                    <!-- Recibiendo la contraseña y hasheando -->
+
+                    <?php
+                   
+                    // $password = $_POST["password"]; 
+                    //$password_hasheada = hash(algoritmo, $password); 
+                    //echo $password_hasheada; 
+
+                    ?>
+                    
+
+
                     <label class='campo'>Correo: 
                         <input id='correo' name='correo' type='email' class='input' required>
                     </label><br><br>

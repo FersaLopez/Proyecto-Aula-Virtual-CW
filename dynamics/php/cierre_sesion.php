@@ -7,7 +7,8 @@
         session_unset(); 
         session_destroy(); 
         echo "Se eliminaron las sesiones";
-        //header("location:  ./inicio_sesion.php"); 
+        header("location:  ../../index.html"); 
     }    
 
-?>
+    
+?>  
