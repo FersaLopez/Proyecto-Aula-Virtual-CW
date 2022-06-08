@@ -242,7 +242,7 @@ a{
 #right_sect{
     display: grid;  
     gap: 4vh;
-    margin-top: 1.5em;
+    margin-top: 3em;
     grid-template: 
         "multiblock"
         "efemerides" 
@@ -374,7 +374,7 @@ div.secciones_Lobby{
 
 .textMenuExp{
     position: relative;
-    top: 50px;
+    top: 60px;
     color: #14002a;
 }
 
@@ -396,3 +396,6 @@ div.secciones_Lobby{
     padding-top: 10%;     
 }
 
+.btnAbajo{
+    margin-top: 50px;
+}
