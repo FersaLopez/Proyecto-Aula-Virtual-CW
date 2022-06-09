@@ -50,6 +50,18 @@
 ---------------------------------------------------------------------------------------------------------------------------------*/
 /*<>*/
 
+h1.h1_nombreAsign{
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    margin: 0;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    
+    background-color: var(--var-colorAzulPadre);
+}
+
+button, textarea, input{
+    color: #14002a;
+}
 
 
 /*
@@ -59,8 +71,8 @@
 /*.*/
 
 div.secciones_workSpace{    
-    min-height: 100vh;
-    padding: 7% 10%;
+    min-height: 50vh;
+    padding: 5% 10%;
 
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -70,7 +82,28 @@ div.secciones_workSpace{
 ---------------------------------------------------------------------------------------------------------------------------------
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
+#archivoClase{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 
+    margin-top: 5%;
+    background-color: #6B7FD7;
+    color: #14002a;
+    padding: 1vh;
+    border: none;
+    border-radius: 15px;    
+
+    
+
+}
+
+#archivoClase:hover{
+    background-color: #4c2a85;
+    transform: scale(1.02);
+}
 
 #right_sect{
     display: grid;  
