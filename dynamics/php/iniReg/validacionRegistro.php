@@ -133,8 +133,10 @@
             echo "La peticion salio mal";
 
     }
+
     
-    //verRedRegistroCorrecto(true, $con, $correo);
+
+    
 
     if($con && $tipo_U != false && $nombre != false && $contra != false && $identf != false)
     {        
