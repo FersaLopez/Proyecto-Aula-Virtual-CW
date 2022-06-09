@@ -13,7 +13,7 @@
                 $mesAct = date('n');
 
                 //selecciona eventos de la BD
-                $sql = "SELECT * FROM eventos_rang NATURAL JOIN mes NATURAL JOIN mes_fin WHERE ID_MES = 1";
+                $sql = "SELECT * FROM eventos_rang NATURAL JOIN mes NATURAL JOIN mes_fin WHERE ID_MES = $mesAct";
                 $res = mysqli_query($con, $sql);
                 $resultados = [];
 
