@@ -201,7 +201,7 @@ window.addEventListener("load", ()=>{
                             return response.json();
                         }).then((datosJSON) =>{
                             if(datosJSON.ok == true){
-                                alert("Todo bien");
+                                alert("Aula Creada con éxito");
                                 refreshValues();    
                             }else{
                                 alert(datosJSON.texto);

@@ -32,6 +32,7 @@
     --var-colorHeaderOscuro: #242325;
     --var-colorAzulPadre: #14002a;
 
+    --var-coloramarilloPRO: rgb(238, 176, 45);
     --var-colorAmarillo1: #FDCA40;
     --var-colorNaranja: #F79824;
     
@@ -76,13 +77,41 @@ div.secciones_workSpace{
 
     background-color: rgba(0, 0, 0, 0.3);
 }
-
+.archivosSubidos{
+    background-color: var(--var-colorNaranja) !important;    
+}
+.archivosSubidos > * > * >*{
+    color: #14002a;    
+}
+.archivosSubidos:hover{
+    background-color: var(--var-colorJuegos) !important;
+    color: aliceblue;
+    transform: scale(1.02);
+}
+.archivosSubidos{
+    max-width: 33%;
+    width: 350px;
+}
+.archivosSubidos>*>*{
+    
+    color: #14002a;
+}
+/* 
+.Aulas_toolsAula{
+    display: flex;    
+    justify-content: space-evenly;    
+    align-items: center;
+    text-align: center;
+    
+    min-height: 80px;/*
+    background-color: #490ead;
+} */
 
 /*
 ---------------------------------------------------------------------------------------------------------------------------------
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
-#archivoClase{
+#archivoClase, .archivosSubidos{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,10 +123,7 @@ div.secciones_workSpace{
     color: #14002a;
     padding: 1vh;
     border: none;
-    border-radius: 15px;    
-
-    
-
+    border-radius: 15px;        
 }
 
 #archivoClase:hover{
@@ -114,4 +140,14 @@ div.secciones_workSpace{
         "efemerides" 
          
                     ;    */
+}
+#sec_Calificaciones{    
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+
+    gap: 2.5%;        
+    justify-content: center;
+    
+
 }

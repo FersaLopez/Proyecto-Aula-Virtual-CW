@@ -121,26 +121,27 @@ input, textarea, select, button, option{
     margin-bottom: 4em;
 }
 
-#eventosMesRang{
-    justify-content: center;
-    align-items: center;
-    /* display: flex; */
-    background-color:  var(--var-fondoEventos);
-    width: fit-content;
-    height: fit-content;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 3em;
-    padding: 1em;
-    color: black;
-    float: left;
-}
-
 .textoEvento{
     display: inline-block;
     display: block;
     /* margin-top: 2em; */
     color: black;
     padding: 1em;
+}
+
+.labinp{
+    color: black !important;
+    font-size: 15pt
+}
+
+.inpuforev{
+    /* width: 50px; */
+    font-size: 15pt;
+    width: 300px;
+}
+
+h1{
+    font-size: 16pt;
+    color: #752867 !important;
 }
 

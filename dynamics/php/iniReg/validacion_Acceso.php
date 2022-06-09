@@ -93,6 +93,13 @@
             echo "¡Bienvenido Docente! <br/>";
 
         }*/
+        
+    /*
+    else
+    {
+        echo "Algo salio Mal";
+    }
+*/
     
 
 

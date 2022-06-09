@@ -64,23 +64,12 @@
                </div>
                ";
                 
-            
-            //obtener los registros de los eventos 
-            // if(!$con)
-            // {
-            //     echo "No se pudo conectar a la base";
-            // }
-            // else
-            // {
-            //     $peticion = "SELECT * FROM eventos_rang NATURAL JOIN "
-            // }
-
-
-                /*if($tipo_user == "Alumno")
+/*
+                if($tipo_user != "Alumno")
                 {
                     echo "
                     <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>
-                      Agregar evento
+                      Agregar evento de un día
                     </button>
                     
                     <div class='modal fade' id='staticBackdrop' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
@@ -91,33 +80,39 @@
                             <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                           </div>
                           <div class='modal-body'>
-                            <form>
-                                <label>evento</label>
-                                    <input type='text'>
+                          <h1>El evento durará 1 dia<h1>
+                            <form id='formSubEv'>
+                                <label class='labinp'>Evento</label>
+                                    <input class='inpuforev' type='text' name='titulo' required>
                                 <br>
-                                <label>Tipo del evento</label>
-                                <select name='materia' id='materia'>
-                                    <option id='UNAMgeneral' value='UNAMgeneral' selected>UNAM General</option>
-                                    <option id='ENPcicloE' value='ENPcicloE'>Ciclo ENP</option>
-                                    <option id='eventosENP' value='eventosENP'>Evento ENP</option>
-                                    <option id='cultYsoc' value='cultYsoc'>Evento cultural y/o social</option>
-                                    <option id='diaFestivo' value='diaFestivo'>Día festivo</option>
+                                <label class='labinp'>Tipo del evento</label>
+                                <select class='inpuforev' name='tipo'>
+                                    <option class='inpuforev' id='UNAMgeneral' value='1' >UNAM General</option>
+                                    <option class='inpuforev' id='ENPcicloE' value='2' >Ciclo ENP</option>
+                                    <option class='inpuforev' id='eventosENP' value='3' >Evento ENP</option>
+                                    <option class='inpuforev' id='cultYsoc' value='4' >Evento cultural y/o social</option>
+                                    <option class='inpuforev' id='diaFestivo' value='5' >Día festivo</option>
                                 </select>
-                                <p>Duración del evento</p>
-                                    <input type='radio'> Dura un día
+                                <br>
+                                <label class='labinp'>Dia</label>
+                                    <input class='inpuforev' type='number' min='1' max='31' name='dia' required>
                                     <br>
-                                    <input type='radio'> Dura varios días
-                                <br>  
+                                  <label class='labinp'>Mes</label>
+                                  <input class='inpuforev' type='number' min='1' max='12' name='mes' required>
+                                <br> 
+                                <button type='submit' >Crear</button>
+
                             </form>
                           </div>
                           <div class='modal-footer'>
-                            <button type='submit' class='btn btn-secondary' data-bs-dismiss='modal'>Crear</button>
+                            <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Salir</button>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div>";
+                }
         
-        
+        /*
                     <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>
                         Modificar evento
                     </button>
@@ -170,9 +165,9 @@
                 <!-- eventos de un solo dia -->
             </div>
                 
-            <div id="eventosMesRang" class="divEventos">
-                <!-- eventos de mas de un dia -->
-            </div>
+            <!-- <div id="eventosMesRang" class="divEventos">
+                eventos de mas de un dia 
+            </div> -->
         </div>
 
 

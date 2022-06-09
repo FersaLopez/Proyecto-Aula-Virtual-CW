@@ -1,0 +1,86 @@
+<!-- <?php
+    session_id("sesion-act");
+    session_name("AULA_CW");
+
+    session_start();
+?> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../../statics/styles/template_Gates.css">
+    <!--link a right section-->    
+</head>
+<body>
+    <section id="right_sect" class="workSpace">
+        <!-- AQUI VAN LAS DIFERENTES SECCIONES -->
+        <?php
+            $ID = $_SESSION["ID_U"];
+            $name = $_SESSION["nombre"];
+            $apodo = $_SESSION["apodo"];
+            $id_TU = $_SESSION["ID_TU"];
+            $tipo_user = $_SESSION["tipo_U"];
+            $id_grado = $_SESSION["grado"];            
+            
+            echo "
+                    <div id=contDatosHidden style='display: fixed'>
+                        <input id='userH_id' disabled value='$ID'>
+                        <input id='userH_name' disabled value='$name'>
+                        <input id='userH_apodo' disabled value='$apodo'>
+                        <input id='userH_idTU' disabled value='$id_TU'>
+                        <input id='userH_tipo' disabled value='$tipo_user'>
+                        <input id='userH_grado' disabled value='$id_grado'>            
+                    </div>
+                ";        
+        ?>
+
+
+        
+
+
+        <h1>Materiales de Estudio</h1>
+        <div id='sec_Materiales' class="secciones_workSpace">
+            <section id="botonCrear">
+
+            </section>
+
+
+        </div>
+        <div id='crearMateriales' class="secciones_workSpace">
+            <form id='formCrearM' action="../../js_queries/CAMMAT/busquedaRegistroMateriales.php" method="post" enctype='multipart/form-data' multipart=''>
+                <div class="preguntaCrear"> 
+                    <input type="text" name="nombreMaterial" id="nombreMaterial" required>
+                </div>
+                <div class="preguntaCrear"> 
+                    <label>Descripción del material
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="10" required></textarea>
+                    </label>
+                </div>                
+                <div class="preguntaCrear"> 
+                    <label for="nombreArch">Nombre del archivo: </label>
+                    <input type="text" name="nombreArch" id="nombreArch">
+                    <label for="archivo">Sube un archivo para compartir: </label>
+                    <input type='file' name='archivo' required>
+                </div>                
+                <input name="id_U" id="id_U" value='$user' style='display: none'>                
+                <!-- <input name="id_U" id="" value='$user' style='display: none'>                 -->
+                <button type='reset'>Borrar</button>
+                <button type='submit'>Subir Entrega</button>
+            </form>
+        </div>
+
+        <!-- <div class="secciones_workSpace">
+
+        </div>
+
+        <div class="secciones_workSpace">
+
+        </div> -->
+
+
+    </section>        
+</body>
+</html>

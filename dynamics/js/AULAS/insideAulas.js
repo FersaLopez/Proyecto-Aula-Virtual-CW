@@ -98,7 +98,7 @@ window.addEventListener("load", ()=>{
     
 
 
-    if(inputH_tipo != 1)
+    if(inputH_idTU.value != 1)
     {
         asign_tools.innerHTML = "<div id=CrearAsign>Crear Asignación</div"
     }

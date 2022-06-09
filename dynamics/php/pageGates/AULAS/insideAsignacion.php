@@ -119,8 +119,6 @@
                 ";                        
         ?>
 
-
-
         <h1 id="tituloNombreAsign" class="h1_nombreAsign"></h1>        
         <div id="infoAsign" class="secciones_workSpace">
             <h3 id=tipoAsig></h3>
@@ -146,7 +144,7 @@
                 {
                     $nombreArch = $row["nombre"];
                     $tipo_arch = $row["tipo_arch"];
-                    $ruta_foto = $row["ruta_arch"];
+                    $ruta_Archivo = $row["ruta_arch"];
                     $carpeta = opendir("../../../../statics/media/files/materialesAulas");
                     $archivos=[];        
                     $hay_archivos=true;                
@@ -158,11 +156,11 @@
                         {
                             //$i++;
                             //echo $archivo1."<br>";
-                            if("../../../../statics/media/files/materialesAulas/".$archivo1 == $ruta_foto)
+                            if("../../../../statics/media/files/materialesAulas/".$archivo1 == $ruta_Archivo)
                             {
                                 //echo "SI TE ENCONTRE";
                                 echo 
-                                "<a id='contenedorDescargar' download href='$ruta_foto'>
+                                "<a id='contenedorDescargar' download href='$ruta_Archivo'>
                                     <div id='archivoClase' class='contenedorArchivo'>
                                         <label class='contenedorArchivo'>Archivo adjunto de la Asignación</label>
                                         <h2 id='nombreArch' class='contenedorArchivo'><strong><u>$nombreArch</u></strong></h2>                                    
@@ -194,38 +192,111 @@
             <p id="text_tarea" style="display: none"></p>            
             <div>
                 <button id='btnEnvioAsign'>Marcar Tarea como Completada</button>
-            </div>            
-            <div id='formEnvioArchivo'>
-                <form action='../../js_queries/AULAS/realizarEnvio.php' id='formEnvioAsign' enctype='multipart/form-data' multipart='' method='POST'>
-                <div>
-                    <label>Nombre del archivo: 
-                        <input id='nombreArch' type='text' name='nombreArch' required>
-                    </label>
-                </div>
-                <label for='archivo'>Sube un material de trabajo: </label>
-                <input type='file' name='archivo' required>                
-                <?php
-                    echo"<input id='id_Asign' value='$asign' name='id_Asign' style='display: none'>";
-                    echo"<input id='id_Asign' value='$ID' name='id_U' style='display: none'>";                    
-                
-                ?>
-                <div id="comentarioPriv">
-                    <textarea name="comentPriv" id="comentPriv" cols="30" rows="10"></textarea>
+            </div>      
+            <div>
+                <div id='formEnvioArchivo'>
+                    <form action='../../js_queries/AULAS/realizarEnvio.php' id='formEnvioAsign' enctype='multipart/form-data' multipart='' method='POST'>
+                        <div>
+                            <label>Nombre del archivo: 
+                                <input id='nombreArch' type='text' name='nombreArch' required>
+                            </label>
+                        </div>
+                        <label for='archivo'>Sube un material de trabajo: </label>
+                        <input type='file' name='archivo' required>                
+                        <?php
+                            echo"<input id='id_Asign' value='$asign' name='id_Asign' style='display: none'>";
+                            echo"<input id='id_U' value='$ID' name='id_U' style='display: none'>";                    
+                        
+                        ?>
+                        <div id="comentarioPriv">
+                            <textarea name="comentPriv" id="comentPriv" cols="30" rows="10"></textarea>
+                        </div>                
+                        <div>
+                            <button type='reset'>Borrar</button>
+                            <button type='submit'>Subir Entrega</button>
+                        </div>
+                    </form>
                 </div>                
-                <div>
-                    <button type='reset'>Borrar</button>
-                    <button type='submit'>Crear Asignacion</button>
-                </div>
-                </form>
-            </div>
+                    <?php
+                                                                                                                                                
+                        $sql = "SELECT ID_UHA FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $ID && ID_ASIGN = $asign";
+                        $res = mysqli_query($con, $sql);                                    
+
+                        $row = mysqli_fetch_assoc($res);
+
+                        //var_dump($row);
+                        
+                        if($row != NULL)
+                        {
+                            $ID_UHA = $row["ID_UHA"];
+                            $sql = "SELECT ruta_archivo, nombre, tipo_extension FROM ARCH_ENTREGA WHERE ID_UHA = $ID_UHA";
+                            $res = mysqli_query($con, $sql);        
+
+                            //$row = mysqli_fetch_assoc($res);
+
+                            if($row != NULL)
+                            {
+                                $resultados = [];
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                    $resultados[] = array("ruta_archivo" => $row["ruta_archivo"], "nombre" => $row["nombre"], "tipo_extension" => $row["tipo_extension"]);
+                                    
+                                    /*var_dump($row);
+                                    echo "<br>";*/
+                                    
+                                }                                
+                                //var_dump($resultados);
+                                foreach($resultados as $valor)
+                                {
+                                    $ruta_ArchivoTareaEntregada = $valor["ruta_archivo"];
+                                    $nombreArchTareaEnviada = $valor["nombre"];
+                                    $tipo_archTareaEnviada = $valor["tipo_extension"];                                    
+                                    
+                                    echo "         
+                                    <div class='archivosSubidos'>
+                        
+                                        <div class='contenedorArchivos'></div>                                                                                           
+                                        <iframe src='$ruta_ArchivoTareaEntregada'>                                    
+                                        </iframe>                            
+                                        <a id='ArchivoEntregado' download href='$ruta_ArchivoTareaEntregada'>
+                                            <div id='archivoEntregado'class='contenedorArchivo'>
+                                                <label class='contenedorArchivo'>Archivo adjunto de tu entrega</label>
+                                                <h2 id='nombreArchEntregado' class='contenedorArchivo'><strong><u>$nombreArchTareaEnviada</u></strong></h2>                                    
+                                                <h4 id='extArch' class='contenedorArchivo'>Extensión del archivo: $tipo_archTareaEnviada</h4>
+                                            </div>
+                                        </a>
+                                    </div>";
+                                }
+
+
+
+                            }
+                            else{
+                                echo "Sin archivos Adjuntos en la Entrega";
+                            }
+
+
+                        }
+                        else{
+                            echo "No concrete mi primera peticion";
+                        }
+
+
+
+                            
+                        
+                    ?>                
+            </div>                  
 
         </div>
 
+        <div id='sec_Calificaciones' class="secciones_workSpace" style="display: none">
+            <!-- <section id="aula_tools" class="Aulas_toolsAula">
+            </section> -->
+            
+
+        </div>
 <!--         
-        <div class="secciones_workSpace">
-
-        </div>
-
         <div class="secciones_workSpace">
 
         </div> -->
