@@ -96,8 +96,8 @@ h4{
 .choose{
     display: flex;
     flex-direction: column;
-    
 }
+/* Botones amarillos */
 .tbtn{
     background-color: var(--var-colorAmarillo1);
     padding: 10%;
@@ -118,10 +118,11 @@ h4{
 ---------------------------------------------------------------------------------------------------------------------------------
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
-#cursos_disponibles{
-    background-color: azure;
-    width: 70%;
-    height: 10%;
+/* Div muestra cursos */
+#cursos_disponibles, #asignaciones_curso{
+    background-color: blanchedalmond;
+    width: 60vw;
+    height: 10vh;
 }
 #right_sect{
     display: grid;  

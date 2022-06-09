@@ -66,6 +66,8 @@
             <div class="choose">
                 <div><h4>Elige tu curso: </h4></div>
                 <div id="cursos_disponibles"></div>
+                <div><h4>Elige la asignación: </h4></div>
+                <div id="asignaciones_curso"></div>
             </div>            
         </div>
         <div id="start_asignacion_e" class="contenedor" style = "display: none">

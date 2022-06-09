@@ -12,6 +12,9 @@ window.addEventListener("load", ()=>{
     const start_a_e = document.getElementById("start_asignacion_e");
     const regresar_aA = document.getElementById("regresar_aA");
     const elegir_asignacion = document.getElementById("elegir_asignacion");
+    //Divs que muestras los cursos disponibles y la asignación de dicho curso
+    const cursos_disponibles = document.getElementById("cursos_disponibles");
+    const asignaciones_curso = document.getElementById("asignaciones_curso");
 
 
     clase.addEventListener("click", ()=>{
@@ -29,10 +32,17 @@ window.addEventListener("load", ()=>{
             crear.style.display = "none";
             start_a_e.style.display = "none";
             elegir_asignacion.style.display = "flex";
-            // menu.style.display = "none";
-            // crear.style.display = "none";
-            // start_a_e.style.display = "grid";
-            // elegir_asignacion.style.display = "none";
+            fetch("./peticiones/cursos.php")
+                .then((response)=>{
+                    return response.json();
+                })
+                .then((datosJSON)=>{
+                    console.log(datosJSON);
+                    for(nombre_curso of datosJSON)
+                    {
+                        
+                    }
+                });
             regresar_aA.addEventListener("click", ()=>{
                 menu.style.display = "grid";
                 crear.style.display = "none";
