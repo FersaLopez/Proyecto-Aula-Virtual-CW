@@ -178,7 +178,8 @@
                 $query = mysqli_query($con, $sql);
                 verRedRegistroCorrecto($query, $con, $correo);
                 
-                
+                header("location: ../pageGates/lobby.php");
+
                 //var_dump($query);                
                 //echo "podes hacer registro";
             }
@@ -217,7 +218,8 @@
                         (0, 1, $tipo_U, NULL, '$nombre', '$apodo', NULL, NULL, '$identf', '$correo', NULL, NULL, NULL, '$concat','$salesita')";
                 $query = mysqli_query($con, $sql);
                 verRedRegistroCorrecto($query, $con, $correo);
-                
+                header("location: ../pageGates/lobby.php");
+
                 // var_dump($query);                
                 // echo "podes hacer registro";
             }
@@ -251,7 +253,8 @@
                         (0, 1, $tipo_U, NULL, '$nombre', NULL, '$apell_pat', '$apell_mat', '$identf', '$correo', NULL, NULL, NULL, '$concat','$salesita')";
                 $query = mysqli_query($con, $sql);
                 verRedRegistroCorrecto($query, $con, $correo);
-                
+                header("location: ../pageGates/lobby.php");
+
                 // var_dump($query);                
                 // echo "podes hacer registro";
             }
