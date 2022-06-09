@@ -33,7 +33,7 @@
         
         
         $typeDoc = false;
-        if($extArch == "jpg" || $extArch == "pdf" || $extArch == "png" || $extArch == "txt" || $extArch == "pptx" || $extArch == "docx" || $extArch == "xlsx" )
+        if($extArch == "JPG" || $extArch == "pdf" || $extArch == "png" || $extArch == "txt" || $extArch == "pptx" || $extArch == "docx" || $extArch == "xlsx" )
         {
             $typeDoc = true;
         }        
