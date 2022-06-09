@@ -2,7 +2,11 @@
     /* --var-proporcionBarra: 0em; */
 
     --var-fondoCal: #1A5276;
-  
+    --var-fondoEventos: #75531C;
+}
+
+body{
+    background-color: #2B2D42 !important;
 }
 
 .workSpace{
@@ -20,6 +24,7 @@
     margin: 3em auto;
     padding: 0.5em;
     width: fit-content;
+    /* height: fit-content; */
     /* max-width: 100wv; */
 }
 
@@ -42,7 +47,7 @@
 .diaSem{
     display: block;
     text-align: center;
-    background-color: #5B2C6F;
+    background-color: #752867;
     padding: 1em;
 }
 
@@ -53,7 +58,7 @@ input, textarea, select, button, option{
 .dias{
     display: block;
     text-align: center;
-    background-color: black;
+    background-color: #102A42;
     padding: 1em;
     margin-top: 1em;
     height: 80px;
@@ -62,7 +67,7 @@ input, textarea, select, button, option{
 .hoy{
     display: block;
     text-align: center;
-    background-color: #7B241C;
+    background-color: #C27B08;
     padding: 1em;
     margin-top: 1em;
     height: 80px;
@@ -93,4 +98,49 @@ input, textarea, select, button, option{
     gap:10px;   
 }
 
+#eventosMes{
+    /* display: flex; */
+    background-color: var(--var-fondoEventos);;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 3em;
+    padding: 1em;
+    color: black;
+    float: right;
+}
+
+
+#divEventos{
+    margin: auto;
+    margin-top: 4em;
+    background-color: aliceblue;
+    height: fit-content;
+    width: 700px;
+    margin-bottom: 4em;
+}
+
+#eventosMesRang{
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+    background-color:  var(--var-fondoEventos);
+    width: fit-content;
+    height: fit-content;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 3em;
+    padding: 1em;
+    color: black;
+    float: left;
+}
+
+.textoEvento{
+    display: inline-block;
+    display: block;
+    /* margin-top: 2em; */
+    color: black;
+    padding: 1em;
+}
 
