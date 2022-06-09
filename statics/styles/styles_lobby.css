@@ -309,6 +309,10 @@ a{
     background-color: var(--var-colorDescubre);
 }
 
+#menuIzq, #menuDer{
+    padding: 0;
+}
+
 a>span{
     color: var(--var-colorFontNegro);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
