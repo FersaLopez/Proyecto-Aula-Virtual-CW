@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="../../../../libs/css/bootstrap.min.css">
     <title>Calendario</title>
 </head>
-<body>
+
+
+
+        
 <section id="right_sect" class="workSpace">
         <!-- AQUI VAN LAS DIFERENTES SECCIONES -->
         <?php
@@ -169,7 +172,9 @@
                 eventos de mas de un dia 
             </div> -->
         </div>
-
+        <!-- <footer class="footer">
+        FOOTER
+    </footer> -->
 
     <script src="../../../js/CALENDARIO/calendario.js"></script>
     <script src ="../../../../libs/js/bootstrap.bundle.min.js"></script>
