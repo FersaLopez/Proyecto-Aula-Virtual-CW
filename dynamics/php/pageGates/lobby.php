@@ -20,7 +20,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="../../../libs/css/bootstrap.css">
     <link rel="stylesheet" href="../../../statics/styles/styles_lobby.css">
-    <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->        
+    <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->       
 
 </head>
 <body class="contenedorUniversal">
@@ -36,20 +36,30 @@
             <!-- </a> -->
             <a href="">
                 <div class="nav_TextContent">
-                    En clase
+                    <?php
+                        $date1 = date('y-m-d');
+                        $date2 = date('H:i:s');
+                                    
+                        $fechaEntrega = "Son las :".$date2." -- "."Fecha: ".$date1;
+                        echo $fechaEntrega;
+                    ?>
                 </div>
             </a>
             <a href="">
                 <div class="nav_IconContent">
                     <?php
-                        echo "<span ">$_SESSION["tipo_U"]"</span>";
-                    
+                        echo "<span>".$_SESSION["tipo_U"]."</span>";                    
                     ?>
                 </div>
             </a>
             <a href="">
-                <div class="nav_TextContent">
-                    Recordatorios
+                <div>
+                    
+                </div>
+            </a>      
+            <a href="">
+                <div >
+                    
                 </div>
             </a>            
         <div id='menuDer' class="nav_IconContent">
@@ -105,34 +115,34 @@
                         </a>     
                         <a href="">
                             <li class="aside_li">
-                                <div class="aside_li_cuadros">Cámara de materiales</div>
+                                <div class="aside_li_cuadros">Calendario</div>
                             </li>
                         </a>  
                         <a href="">
                             <li class="aside_li">
-                                <div class="aside_li_cuadros">Foro</div>
+                                <div class="aside_li_cuadros">+</div>
                             </li>
                         </a>
                         <a href="">
                             <li class="aside_li">
-                                <div class="aside_li_cuadros">Mis juegos</div>
+                                <div class="aside_li_cuadros">+</div>
                             </li>
                         </a>
                         <a href="./CALENDARIO/calendario.php">
                             <li class="aside_li">
-                                <div class="aside_li_cuadros">Calendario</div>
+                                <div class="aside_li_cuadros">+</div>
                             </li>                    
                         </a>
                       </ul>
                       <ul class="aside_ul_EXTRA" >
                         <a href="">
                             <li class="aside_li_EXTRA">
-                                <div class="aside_li_cuadros">Biblioteca</div> <!--BiblioTeca -->
+                                <div class="aside_li_cuadros">+</div> <!--BiblioTeca -->
                             </li>
                         </a>
                         <a href="">
                             <li class="aside_li_EXTRA">
-                                <div class="aside_li_cuadros">Aulas</div>
+                                <div class="aside_li_cuadros">Biblioteca</div>
                             </li>                                     
                         </a>
                       </ul>
@@ -143,44 +153,44 @@
                 <ul class="aside_ul" >
                     <a href="./lobby.php">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">m</div> <!--MULTI BLOCK -->
+                            <div class="aside_li_cuadros">-M-</div> <!--MULTI BLOCK -->
                         </li>
                     </a>             
-                    <a href="">
+                    <a href="#">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">a</div><!--AULAS-->
+                            <div class="aside_li_cuadros">+-A-+</div><!--AULAS-->
                         </li>
                     </a>     
-                    <a href="">
+                    <a href="#">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">c</div><!--CAMMAT-->
+                            <div class="aside_li_cuadros">-C-</div><!--CAMMAT-->
                         </li>
                     </a>  
-                    <a href="">
+                    <a href="#">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">f</div><!--FORO-->
+                            <div class="aside_li_cuadros">+</div><!--FORO-->
                         </li>
                     </a>
                     <a href="">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">J</div><!--JUEGOS-->
+                            <div class="aside_li_cuadros">+</div><!--JUEGOS-->
                         </li>
                     </a>
                     <a href="./CALENDARIO/calendario.php">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">C</div><!--CALENDARIO-->
+                            <div class="aside_li_cuadros">+</div><!--CALENDARIO-->
                         </li>                    
                     </a>
                 </ul>
                 <ul class="aside_ul_EXTRA" >
                     <a href="">
                         <li class="aside_li_EXTRA">
-                            <div class="aside_li_cuadros">b</div> <!--BiblioTeca -->
+                            <div class="aside_li_cuadros">BIDI</div> <!--BiblioTeca -->
                         </li>
                     </a>
                     <a href="">
                         <li class="aside_li_EXTRA">
-                            <div class="aside_li_cuadros">a</div><!--AULAS-->
+                            <div class="aside_li_cuadros">BIDI</div><!--AULAS-->
                         </li>                                     
                     </a>
                 </ul>  
@@ -199,7 +209,7 @@
             $id_grado = $_SESSION["grado"];            
             
             echo "
-                    <div id=contDatosHidden style='display: fixed'>
+                    <div id=contDatosHidden style='display: none'>
                         <input id='userH_id' disabled value='$ID'>
                         <input id='userH_name' disabled value='$name'>
                         <input id='userH_apodo' disabled value='$apodo'>
@@ -219,15 +229,16 @@
                 
                 <!-- No se si es el link correcto :0 -->
                 <div id="aulas" class="multiBlocks"><a href="./AULAS/aulas.php"><span>Mis Aulas</span></a></div>
-                <div id="perfil" class="multiBlocks"><a href="./PERFIL/subir_archivos.php"><span>Mi Perfil</span></a></div>
-                <div id="juegos" class="multiBlocks"><a href=""><span>Mis Juegos</span></a></div>
-                <div id="foro" class="multiBlocks"><a href=""><span>Foro</span></a></div>
-                <div id="descubre" class="multiBlocks"><a href=""><span>Descubre</span></a></div>
+                <div id="perfil" class="multiBlocks"><a href="./PERFIL/subir_archivos.php"><span>Mi Perfil</span></a><br>PROXIMAMENTE</div>
+                <div id="juegos" class="multiBlocks"><a href=""><span>Mis Juegos</span></a><br>PROXIMAMENTE</div>
+                <div id="foro" class="multiBlocks"><a href=""><span>Foro</span></a><br>PROXIMAMENTE</div>
+                <div id="descubre" class="multiBlocks"><a href=""><span>Descubre</span></a><br>PROXIMAMENTE</div>
                 
             </div>
 
             </div>
-            <div id="sec_efemerides" class="secciones_Lobby">
+            
+            <!-- <div id="sec_efemerides" class="secciones_Lobby">
                 <h1>Efemerides</h1>
             </div>
             <h1 id="title_ANA">ANA</h1>
@@ -245,13 +256,12 @@
             </div>
             <div id="sec_clubes" class="secciones_Lobby">
                 <h1>CLUBES</h1>
-            </div>
+            </div> -->
 
         </section>        
     </main>
     
-    <footer class="footer">
-        FOOTER
+    <footer class="footer">        
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

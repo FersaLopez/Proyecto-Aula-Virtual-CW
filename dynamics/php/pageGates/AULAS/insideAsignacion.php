@@ -92,7 +92,7 @@
             }
 
             echo "
-                    <div id=contDatosHidden style='display: fixed'>
+                    <div id=contDatosHidden style='display: none'>
                         <input id='userH_id' disabled value='$ID'>
                         <input id='userH_name' disabled value='$name'>
                         <input id='userH_apodo' disabled value='$apodo'>
