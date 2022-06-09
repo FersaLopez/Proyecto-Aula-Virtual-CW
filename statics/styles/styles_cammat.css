@@ -51,18 +51,6 @@
 ---------------------------------------------------------------------------------------------------------------------------------*/
 /*<>*/
 
-h1.h1_nombreAsign{
-    /* background-color: rgba(0, 0, 0, 0.3); */
-    margin: 0;
-    padding-top: 6vh;
-    padding-bottom: 6vh;
-    
-    background-color: var(--var-colorAzulPadre);
-}
-
-button, textarea, input{
-    color: #14002a;
-}
 
 
 /*
@@ -72,64 +60,18 @@ button, textarea, input{
 /*.*/
 
 div.secciones_workSpace{    
-    min-height: 50vh;
-    padding: 5% 10%;
+    min-height: 100vh;
+    padding: 7% 10%;
 
     background-color: rgba(0, 0, 0, 0.3);
 }
-.archivosSubidos{
-    background-color: var(--var-colorNaranja) !important;    
-}
-.archivosSubidos > * > * >*{
-    color: #14002a;    
-}
-.archivosSubidos:hover{
-    background-color: var(--var-colorJuegos) !important;
-    color: aliceblue;
-    transform: scale(1.02);
-}
-.archivosSubidos{
-    max-width: 33%;
-    width: 350px;
-}
-.archivosSubidos>*>*{
-    
-    color: #14002a;
-}
-/* 
-.Aulas_toolsAula{
-    display: flex;    
-    justify-content: space-evenly;    
-    align-items: center;
-    text-align: center;
-    
-    min-height: 80px;/*
-    background-color: #490ead;
-} */
+
 
 /*
 ---------------------------------------------------------------------------------------------------------------------------------
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
-#archivoClase, .archivosSubidos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
 
-    margin-top: 5%;
-    background-color: #6B7FD7;
-    color: #14002a;
-    padding: 1vh;
-    border: none;
-    border-radius: 15px;        
-}
-
-#archivoClase:hover{
-    background-color: #4c2a85;
-    transform: scale(1.02);
-}
 
 #right_sect{
     display: grid;  
@@ -140,14 +82,4 @@ div.secciones_workSpace{
         "efemerides" 
          
                     ;    */
-}
-#sec_Calificaciones{    
-    display: flex;
-    flex-direction: row;    
-    flex-wrap: wrap;
-
-    gap: 2.5%;        
-    justify-content: center;
-    
-
 }
