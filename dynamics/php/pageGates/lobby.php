@@ -173,11 +173,7 @@
                             <div class="aside_li_cuadros">ETE</div><!--FORO-->
                         </li>
                     </a>
-<<<<<<< HEAD
                     <a href="../videojuego/Esa_es_la_Question.php">
-=======
-                    <a href="https://www.prepa6.unam.mx/ENP6/_P6/publicaciones/ateneo/ateneo_ne_02.html">
->>>>>>> 7c5628c3ef0b37a455876988dc2fca17ee90fec5
                         <li class="aside_li">
                             <div class="aside_li_cuadros">El ateneo de <br> Coyoacán</div><!--JUEGOS-->
                         </li>
@@ -235,17 +231,10 @@
                 
                 <!-- No se si es el link correcto :0 -->
                 <div id="aulas" class="multiBlocks"><a href="./AULAS/aulas.php"><span>Mis Aulas</span></a></div>
-<<<<<<< HEAD
-                <div id="perfil" class="multiBlocks"><a href="./PERFIL/subir_archivos.php"><span>Mi Perfil</span></a></div>
-                <div id="juegos" class="multiBlocks"><a href="../videojuego/Esa_es_la_Question.php"><span>Mis Juegos</span></a></div>
-                <div id="foro" class="multiBlocks"><a href=""><span>Foro</span></a></div>
-                <div id="descubre" class="multiBlocks"><a href=""><span>Descubre</span></a></div>
-=======
                 <div id="perfil" class="multiBlocks"><a href="./PERFIL/subir_archivos.php"><span>Mi Perfil</span></a><br>PROXIMAMENTE</div>
-                <div id="juegos" class="multiBlocks"><a href=""><span>Mis Juegos</span></a><br>PROXIMAMENTE</div>
+                <div id="juegos" class="multiBlocks"><a href="../videojuego/Esa_es_la_Question.php"><span>Mis Juegos</span></a><br>PROXIMAMENTE</div>
                 <div id="foro" class="multiBlocks"><a href=""><span>Foro</span></a><br>PROXIMAMENTE</div>
                 <div id="descubre" class="multiBlocks"><a href=""><span>Descubre</span></a><br>PROXIMAMENTE</div>
->>>>>>> 7c5628c3ef0b37a455876988dc2fca17ee90fec5
                 
             </div>
 
