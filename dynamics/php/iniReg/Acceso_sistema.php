@@ -16,7 +16,8 @@
     <!-- Añadir icono -->
     <!-- <link rel="stylesheet" href="../../../statics/styles/AccesoSistema.css"> -->
     <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->     
-    <link rel="stylesheet" href="../../../statics/styles/style_Acceso_Sistema.css">   
+    <link rel="stylesheet" href="../../../statics/styles/style_Acceso_Sistema.css">
+    <link rel="shortcut icon" href="../../../statics/img/school.png" type="image/x-icon">
 </head>
 <body id="body">
     <header>

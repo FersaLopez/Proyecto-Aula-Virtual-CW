@@ -119,10 +119,22 @@ h4{
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
 /* Div muestra cursos */
-#cursos_disponibles, #asignaciones_curso{
+.cursos_disponibles, #asignaciones_curso{
     background-color: blanchedalmond;
     width: 60vw;
-    height: 10vh;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#mas{
+    background-color: var(--var-colorAmarillo1);
+    padding: 10%;
+    border-radius: 20px;
+    font-size: 250%;
 }
 #right_sect{
     display: grid;  

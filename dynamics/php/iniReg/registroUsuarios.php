@@ -13,6 +13,7 @@
     <meta name="description" content="Aula Virtual para alumnos de la Escuela Nacional Preparatoria Plantel 6: 'Antonio Caso'"><!---->    
     <meta name="keywords" content="Aula Virtual, ENP6, COYO-ROOM"><!---->
     <link rel="stylesheet" href="../../../statics/styles/styles_InicioCuentas.css">
+    <link rel="shortcut icon" href="../../../statics/img/school.png" type="image/x-icon">
     <title>Acceso al Sistema</title>            
     <!-- Añadir icono -->
     <!-- <link rel="stylesheet" href="../../../statics/styles/AccesoSistema.css"> -->

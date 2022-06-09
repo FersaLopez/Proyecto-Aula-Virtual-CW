@@ -14,6 +14,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../../../statics/styles/template_Gates.css">
     <link rel="stylesheet" href="../../../../statics/styles/styles_aulas.css">
+    <link rel="shortcut icon" href="../../../../statics/img/school.png" type="image/x-icon">
 </head>
 <body>
     <section id="right_sect" class="workSpace">

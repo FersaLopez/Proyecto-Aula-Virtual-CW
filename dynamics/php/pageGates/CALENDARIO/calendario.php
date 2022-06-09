@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="../../../../statics/styles/styles_calendario.css">
     <link rel="stylesheet" href="../../../../libs/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../../../../statics/img/school.png" type="image/x-icon">
     <title>Calendario</title>
 </head>
 <body>

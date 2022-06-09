@@ -11,9 +11,11 @@ window.addEventListener("load", ()=>{
     const crear = document.getElementById("crear");
     const start_a_e = document.getElementById("start_asignacion_e");
     const regresar_aA = document.getElementById("regresar_aA");
+    //Div agregar asignación Question
+    const mas = document.getElementById("mas");
     const elegir_asignacion = document.getElementById("elegir_asignacion");
     //Divs que muestras los cursos disponibles y la asignación de dicho curso
-    const cursos_disponibles = document.getElementById("cursos_disponibles");
+    const cursos_disponibles_cont = document.getElementById("cursos_disponibles_cont");
     const asignaciones_curso = document.getElementById("asignaciones_curso");
 
 
@@ -25,6 +27,9 @@ window.addEventListener("load", ()=>{
             crear.style.display = "grid";
             start_a_e.style.display = "none";
             elegir_asignacion.style.display = "none";
+            mas.addEventListener("click", ()=>{
+                console.log("Más");
+            })
         }
         else if(string_tipo_user.value == "Alumno")
         {
@@ -38,9 +43,13 @@ window.addEventListener("load", ()=>{
                 })
                 .then((datosJSON)=>{
                     console.log(datosJSON);
-                    for(nombre_curso of datosJSON)
+                    for(datos_curso of datosJSON)
                     {
-                        
+                        console.log(user_id.value);
+                        if(datos_curso.id_usuario == user_id.value)
+                        {
+                            cursos_disponibles_cont.innerHTML += "<div class='cursos_disponibles'>" + datos_curso.name_curso + "</div>";
+                        }
                     }
                 });
             regresar_aA.addEventListener("click", ()=>{

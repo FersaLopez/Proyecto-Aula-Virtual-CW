@@ -12,6 +12,7 @@
     <title>Esa es la Question</title>
     <!-- <link rel="stylesheet" href="../../../../statics/styles/template_Gates.css"> -->
     <link rel="stylesheet" href="../../../statics/styles/esa_es_la_question.css">
+    <link rel="shortcut icon" href="../../statics/img/school.png" type="image/x-icon">
     <!--link a right section-->
 </head>
 <body>
@@ -54,10 +55,10 @@
                 <div></div>
                 <div></div>
                 <div></div>
-                <div><h1>Crear +</h1></div>
+                <div><h1>Crear</h1></div>
                 <div></div>
                 <div></div>
-                <div></div>
+                <div id="mas">+</div>
                 <div></div>
             </div>
         </div>
@@ -65,11 +66,12 @@
         <div id="elegir_asignacion" class="contenedor" style = "display: none">
             <div class="choose">
                 <div><h4>Elige tu curso: </h4></div>
-                <div id="cursos_disponibles"></div>
+                <div id="cursos_disponibles_cont"></div>
                 <div><h4>Elige la asignación: </h4></div>
                 <div id="asignaciones_curso"></div>
             </div>            
         </div>
+        <!-- Si es alumno y ya hay asignación -->
         <div id="start_asignacion_e" class="contenedor" style = "display: none">
             <div class="start_asignacion">
                 <div></div> <div></div> <div></div>
