@@ -1,9 +1,14 @@
 
-/*Para sazonar*/
-ALTER TABLE USUARIO ADD Sal VARCHAR(15);
+
 /*Por favor, introduzcan este comando para cambiarle el 
 intervalo de caracteres al atributo password*/
-ALTER TABLE USUARIO MODIFY password CHAR(100);
+ALTER TABLE USUARIO MODIFY password VARCHAR(256);
+
+/*Eliminen por favor el atributo Sal, ya no es necesario*/ 
+ALTER TABLE USUARIO DROP Sal;
+
+
+
 
 /*Añadan estas tablas a la BD*/ 
 CREATE TABLE CUESTIONARIO(
