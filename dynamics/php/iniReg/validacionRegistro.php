@@ -1,7 +1,7 @@
 <?php
     require "../config/config.php";    
     require "../config/common_queries.php";
-    // require_once "seguridad.php";
+    // require "seguridad.php";
     
     
     $con = connect();
@@ -14,30 +14,23 @@
     $apodo = (isset($_POST["apodo"]))? $_POST["apodo"] : false;
     $correo = (isset($_POST["correo"]))? $_POST["correo"] : false;
     $identf = (isset($_POST["num_ident"]) && $_POST["num_ident"] != "")? $_POST["num_ident"] : false;
-    
-    function generar_pimienta(){
-        $caracteres = str_split('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz');
-        $pimienta = '';
-        $partes_pimienta = array_rand($caracteres,2);
-        $pimienta = $caracteres[$partes_pimienta[0]].$caracteres[$partes_pimienta[1]];
-        return $pimienta;
-    };
-    
-    function generar_sal(){
-        $sal = uniqid();
-        return $sal;
-    };
+    //para hashear una contra mucho más rápido y sencillo
+    //Utiliza BCRYPT 
+    $contra_hasheada=password_hash($contra, PASSWORD_DEFAULT);
+   
 
-    function hasheando($contra){
-        global $contra;
-        $contra_hasheada = hash("sha256",$contra); 
-        return $contra_hasheada;
-    }
+    // function hasheando($contra){
+    //     global $contra;
+    //     $contra_hasheada = hash("sha256",$contra); 
+    //     return $contra_hasheada;
+    // }
     
-    $hasheo = hasheando($contra);
-    $pimientita = generar_pimienta(); 
-    $salesita = generar_sal(); 
-    $concat= $hasheo.$pimientita.$salesita;
+    // $hasheo = hasheando($contra);
+    // $pimientita = generar_pimienta(); 
+    // $salesita = generar_sal(); 
+    // $concat= $hasheo.$salesita.$pimientita;
+
+
 
     function esNumeroDeCuenta($identf)
     {
@@ -74,16 +67,13 @@
 
     function verRedRegistroCorrecto($query, $con, $correo)
     {
-        global $concat; 
-        global $hasheo; 
-        global $pimientita; 
-        global $salesita; 
+        global $contra_hasheada;
         if($query == true)
         {
             
             $id_U = obtenerID("ID_USUARIO", $con, "USUARIO", "correo", $correo, true);
             $ID = $id_U["ID_USUARIO"];  
-            $sql = "SELECT ID_TIPO_USER, tipo_usuario, ID_GRADO, apodo, nombre, password, Sal FROM USUARIO NATURAL JOIN TIPO_USER WHERE ID_USUARIO = $ID";
+            $sql = "SELECT ID_TIPO_USER, tipo_usuario, ID_GRADO, apodo, nombre, password FROM USUARIO NATURAL JOIN TIPO_USER WHERE ID_USUARIO = $ID";
             $query = mysqli_query($con, $sql);
             
 
@@ -105,10 +95,9 @@
             $contra = $datos["password"];    
                     
 
-            // $concat = $datos["password"];
-            // $salesita = $datos["Sal"];
             
-            echo $id_TU."<br>".$tipo_user."<br>".$id_grado."<br>".$apodoo."<br>".$name."<br>".$concat;
+            
+            echo $id_TU."<br>".$tipo_user."<br>".$id_grado."<br>".$apodoo."<br>".$name."<br>".$contra_hasheada;
           
             // session_unset();
             // session_destroy();
@@ -133,8 +122,10 @@
             echo "La peticion salio mal";
 
     }
+
     
-    //verRedRegistroCorrecto(true, $con, $correo);
+
+    
 
     if($con && $tipo_U != false && $nombre != false && $contra != false && $identf != false)
     {        
@@ -173,12 +164,13 @@
                 
                 $sql = "INSERT INTO USUARIO 
                         (ID_USUARIO, ID_ESTADO, ID_TIPO_USER, ID_GRADO, nombre, apodo, apellido_paterno, apellido_materno,
-                        num_identificador, correo, ruta_foto, estado_unico, telefono, password, Sal) VALUES 
-                        (0, 1, $tipo_U, NULL, '$nombre', '$apodo', '$apell_pat', '$apell_mat', '$identf', '$correo', NULL, NULL, NULL, '$concat', '$salesita')";
+                        num_identificador, correo, ruta_foto, estado_unico, telefono, password) VALUES 
+                        (0, 1, $tipo_U, NULL, '$nombre', '$apodo', '$apell_pat', '$apell_mat', '$identf', '$correo', NULL, NULL, NULL, '$contra_hasheada')";
                 $query = mysqli_query($con, $sql);
                 verRedRegistroCorrecto($query, $con, $correo);
                 
-                
+                header("location: ../pageGates/lobby.php");
+
                 //var_dump($query);                
                 //echo "podes hacer registro";
             }
@@ -213,11 +205,12 @@
                 
                 $sql = "INSERT INTO USUARIO 
                         (ID_USUARIO, ID_ESTADO, ID_TIPO_USER, ID_GRADO, nombre, apodo, apellido_paterno, apellido_materno,
-                        num_identificador, correo, ruta_foto, estado_unico, telefono, password, Sal) VALUES 
-                        (0, 1, $tipo_U, NULL, '$nombre', '$apodo', NULL, NULL, '$identf', '$correo', NULL, NULL, NULL, '$concat','$salesita')";
+                        num_identificador, correo, ruta_foto, estado_unico, telefono, password) VALUES 
+                        (0, 1, $tipo_U, NULL, '$nombre', '$apodo', NULL, NULL, '$identf', '$correo', NULL, NULL, NULL, '$contra_hasheada')";
                 $query = mysqli_query($con, $sql);
                 verRedRegistroCorrecto($query, $con, $correo);
-                
+                header("location: ../pageGates/lobby.php");
+
                 // var_dump($query);                
                 // echo "podes hacer registro";
             }
@@ -247,11 +240,12 @@
               
                 $sql = "INSERT INTO USUARIO 
                         (ID_USUARIO, ID_ESTADO, ID_TIPO_USER, ID_GRADO, nombre, apodo, apellido_paterno, apellido_materno,
-                        num_identificador, correo, ruta_foto, estado_unico, telefono, password, Sal) VALUES 
-                        (0, 1, $tipo_U, NULL, '$nombre', NULL, '$apell_pat', '$apell_mat', '$identf', '$correo', NULL, NULL, NULL, '$concat','$salesita')";
+                        num_identificador, correo, ruta_foto, estado_unico, telefono, password) VALUES 
+                        (0, 1, $tipo_U, NULL, '$nombre', NULL, '$apell_pat', '$apell_mat', '$identf', '$correo', NULL, NULL, NULL, '$contra_hasheada')";
                 $query = mysqli_query($con, $sql);
                 verRedRegistroCorrecto($query, $con, $correo);
-                
+                header("location: ../pageGates/lobby.php");
+
                 // var_dump($query);                
                 // echo "podes hacer registro";
             }

@@ -8,9 +8,10 @@ window.addEventListener("load", ()=>{
 
     const wS_Aulas = document.getElementById("wS_Aulas");
     const sec_form_CreacionAula = document.getElementById("sec_form_CreacionAula");
+    
         
     const aulaTools = document.getElementById("aula_tools");
-    const aula_Blocks = document.getElementById("aula_Blocks");    
+    const aula_Blocks = document.getElementById("aula_Blocks");            
     
     // console.log("idU = "+inputH_id.value);
     // console.log(inputH_name.value);
@@ -18,6 +19,8 @@ window.addEventListener("load", ()=>{
     // console.log("idTU = "+inputH_idTU.value);
     // console.log(inputH_tipo.value);
     // console.log(inputH_grado.value);    
+
+    let formAula = 0;        
 
     function buscarRegistrosClases()
     {
@@ -58,6 +61,10 @@ window.addEventListener("load", ()=>{
     function refreshValues()
     {
         sec_form_CreacionAula.innerHTML = "";
+        sec_Unirse_Aula.innerHTML = "";
+
+        sec_Unirse_Aula.style.display = "none";        
+        
         formAula = 0;
         aula_Blocks.innerHTML = "";
         
@@ -66,7 +73,7 @@ window.addEventListener("load", ()=>{
         buscarRegistrosClases();        
     }
 
-    let formAula = 0;    
+    
 
     function crearAula()
     {        
@@ -139,11 +146,7 @@ window.addEventListener("load", ()=>{
             inp_privacidad_auto.value = datosJSON[0].privacidad;
         });
 
-    }
-    
-
-
-    buscarRegistrosClases();
+    }        
 
 
 
@@ -212,7 +215,7 @@ window.addEventListener("load", ()=>{
         }
     });
 
-    if(inputH_idTU.value != 1){ //----------------------------------------------> Modificar condicional
+    if(inputH_idTU.value == 1){ //----------------------------------------------> Modificar condicional
         console.log(aulaTools);
         aulaTools.innerHTML = "<div id='btnf_añadirAula'>+</div><div id='btnf_EliminarAula'>-</div>";     
     }
@@ -221,11 +224,89 @@ window.addEventListener("load", ()=>{
         aulaTools.innerHTML = "<div id='btnf_añadirAula'>+</div><div id='btnf_CrearAula'>++</div><div id='btnf_EliminarAula'>-</div>";     
     }
 
+    const sec_Unirse_Aula = document.getElementById("sec_Unirse_Aula");
+    sec_Unirse_Aula.style.display = "none";
+
+    let formUnirmeA = 0;
+    function unirseAula()
+    {        
+        sec_Unirse_Aula.style.display = "block";
+        sec_form_CreacionAula.style.display = "none";
+        wS_Aulas.style.display = "none";
+        
+        sec_Unirse_Aula.innerHTML = ""+
+    
+        "<h2>Unirme a un Aula</h2>"+
+        "<form id='formUnirmeA'>"+        
+            "<div id='divUnirmeA'>"+
+                "<label>Ingresa el Código del Aula"+
+                    "<input id='inpUnirmeA' name='inpUnirmeA' type='text'>"+
+                "</label>"+
+            "</div>"+
+            "<button id='btn_UnirmeA' type='submit'>Inscribirme al Aula</button>"+
+        "</form>";
+
+            
+
+
+        formUnirmeA = document.getElementById("formUnirmeA");
+        let inpUnirmeA = document.getElementById("inpUnirmeA");
+        let divUnirmeA = document.getElementById("divUnirmeA");        
+        let btn_UnirmeA = document.getElementById("btn_UnirmeA");                
+        //console.log(formAula);                                                     
+    }
+
+
+    sec_Unirse_Aula.addEventListener("click", (evento) =>{
+        console.log(evento);
+        evento.preventDefault();
+        if(evento.target.id == "btn_UnirmeA")
+        {
+            //if(evento.target.parentElement.children[0].children[0].children[0].value == "")
+            console.log(evento.target);
+            if(evento.target.parentElement[0].value != "")
+            {
+            
+                let form_UnirmeA = new FormData(formUnirmeA);
+                form_UnirmeA.append("id_U", inputH_id.value); 
+                fetch("../../js_queries/AULAS/unirseAula.php", {
+                    method:"POST", 
+                    body: form_UnirmeA,        
+                }).then((response)=>{
+                //console.log(response);
+                    return response.json();      
+                })
+                .then((datosJSON)=>{
+                    //console.log(datosJSON);
+                    if(datosJSON.ok == true)
+                    {
+                        alert(datosJSON.texto);
+                        refreshValues();
+                    }
+                    else
+                    {
+                        alert(datosJSON.texto);
+                    }
+                });            
+                }
+            else
+            {
+                alert("Ingresa un codigo");
+            }
+        }
+
+    });
+    
+
+
+
+
 
     aulaTools.addEventListener("click", (evento) =>{
         if(evento.target.id == "btnf_añadirAula")
         {
             console.log("AÑADIR");
+            unirseAula();
         }
         else if(evento.target.id == "btnf_CrearAula")
         {
@@ -262,6 +343,6 @@ window.addEventListener("load", ()=>{
     });
 
 
-
+    buscarRegistrosClases();
 
 });

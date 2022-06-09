@@ -47,7 +47,8 @@
                     <br><br>
                     <label id="lab_contra" class="campo">Contraseña:
                         <input id="contrasena" type="password" name="contrasena" class="input" required>
-                    </label>                     
+                    </label>                 
+                    <div id='linkRegistro'><u id='fakeLink'>Registro de Usuarios</u></div>
                     <div class="divBtn">
                         <button id="enviar_alumnos" class="btn" type="submit">Ingresar</button>
                         <button id="reset" type="reset">Borrar</button>

@@ -19,6 +19,7 @@
     <section id="right_sect" class="workSpace">
         <!-- AQUI VAN LAS DIFERENTES SECCIONES -->
         <?php
+
             $ID = $_SESSION["ID_U"];
             $name = $_SESSION["nombre"];
             $apodo = $_SESSION["apodo"];
@@ -35,7 +36,48 @@
                         <input id='userH_tipo' disabled value='$tipo_user'>
                         <input id='userH_grado' disabled value='$id_grado'>            
                     </div>
-                ";        
+                ";      
+                
+            /*
+            require "../../config/config.php";        
+
+            $con = connect();
+        
+            if(!$con)
+            {
+                echo "No se pudo conectar a la base";
+            }
+            else
+            {            
+                // $id_U = (isset($_POST["id_U"]) && $_POST["id_U"] != "")? $_POST["id_U"] : false;
+                // $idAula = (isset($_POST["idAula"]) && $_POST["idAula"] != "")? $_POST["idAula"] : false;
+
+                $sql = "INSERT INTO AULA_HAS_USUARIO (ID_AHU, ID_USUARIO, ID_AULA, ID_ROL) VALUES (0, $id_U, '$idAula', 1)";        
+                
+                
+                
+                $sql = "INSERT INTO AULA_HAS_USUARIO (ID_AHU, ID_USUARIO, ID_AULA, ID_ROL) VALUES (0, $id_U, '$idAula', 1)";
+                $res = mysqli_query($con, $sql);
+                //$row = mysqli_fetch_array($res);        
+                //$row = mysqli_fetch_assoc($res);
+        
+                if($res == false)
+                {
+                    $respuesta = array("ok" => false, "texto" => "No se pudo ingresar los datos");
+                    echo json_encode($respuesta);
+                }
+                else
+                {                        
+                $respuesta = array("ok" => true/*, "idAula" => $idAula_prototype);
+                    echo json_encode($respuesta);
+                }
+                
+                
+            }
+        */
+
+
+
         ?>
 
 
@@ -60,15 +102,21 @@
             </section>
 
 
-        </div>
-
+        </div>        
+        
         <div id="sec_form_CreacionAula" class="secciones_workSpace">
 
         </div>
 
-        <div class="secciones_workSpace">
+        
+        <div id="sec_Unirse_Aula" class="secciones_workSpace">
 
         </div>
+        
+
+        <!-- <div class="secciones_workSpace">
+
+        </div> -->
 
 
     </section>
