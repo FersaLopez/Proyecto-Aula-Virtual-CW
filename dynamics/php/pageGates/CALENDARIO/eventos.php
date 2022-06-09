@@ -13,7 +13,7 @@
                 // $consigue el mes para saber que eventos tomar de la BD
                 $mesAct = date('n');
                 //selecciona eventos de la BD
-                $sql = "SELECT * FROM eventos NATURAL JOIN mes WHERE ID_MES = 5";
+                $sql = "SELECT * FROM eventos NATURAL JOIN mes WHERE ID_MES = $mesAct";
                 // $eventos = "SELECT ID_EVENTO, ID_TIPO_EVENT, ID_AULA, ID_USUARIO, ID_ASIGN, ID_MES, ID_MES_FIN, ID_CICLOS, DIA, AÑO, dia_fin, titulo FROM eventos_rang WHERE ID_MES = 5";
                 $res = mysqli_query($con, $sql);
                 $resultados = [];

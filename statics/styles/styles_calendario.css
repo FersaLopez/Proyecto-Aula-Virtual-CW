@@ -11,10 +11,14 @@ body{
 
 .workSpace{
     box-sizing: border-box;
+    /* position: relative;
+    top: 150px; */
+    
 }
 
 #calendario{
     /* box-sizing: border-box; */
+    
     display: block;     
     justify-content: space-evenly;    
     align-items: center;
@@ -127,5 +131,21 @@ input, textarea, select, button, option{
     /* margin-top: 2em; */
     color: black;
     padding: 1em;
+}
+
+.labinp{
+    color: black !important;
+    font-size: 15pt
+}
+
+.inpuforev{
+    /* width: 50px; */
+    font-size: 15pt;
+    width: 300px;
+}
+
+h1{
+    font-size: 16pt;
+    color: #752867 !important;
 }
 

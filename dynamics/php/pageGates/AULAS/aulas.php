@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aulas</title>
     <link rel="stylesheet" href="../../../../statics/styles/template_Gates.css">
     <link rel="stylesheet" href="../../../../statics/styles/styles_aulas.css">
     <link rel="shortcut icon" href="../../../../statics/img/school.png" type="image/x-icon">
@@ -29,7 +29,7 @@
             $id_grado = $_SESSION["grado"];            
             
             echo "
-                    <div id=contDatosHidden style='display: fixed'>
+                    <div id=contDatosHidden style='display: none'>
                         <input id='userH_id' disabled value='$ID'>
                         <input id='userH_name' disabled value='$name'>
                         <input id='userH_apodo' disabled value='$apodo'>

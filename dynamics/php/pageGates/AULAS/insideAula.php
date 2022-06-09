@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aula</title>
     <link rel="stylesheet" href="../../../../statics/styles/template_Gates.css">
     <link rel="stylesheet" href="../../../../statics/styles/insideAula.css">
     <link rel="shortcut icon" href="../../../../statics/img/school.png" type="image/x-icon">
@@ -73,7 +73,7 @@
             if(isset($_GET["aula"]) && $aula != false)
             {                                                           
                 echo "
-                        <div id=contDatosHidden style='display: fixed'>
+                        <div id=contDatosHidden style='display: none'>
                             <input id='userH_id' disabled value='$ID'>
                             <input id='userH_name' disabled value='$name'>
                             <input id='userH_apodo' disabled value='$apodo'>
@@ -155,20 +155,7 @@
             
         </div>
 
-        <div id='sec_Calificaciones' class="secciones_workSpace">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Holi</th><th>Hi</th><th>Lol</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Holi</td><td>Hi</td><td>Lol</td>
-                    </tr>
-    
-                </tbody>
-            </table>   
+        <div id='sec_Calificaciones' class="secciones_workSpace">             
 
         </div>
 

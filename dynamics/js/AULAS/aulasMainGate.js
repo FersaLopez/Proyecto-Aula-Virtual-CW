@@ -217,11 +217,11 @@ window.addEventListener("load", ()=>{
 
     if(inputH_idTU.value == 1){ //----------------------------------------------> Modificar condicional
         console.log(aulaTools);
-        aulaTools.innerHTML = "<div id='btnf_añadirAula'>+</div><div id='btnf_EliminarAula'>-</div>";     
+        aulaTools.innerHTML = "<div id='btnf_añadirAula'>+</div>";     
     }
     else
     {
-        aulaTools.innerHTML = "<div id='btnf_añadirAula'>+</div><div id='btnf_CrearAula'>++</div><div id='btnf_EliminarAula'>-</div>";     
+        aulaTools.innerHTML = "<div id='btnf_añadirAula'>+</div><div id='btnf_CrearAula'>++</div>";     
     }
 
     const sec_Unirse_Aula = document.getElementById("sec_Unirse_Aula");

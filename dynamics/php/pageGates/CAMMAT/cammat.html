@@ -18,7 +18,7 @@
 <body>
     <section id="right_sect" class="workSpace">
         <!-- AQUI VAN LAS DIFERENTES SECCIONES -->
-        <!-- <?php
+        <?php
             $ID = $_SESSION["ID_U"];
             $name = $_SESSION["nombre"];
             $apodo = $_SESSION["apodo"];
@@ -36,19 +36,50 @@
                         <input id='userH_grado' disabled value='$id_grado'>            
                     </div>
                 ";        
-        ?> -->
+        ?>
 
-        <div class="secciones_workSpace">
+
+        
+
+
+        <h1>Materiales de Estudio</h1>
+        <div id='sec_Materiales' class="secciones_workSpace">
+            <section id="botonCrear">
+
+            </section>
+
+
+        </div>
+        <div id='crearMateriales' class="secciones_workSpace">
+            <form id='formCrearM' action="../../js_queries/CAMMAT/busquedaRegistroMateriales.php" method="post" enctype='multipart/form-data' multipart=''>
+                <div class="preguntaCrear"> 
+                    <input type="text" name="nombreMaterial" id="nombreMaterial" required>
+                </div>
+                <div class="preguntaCrear"> 
+                    <label>Descripción del material
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="10" required></textarea>
+                    </label>
+                </div>                
+                <div class="preguntaCrear"> 
+                    <label for="nombreArch">Nombre del archivo: </label>
+                    <input type="text" name="nombreArch" id="nombreArch">
+                    <label for="archivo">Sube un archivo para compartir: </label>
+                    <input type='file' name='archivo' required>
+                </div>                
+                <input name="id_U" id="id_U" value='$user' style='display: none'>                
+                <!-- <input name="id_U" id="" value='$user' style='display: none'>                 -->
+                <button type='reset'>Borrar</button>
+                <button type='submit'>Subir Entrega</button>
+            </form>
+        </div>
+
+        <!-- <div class="secciones_workSpace">
 
         </div>
 
         <div class="secciones_workSpace">
 
-        </div>
-
-        <div class="secciones_workSpace">
-
-        </div>
+        </div> -->
 
 
     </section>        
