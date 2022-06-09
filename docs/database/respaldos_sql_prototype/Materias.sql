@@ -88,7 +88,7 @@ INSERT INTO MATERIAS VALUES
         (0, 'Comunicación Visual', 6, 7), 
         (0, 'Pensamiento Filosófico de México', 6, 4), 
         (0, 'Latín', 6, 4), 
-        (0, 'Griego', 6, 4), 
+        (0, 'Griego', 6, 4);
 
         
 

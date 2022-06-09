@@ -40,6 +40,11 @@ INSERT INTO MES_FIN VALUES
             (0, 'Diciembre');
 
 
+
+
+
+
+
 INSERT INTO EVENTOS VALUES 
             (1, 1, NULL, 6, NULL, 9, NULL, '00:00:00', '23:59:59','22', NULL,  '1910-09-22 12:00:00', 'aniversario-UNAM', 'Aniversario de la UNAM', NULL),   
             (2, 1, NULL, 6, NULL, 2, NULL, '00:00:00', '23:59:59','11', NULL,  '1964-02-11 12:00:00', 'aniversario-p6', 'Aniversario del plantel No.6 Antonio Caso', NULL), 
