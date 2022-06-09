@@ -1,7 +1,7 @@
 <?php
     require "../config/config.php";    
     require "../config/common_queries.php";    
-    //require "seguridad.php";
+    // require "seguridad.php";
     $con = connect();
     $tipo_U = (isset($_POST["tipo_User"]) && $_POST["tipo_User"] != "")? $_POST["tipo_User"] : false;
     //echo $tipo_U;

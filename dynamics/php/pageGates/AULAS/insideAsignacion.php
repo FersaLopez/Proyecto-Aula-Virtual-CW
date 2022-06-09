@@ -213,65 +213,79 @@
                         </div>                
                         <div>
                             <button type='reset'>Borrar</button>
-                            <button type='submit'>Crear Asignacion</button>
+                            <button type='submit'>Subir Entrega</button>
                         </div>
                     </form>
-                </div>
-                <div id='archivosSubidos'>
+                </div>                
                     <?php
-                        if($id_edo_entrega != "No entregado")
+                                                                                                                                                
+                        $sql = "SELECT ID_UHA FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $ID && ID_ASIGN = $asign";
+                        $res = mysqli_query($con, $sql);                                    
+
+                        $row = mysqli_fetch_assoc($res);
+
+                        //var_dump($row);
+                        
+                        if($row != NULL)
                         {
-                            $sql = "SELECT ID_UHA FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $ID && ID_ASIGN = $asign";
-                            $res = mysqli_query($con, $sql);                                    
+                            $ID_UHA = $row["ID_UHA"];
+                            $sql = "SELECT ruta_archivo, nombre, tipo_extension FROM ARCH_ENTREGA WHERE ID_UHA = $ID_UHA";
+                            $res = mysqli_query($con, $sql);        
 
-                            $row = mysqli_fetch_assoc($res);
+                            //$row = mysqli_fetch_assoc($res);
 
-                            var_dump($row);
-                            
                             if($row != NULL)
                             {
-                                $ID_UHA = $row["ID_UHA"];
-                                $sql = "SELECT ruta_archivo, nombre, tipo_extension FROM ARCH_ENTREGA WHERE ID_UHA = $ID_UHA";
-                                $res = mysqli_query($con, $sql);        
-
-                                $row = mysqli_fetch_assoc($res);
-
-                                if($row != NULL)
+                                $resultados = [];
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    $ruta_ArchivoTareaEntregada = $row["ruta_archivo"];
-                                    $nombreArchTareaEnviada = $row["nombre"];
-                                    $tipo_archTareaEnviada = $row["tipo_arch"];
+                                    $resultados[] = array("ruta_archivo" => $row["ruta_archivo"], "nombre" => $row["nombre"], "tipo_extension" => $row["tipo_extension"]);
                                     
+                                    /*var_dump($row);
+                                    echo "<br>";*/
                                     
-                                    echo "                                                                                                            
-                                    <iframe src='$ruta_ArchivoTareaEntregada'>                                    
-                                    </iframe>                            
-                                    <a id='ArchivoEntregado' download href='$ruta_ArchivoTareaEntregada'>
-                                        <div id='archivoEntregado'class='contenedorArchivo'>
-                                            <label class='contenedorArchivo'>Archivo adjunto de tu entrega</label>
-                                            <h2 id='nombreArchEntregado' class='contenedorArchivo'><strong><u>$nombreArchTareaEnviada</u></strong></h2>                                    
-                                            <h4 id='extArch' class='contenedorArchivo'>Extensión del archivo: $tipo_archTareaEnviada</h4>
-                                        </div>
-                                    </a>";
-    
-    
+                                }                                
+                                //var_dump($resultados);
+                                foreach($resultados as $valor)
+                                {
+                                    $ruta_ArchivoTareaEntregada = $valor["ruta_archivo"];
+                                    $nombreArchTareaEnviada = $valor["nombre"];
+                                    $tipo_archTareaEnviada = $valor["tipo_extension"];                                    
+                                    
+                                    echo "         
+                                    <div class='archivosSubidos'>
+                        
+                                        <div class='contenedorArchivos'></div>                                                                                           
+                                        <iframe src='$ruta_ArchivoTareaEntregada'>                                    
+                                        </iframe>                            
+                                        <a id='ArchivoEntregado' download href='$ruta_ArchivoTareaEntregada'>
+                                            <div id='archivoEntregado'class='contenedorArchivo'>
+                                                <label class='contenedorArchivo'>Archivo adjunto de tu entrega</label>
+                                                <h2 id='nombreArchEntregado' class='contenedorArchivo'><strong><u>$nombreArchTareaEnviada</u></strong></h2>                                    
+                                                <h4 id='extArch' class='contenedorArchivo'>Extensión del archivo: $tipo_archTareaEnviada</h4>
+                                            </div>
+                                        </a>
+                                    </div>";
                                 }
-                                else{
-                                    echo "Sin archivos Adjuntos en la Entrega";
-                                }
+
 
 
                             }
                             else{
-                                echo "No concrete mi primera peticion";
+                                echo "Sin archivos Adjuntos en la Entrega";
                             }
+
+
+                        }
+                        else{
+                            echo "No concrete mi primera peticion";
+                        }
 
 
 
                             
-                        }
-                    ?>
-                </div>
+                        
+                    ?>                
             </div>      
             
 

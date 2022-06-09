@@ -108,13 +108,15 @@
 
         </div>
 
+        
         <div id="sec_Unirse_Aula" class="secciones_workSpace">
 
         </div>
+        
 
-        <div class="secciones_workSpace">
+        <!-- <div class="secciones_workSpace">
 
-        </div>
+        </div> -->
 
 
     </section>

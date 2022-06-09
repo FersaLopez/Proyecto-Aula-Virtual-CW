@@ -154,6 +154,23 @@
             
         </div>
 
+        <div id='sec_Calificaciones' class="secciones_workSpace">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Holi</th><th>Hi</th><th>Lol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Holi</td><td>Hi</td><td>Lol</td>
+                    </tr>
+    
+                </tbody>
+            </table>   
+
+        </div>
+
         <!-- <div class="secciones_workSpace">
 
             

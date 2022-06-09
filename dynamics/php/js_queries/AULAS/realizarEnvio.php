@@ -32,17 +32,8 @@
                 $typeDoc = true;
             }        
         }
-
-//      echo $nameArcOrig."+++++".$extArch;        
-
-
         
-        //$fecha_entrega = date_create("2020-02-16 22:03:16");        
-                        
-        
-
-
-
+        //$fecha_entrega = date_create("2020-02-16 22:03:16");                                        
 
         if(isset($_POST["btnEnvioAsign"]) && $id_Asign && !isset($_POST["BOOL"]))
         {
@@ -65,16 +56,36 @@
 
                 $date1 = date('y-m-d');
                 $date2 = date('H:i:s');
-
-                //$fechaAct = date();                
+                            
                 $fechaEntrega = $date1."T".$date2;
 
-                $sql = "INSERT INTO USER_HAS_ASIGNACION (ID_UHA, ID_USUARIO, ID_ASIGN, ID_ESTADO_ENTREGA, fecha_entrega) 
-                        VALUES (0, $id_U, $id_Asign, $edoEntrega, '$fechaEntrega')";
+                $sql = "SELECT ID_UHA FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $id_U && ID_ASIGN = $id_Asign";
+                $res = mysqli_query($con, $sql);
+                $row = mysqli_fetch_array($res);        
 
-                //$sql = "DELETE FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $id_U && ID_ASIGNACION"
-            
-                //INSERT INTO ASIGNACION (ID_ASIGN, titulo, indicaciones, ID_USUARIO, puntos, fecha_asignacion, fecha_limite, ID_BLOQUE, ID_TEMA, ID_AULA, ID_TIPO_ASIGN) VALUES (0, 'SI', 'HOLA', 1, 777, '2022-02-16T22:03:16','2022-02-16T22:03:16' , NULL, NULL, 'AGIPe8', 3)";                        
+                if($row == NULL)
+                {
+                    $sql = "INSERT INTO USER_HAS_ASIGNACION (ID_UHA, ID_USUARIO, ID_ASIGN, ID_ESTADO_ENTREGA, fecha_entrega) 
+                    VALUES (0, $id_U, $id_Asign, $edoEntrega, '$fechaEntrega')";            
+                }
+                else
+                {
+                    $sql = "UPDATE USER_HAS_ASIGNACION SET ID_ESTADO_ENTREGA = $edoEntrega, fecha_entrega = '$fechaEntrega' WHERE ID_USUARIO = $id_U && ID_ASIGN = $id_Asign";                    
+                }
+                /*
+                $res = mysqli_query($con, $sql);
+
+                if()
+                $sql = "SELECT estado FROM USER_HAS_ASIGNACION NATURAL JOIN ESTADO_ENTREGA WHERE ID_USUARIO = $id_U && ID_ASIGN = $id_Asign";
+                $res = mysqli_query($con, $sql);
+                $row = mysqli_fetch_array($res);
+
+                if($row != NULL)
+                {
+                    $idEdoEntrega = $row["estado"];
+                }
+*/
+
                 $res = mysqli_query($con, $sql);
                 //$row = mysqli_fetch_array($res);
                 if($res != false)
@@ -84,16 +95,53 @@
                 }
                 else
                 {
-                    $respuesta = array("ok" => false, "texto" => "No se pudo ingresar los datos");
+                    $respuesta = array("ok" => false, "texto" => "No se pudieron ingresar los datos");
                     echo json_encode($respuesta);
                 }
 
-            }
+            }                                            
+                         
+
             else
             {
                 $respuesta = array("ok" => false, "texto" => "No sllego alguna variable");
                 echo json_encode($respuesta);
             }
+        }
+        else if(isset($_POST["BOOL"]))
+        {
+            //$fechaAsign = $row["fecha_asignacion"];                                        
+            //$fecha_actual = date_create("now");
+
+            $edoEntrega = 3;
+            /*
+            if($fecha_actual > $fechaAsign)
+            {
+                $edoEntrega = 2;                
+            } */       
+
+            $date1 = date('y-m-d');
+            $date2 = date('H:i:s');
+
+            //$fechaAct = date();                
+            //$fechaEntrega = $date1."T".$date2;
+            
+            $sql = "UPDATE USER_HAS_ASIGNACION SET ID_ESTADO_ENTREGA = $edoEntrega, fecha_entrega = null WHERE ID_USUARIO = $id_U && ID_ASIGN = $id_Asign";
+            $res = mysqli_query($con, $sql);
+            //$row = mysqli_fetch_assoc($res);
+
+            if($res != false)
+            {
+                $respuesta = array("ok" => true, "texto" => "Se marco como NO COMPLETADA");
+                echo json_encode($respuesta);
+            }
+            else
+            {
+                $respuesta = array("ok" => false, "texto" => "No complete mi query");
+                echo json_encode($respuesta);
+            }
+
+
         }
         else if(!isset($_POST["btnEnvioAsign"]))
         {
@@ -115,18 +163,30 @@
                     if($fecha_actual > $fechaAsign)
                     {
                         $edoEntrega = 2;
-                        echo "SI";
+                        //echo "SI";
                     }        
 
                     $date1 = date('y-m-d');
                     $date2 = date('H:i:s');
-
-                    //$fechaAct = date();                
+                                
                     $fechaEntrega = $date1."T".$date2;
 
-                    $sql = "INSERT INTO USER_HAS_ASIGNACION (ID_UHA, ID_USUARIO, ID_ASIGN, ID_ESTADO_ENTREGA, fecha_entrega) 
-                            VALUES (0, $id_U, $id_Asign, $edoEntrega, '$fechaEntrega')";
-                
+                    $sql = "SELECT ID_UHA FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $id_U && ID_ASIGN = $id_Asign";
+                    $res = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($res);        
+
+                    if($row == NULL)
+                    {
+                        $sql = "INSERT INTO USER_HAS_ASIGNACION (ID_UHA, ID_USUARIO, ID_ASIGN, ID_ESTADO_ENTREGA, fecha_entrega) 
+                        VALUES (0, $id_U, $id_Asign, $edoEntrega, '$fechaEntrega')";            
+                    }
+                    else
+                    {
+                        $sql = "UPDATE USER_HAS_ASIGNACION SET ID_ESTADO_ENTREGA = $edoEntrega, fecha_entrega = '$fechaEntrega' WHERE ID_USUARIO = $id_U && ID_ASIGN = $id_Asign";
+                    }
+
+
+                    
                     //INSERT INTO ASIGNACION (ID_ASIGN, titulo, indicaciones, ID_USUARIO, puntos, fecha_asignacion, fecha_limite, ID_BLOQUE, ID_TEMA, ID_AULA, ID_TIPO_ASIGN) VALUES (0, 'SI', 'HOLA', 1, 777, '2022-02-16T22:03:16','2022-02-16T22:03:16' , NULL, NULL, 'AGIPe8', 3)";                        
                     $res = mysqli_query($con, $sql);
                     //$row = mysqli_fetch_array($res);        
@@ -134,29 +194,42 @@
         
                     if($res != false)
                     {
-                        $idUHA = mysqli_insert_id($con);
-                        //echo $idAsig;
-                            
-                        //$ruta_arch = "../../../../statics/media/files/materialesAulas/".$id_A.$id_U.$idAsig.$nombreArch.".".$extArch;
-                        $ruta_arch = "../../../../statics/media/files/materialesAulas/"."UHA".$id_Asign.$id_U.$idUHA.$nombreArch.".".$extArch;                        
-            
-                        $arch = $_FILES['archivo']['tmp_name'];
-                        rename($arch, $ruta_arch);
-                        //echo $ruta_arch;    
-            
-                        $sql = "INSERT INTO ARCH_ENTREGA (ID_ARCH_ENTREGA, nombre, ruta_archivo, tipo_extension, ID_UHA) 
-                                                VALUES (0, '$nombreArch', '$ruta_arch', '$extArch', $idUHA)";
+                        
+                        $sql = "SELECT ID_UHA FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $id_U && ID_ASIGN = $id_Asign";
                         $res = mysqli_query($con, $sql);
-        
-                        if($res == false)
+                        $row = mysqli_fetch_array($res);        
+
+                        if($row != NULL)
                         {
-                            echo "Hubo un error con UHA";
+                            $idUHA = $row["ID_UHA"];
+                            //$idUHA = mysqli_insert_id($con);
+                            //echo $idAsig;
+                                
+                            //$ruta_arch = "../../../../statics/media/files/materialesAulas/".$id_A.$id_U.$idAsig.$nombreArch.".".$extArch;
+                            $ruta_arch = "../../../../statics/media/files/materialesAulas/"."UHA".$id_Asign.$id_U.$idUHA.$nombreArch.".".$extArch;                        
+                
+                            $arch = $_FILES['archivo']['tmp_name'];
+                            rename($arch, $ruta_arch);
+                            //echo $ruta_arch;    
+                
+                            $sql = "INSERT INTO ARCH_ENTREGA (ID_ARCH_ENTREGA, nombre, ruta_archivo, tipo_extension, ID_UHA) 
+                                                    VALUES (0, '$nombreArch', '$ruta_arch', '$extArch', $idUHA)";
+                            $res = mysqli_query($con, $sql);
+            
+                            if($res == false)
+                            {
+                                echo "Hubo un error con UHA";
+                            }
+                            else
+                            {                        
+                                header("location: ../../pageGates/AULAS/insideAsignacion.php?asign=".$id_Asign);
+                            }
                         }
                         else
-                        {                        
-                            header("location: ../../pageGates/AULAS/insideAsignacion.php?asign=".$id_Asign);
+                        {
+                            echo "No pude encontrar la ID_UHA";
                         }
-        
+                                
                     }
                     else
                     {                        
@@ -181,11 +254,7 @@
                 echo "Hubo un error";
             }
 
-        }
-        else if(isset($_POST["BOOL"]))
-        {
-
-        }
+        }        
         
     }
 ?>
