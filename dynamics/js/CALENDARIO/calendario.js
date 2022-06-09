@@ -8,15 +8,15 @@ let mes = document.getElementById("5")
 let year = document.getElementById("6");
 let aBisiesto = document.getElementById("abis");
 
-
-
 //variables para probar funcionamiento
 
-// diaMes.value = 29
-// diaSem.value = 4
+
+//arreglar problemas con dia de la semana 1 y 7
+// diaMes.value = 25
+// diaSem.value =1
 // mes.value= 2
-// year.value = 2024
-// aBisiesto = year
+// year.value = 2025
+// // aBisiesto = year
 // aBisiesto.value = 2024
 
 
@@ -24,77 +24,81 @@ let aBisiesto = document.getElementById("abis");
 const calendario = document.getElementById("calendario");
 const textFecha = document.getElementById("textFecha");
 let gridCalen = document.getElementById("gridCalen")
-let fila1 = document.getElementById("fila1")
-let fila2 = document.getElementById("fila2")
-let fila3 = document.getElementById("fila3")
-let fila4 = document.getElementById("fila4")
-let fila5 = document.getElementById("fila5")
 let fila6 = document.getElementById("fila6")
+// const agregarEvento = document.getElementById("agregarEvento")
 
 dibujarCalendario();
 
 
 function dibujarCalendario(){
+    // console.log(mes.value)
 
     //ver si se puede optimizar con la base de datos 
-    if(mes.value == 1)
-    {
-        textFecha.innerHTML = "<div>Enero de "+ year.value+"</div>";
-    }
-    else if (mes.value == 2)
-    {
-        textFecha.innerHTML = "<div>Febrero de "+ year.value+"</div>";
-    }
-    else if (mes.value == 3)
-    {
-        textFecha.innerHTML = "<div>Marzo de "+ year.value+"</div>";
-    }
-    else if (mes.value == 4)
-    {
-        textFecha.innerHTML = "<div>Abril de "+ year.value+"</div>";
-    }
-    else if (mes.value == 5)
-    {
-        textFecha.innerHTML = "<div>Mayo de "+ year.value+"</div>";
-    }
-    else if (mes.value == 6)
-    {
-        textFecha.innerHTML = "<div>Junio de "+ year.value+"</div>";
-    }
-    else if (mes.value == 7)
-    {
-        textFecha.innerHTML == "<div>Julio de "+ year.value+"</div>";
-    }
-    else if (mes.value == 8)
-    {
-        textFecha.innerHTML == "<div>Agosto de "+ year.value+"</div>";
-    }
-    else if (mes.value == 9)
-    {
-        textFecha.innerHTML == "<div>Septiembre de "+ year.value+"</div>";
-    }
-    else if (mes.value == 10)
-    {
-        textFecha.innerHTML == "<div>Octubre de "+ year.value+"</div>";
-    }
-    else if (mes.value == 11)
-    {
-        textFecha.innerHTML == "<div>Noviembre de "+ year.value+"</div>";
-    }
-    else if (mes.value == 12)
-    {
-        textFecha.innerHTML == "<div>Diciembre de "+ year.value+"</div>";
+    if(mes.value){    
+        //ver si se puede optimizar con la base de datos 
+        if(mes.value == 1)
+        {
+            textFecha.innerHTML = "<div>Enero de "+ year.value+"</div>";
+        }
+        else if (mes.value == 2)
+        {
+            textFecha.innerHTML = "<div>Febrero de "+ year.value+"</div>";
+        }
+        else if (mes.value == 3)
+        {
+            textFecha.innerHTML = "<div>Marzo de "+ year.value+"</div>";
+        }
+        else if (mes.value == 4)
+        {
+            textFecha.innerHTML = "<div>Abril de "+ year.value+"</div>";
+        }
+        else if (mes.value == 5)
+        {
+            textFecha.innerHTML = "<div>Mayo de "+ year.value+"</div>";
+        }
+        else if (mes.value == 6)
+        {
+            textFecha.innerHTML = "<div>Junio de "+ year.value+"</div>";
+        }
+        else if (mes.value == 7)
+        {
+            textFecha.innerHTML == "<div>Julio de "+ year.value+"</div>";
+        }
+        else if (mes.value == 8)
+        {
+            textFecha.innerHTML == "<div>Agosto de "+ year.value+"</div>";
+        }
+        else if (mes.value == 9)
+        {
+            textFecha.innerHTML == "<div>Septiembre de "+ year.value+"</div>";
+        }
+        else if (mes.value == 10)
+        {
+            textFecha.innerHTML == "<div>Octubre de "+ year.value+"</div>";
+        }
+        else if (mes.value == 11)
+        {
+            textFecha.innerHTML == "<div>Noviembre de "+ year.value+"</div>";
+        }
+        else if (mes.value == 12)
+        {
+            textFecha.innerHTML == "<div>Diciembre de "+ year.value+"</div>";
+        }
+        
     }
     
-
-
-
-
 // function inicioSemana()
 // {
     let diaInicio 
-    if(diaMes)
+    if(diaMes.value == diaSem.value)
     {
+        diaInicio = diaMes.value
+    }
+    // else if(diaMes == 7)
+    // {
+    //     diaInicio = 1
+    // }
+    else{
         let contG =0;
         let contDiaMes = diaMes.value;
         if(diaSem)
@@ -103,7 +107,6 @@ function dibujarCalendario(){
             do
             {
                 //va recorriendo los dias hasta llegar al dia 1 sentido contratio
-                // console.log("inicio contG" + contG)
                 contDiaSem--;
                 //cada que llega al lunes 
                 if(contDiaSem==0){
@@ -112,11 +115,9 @@ function dibujarCalendario(){
                     //se suma el contador para saber cuantas veces se reinició la cuenta
                     contG += 1;
                 }
-                // console.log("prueba"+contDiaSem)
                 contDiaMes--
                 // contG--
-            }while(contDiaMes)
-            // console.log("contG"+contG)
+            }while(contDiaMes >0)
              diaInicio = contDiaSem - contG +1
             if(diaInicio == 8)
             {
@@ -183,16 +184,19 @@ function dibujarCalendario(){
     let contDiasAntes
     let ponerDiasFilas
     let ponerID = 1
-    let ultimaFila = 0
     // if(diasAntes){
     //     console.log(100)
         contDiasAntes = diasAntes;
         //dibuja los dias antes de que empiece el mes
+        if(diasAntes != 0)
+        {
         do
         {
+            if(diasAntes)
             fila6.innerHTML +="<div class='diasNulos'></div>";
             contDiasAntes--
         }while(contDiasAntes)
+    }
         //dibuja los primeros dias del mes de la primer fila
         contDiasAntes= 7 - diaInicio + 1
         do

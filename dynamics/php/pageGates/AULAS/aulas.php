@@ -72,7 +72,6 @@
 
 
     </section>
-    <script src="../../../js/AULAS/aulasMainGate.js">        
-    </script>        
+    <script src="../../../js/AULAS/aulasMainGate.js"></script>        
 </body>
 </html>

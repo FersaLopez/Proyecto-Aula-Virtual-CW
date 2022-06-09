@@ -46,9 +46,27 @@
                     Recordatorios
                 </div>
             </a>
-            <a href="">
-                <div class="nav_IconContent">
-                    P
+            <a href="#">
+        <div class="nav_IconContent">
+            <nav  id="nav">
+                <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <!-- <li class="nav-item dropdown"> -->
+                    <a  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      P
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" class="btnAbajo">
+                        <div id="opciones"  >
+                          <li><a class="dropdown-item" href="#">Perfil</a></li>
+                          <li><a class="dropdown-item" href="../cierre_sesion.php">Cerrar sesión</a></li>
+                        </div>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+                
+                    
                 </div>
             </a>
         </nav>        

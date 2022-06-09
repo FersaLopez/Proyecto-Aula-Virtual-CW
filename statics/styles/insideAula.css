@@ -1,0 +1,152 @@
+/*TOOLS = funciones a nivel global, GENERIC = estilos de nivel global, ELEMENTS = etiquetas HTML?, OBJECT = clases, COMPONENTS = id?, UTILITIES = !important, ?*/
+
+/* =SETTINGS
+---------------------------------------------------------------------------------------------------------------------------------*/
+/*@font-face {
+    font-family: "Fuego";
+    src: url(../fonts/charbb_reg.ttf);
+}
+@font-face {
+    font-family: "VECTOR";
+    src: url(../fonts/Newton\ Howard\ Font.ttf);
+}
+@font-face {
+    font-family: "Texto";
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: "Titulos";
+    src: url(../fonts/Fresh\ Fruit.ttf);
+}*/
+:root{
+    /* --var-proporcionBarra: 0em; */
+
+    --var-tamañoBarra: 5em;
+    --var-tamañoIconNavbar: 5em;
+
+    --var-colorFontNegro: black;
+    --var-colorFontBlanco: white;
+
+    
+    --var-colorFondoOscuro: #2B2D42;
+    --var-colorHeaderOscuro: #242325;
+    --var-colorAzulPadre: #14002a;
+
+    --var-colorAmarillo1: #FDCA40;
+    --var-colorNaranja: #F79824;
+    
+    
+    --var-colorCal: #4c2a85;
+    --var-colorAulas: #6B7FD7;
+    --var-colorPerfil: #C8C8C8;
+    --var-colorJuegos: #F72C25;
+    --var-colorForo: #fdc440;
+    --var-colorDescubre: #a9E5BB;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------
+=> ELEMENTS <=
+---------------------------------------------------------------------------------------------------------------------------------*/
+/*<>*/
+
+h1.h1_nombreAula{
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    margin: 0;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    
+    background-color: var(--var-colorAzulPadre);
+}
+input, textarea, select, button, option{
+    color: #14002a;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------
+ => OBJECT <=
+---------------------------------------------------------------------------------------------------------------------------------*/
+/*.*/
+
+div.secciones_workSpace{    
+    min-height: 100vh;
+    padding: 7% 10%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.h1_nombreAula{
+    grid-area: tituloAula;
+}
+.asignacion{
+    height: 80px;    
+    margin: 25px;
+
+    background-color:var(--var-colorAzulPadre);
+    border-color: #14002a;
+}
+.asignacion:hover{
+    transform: scale(1.04);
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------
+ => COMPONENTS <=
+---------------------------------------------------------------------------------------------------------------------------------*/
+#right_sect{
+    display: grid;  
+    gap: 4vh;
+
+    grid-template: 
+        "tituloAula"
+        "formCrear"    
+        "InformacionAula"
+        "asignaciones"
+        "calif"          
+        "tablon" 
+                    ;    
+}
+
+#InformacionAula{
+
+}
+
+#nombreDocente{
+
+}
+#sect1InfoA{
+
+}
+
+#asignBlocks{
+
+}
+
+#asign_tools{
+    height: 30px;
+    background-color: var(--var-colorAulas);
+    text-align: center;
+}
+#crearAula{
+    grid-area: formCrear;
+}
+
+#InformacionAula{
+    grid-area: InformacionAula;
+}
+#asignaciones{
+    grid-area: asignaciones;
+}
+
+#tablon{
+    grid-area: tablon;
+}
+
+#calificaciones{
+    grid-area: calif;
+}
+
+#CrearAsign{
+    height: 100%;    
+
+}
+
