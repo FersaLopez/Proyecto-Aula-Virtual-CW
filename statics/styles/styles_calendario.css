@@ -121,21 +121,6 @@ input, textarea, select, button, option{
     margin-bottom: 4em;
 }
 
-#eventosMesRang{
-    justify-content: center;
-    align-items: center;
-    /* display: flex; */
-    background-color:  var(--var-fondoEventos);
-    width: fit-content;
-    height: fit-content;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 3em;
-    padding: 1em;
-    color: black;
-    float: left;
-}
-
 .textoEvento{
     display: inline-block;
     display: block;

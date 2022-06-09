@@ -13,24 +13,33 @@
                 $mesAct = date('n');
 
                 //selecciona eventos de la BD
-                $sql = "SELECT ID_EVENTO_RANG, ID_TIPO_EVENT, ID_AULA, ID_USUARIO, ID_ASIGN, ID_MES, ID_CICLOS, dia, año, dia_fin, titulo FROM eventos_rang WHERE ID_MES = $mesAct";
+                $sql = "SELECT * FROM eventos_rang NATURAL JOIN mes NATURAL JOIN mes_fin WHERE ID_MES = 1";
                 $res = mysqli_query($con, $sql);
                 $resultados = [];
 
                 //por cada registro existente, se guarda en un arreglo
                 while($row = mysqli_fetch_assoc($res)){
                     $resultados[]= array(
-                        "id_rang" => $row["ID_EVENTO_RANG"],
+                        "ID_MES_FIN" => $row["ID_MES_FIN"],
+                        "ID_MES" => $row["ID_MES"],
+                        "id" => $row["ID_EVENTO_RANG"],
                         "tipo" => $row["ID_TIPO_EVENT"],
                         "ID_AULA" => $row["ID_AULA"],
                         "ID_USUARIO" => $row["ID_USUARIO"], 
                         "ID_ASIGN" => $row["ID_ASIGN"],
-                        "ID_MES" => $row["ID_MES"],
                         "ID_CICLOS" => $row["ID_CICLOS"],
+                        "hora_inicio" => $row["hora_inicio"],
+                        "hora_final" => $row["hora_final"],
                         "dia_inicio" => $row["dia"],
                         "año" => $row["año"],
+                        "fecha_comp" => $row["fecha_comp"],
                         "dia_fin" => $row["dia_fin"],
-                        "titulo" => $row["titulo"]
+                        "fecha_comp_fin" => $row["fecha_comp_fin"],
+                        "key_word" => $row["key_word"],
+                        "titulo" => $row["titulo"],
+                        "descripcion" => $row["descripcion"],
+                        "mes_inicio" => $row["mes"],
+                        "mes_fin" => $row["mes_fin"],
                     );
                 }
               
