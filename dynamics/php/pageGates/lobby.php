@@ -138,24 +138,24 @@
                             <div class="aside_li_cuadros">m</div> <!--MULTI BLOCK -->
                         </li>
                     </a>             
-                    <a href="">
+                    <a href="https://uapas.bunam.unam.mx/">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">a</div><!--AULAS-->
+                            <div class="aside_li_cuadros">UAPA</div><!--AULAS-->
                         </li>
                     </a>     
-                    <a href="">
+                    <a href="https://meet.google.com/">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">c</div><!--CAMMAT-->
+                            <div class="aside_li_cuadros">Meet</div><!--CAMMAT-->
                         </li>
                     </a>  
-                    <a href="">
+                    <a href="http://www.ete.enp.unam.mx/">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">f</div><!--FORO-->
+                            <div class="aside_li_cuadros">ETE</div><!--FORO-->
                         </li>
                     </a>
-                    <a href="">
+                    <a href="https://www.prepa6.unam.mx/ENP6/_P6/publicaciones/ateneo/ateneo_ne_02.html">
                         <li class="aside_li">
-                            <div class="aside_li_cuadros">J</div><!--JUEGOS-->
+                            <div class="aside_li_cuadros">El ateneo de <br> Coyoacán</div><!--JUEGOS-->
                         </li>
                     </a>
                     <a href="./CALENDARIO/calendario.php">
@@ -165,14 +165,14 @@
                     </a>
                 </ul>
                 <ul class="aside_ul_EXTRA" >
-                    <a href="">
+                    <a href="https://bidi.unam.mx/">
                         <li class="aside_li_EXTRA">
-                            <div class="aside_li_cuadros">b</div> <!--BiblioTeca -->
+                            <div class="aside_li_cuadros">Biblioteca</div> <!--BiblioTeca -->
                         </li>
                     </a>
-                    <a href="">
+                    <a href="https://www.revista.unam.mx/">
                         <li class="aside_li_EXTRA">
-                            <div class="aside_li_cuadros">a</div><!--AULAS-->
+                            <div class="aside_li_cuadros">Revista UNAM</div><!--AULAS-->
                         </li>                                     
                     </a>
                 </ul>  
@@ -246,6 +246,8 @@
         FOOTER
     </footer>
 
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
