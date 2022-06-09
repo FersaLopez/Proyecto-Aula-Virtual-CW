@@ -64,10 +64,8 @@
         <!-- Si es alumno y da a clase -->
         <div id="elegir_asignacion" class="contenedor" style = "display: none">
             <div class="choose">
-                <div><h4>Elige tu curso: </h4></div> <div><div id="cursos_disponibles"></div></div> <div></div> <div></div>
-                <div></div> <div></div> <div></div> <div></div>
-                <div></div> <div></div> <div></div> <div></div>
-                <div></div> <div></div> <div></div> <div></div>
+                <div><h4>Elige tu curso: </h4></div>
+                <div id="cursos_disponibles"></div>
             </div>            
         </div>
         <div id="start_asignacion_e" class="contenedor" style = "display: none">
