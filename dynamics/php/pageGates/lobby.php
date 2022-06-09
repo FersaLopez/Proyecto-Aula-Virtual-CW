@@ -18,6 +18,7 @@
     <!-- Añadir icono -->
     <script src="https://kit.fontawesome.com/a6b650041d.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="../../../libs/css/bootstrap.css">
     <link rel="stylesheet" href="../../../statics/styles/styles_lobby.css">
     <!-- <link rel="stylesheet" href="./libs/css/bootstrap.css.map"> -->        
 
@@ -27,8 +28,10 @@
     <header class="barraSuperior">
         <nav id="nav_sup">
             <!-- <a href=""> -->
-            <div class="nav_IconContent" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" >
-                   multi
+            <div id="menuIzq" class="nav_IconContent" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="black" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
             </div>
             <!-- </a> -->
             <a href="">
@@ -45,14 +48,16 @@
                 <div class="nav_TextContent">
                     Recordatorios
                 </div>
-            </a>
-            <a href="#">
-        <div class="nav_IconContent">
+            </a>            
+        <div id='menuDer' class="nav_IconContent">
             <nav  id="nav">
                 <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
                   <!-- <li class="nav-item dropdown"> -->
                     <a  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      P
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="103%" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" class="btnAbajo">
                         <div id="opciones"  >

@@ -11,6 +11,7 @@
     else
     {                    
         $marcarComp = (isset($_POST["btnEnvioAsign"]) && $_POST["btnEnvioAsign"] != "")? $_POST["btnEnvioAsign"] : false;
+        $boolTarea = (isset($_POST["BOOL"]) && $_POST["BOOL"] != "")? $_POST["BOOL"] : false;
         
         $nombreArch = (isset($_POST["nombreArch"]) && $_POST["nombreArch"] != "")? $_POST["nombreArch"] : false;
         $doc = (isset($_FILES["archivo"]))? $_FILES["archivo"] : false;
@@ -21,9 +22,16 @@
                 
         //$nombreEnRuta = "".$
 
-
-        $nameArcOrig = $_FILES['archivo']['name'];
-        $extArch = pathinfo($nameArcOrig, PATHINFO_EXTENSION);                
+        $typeDoc = false;                        
+        if(isset($_FILES['archivo']))
+        {
+            $nameArcOrig = $_FILES['archivo']['name'];
+            $extArch = pathinfo($nameArcOrig, PATHINFO_EXTENSION);                
+            if($extArch == "jpg" || $extArch == "pdf" || $extArch == "png" || $extArch == "txt" || $extArch == "pptx" || $extArch == "docx" || $extArch == "xlsx" )
+            {
+                $typeDoc = true;
+            }        
+        }
 
 //      echo $nameArcOrig."+++++".$extArch;        
 
@@ -31,17 +39,63 @@
         
         //$fecha_entrega = date_create("2020-02-16 22:03:16");        
                         
-        $typeDoc = false;                        
-        if($extArch == "jpg" || $extArch == "pdf" || $extArch == "png" || $extArch == "txt" || $extArch == "pptx" || $extArch == "docx" || $extArch == "xlsx" )
-        {
-            $typeDoc = true;
-        }        
+        
 
-        if(isset($_POST["btnEnvioAsign"]))
-        {
 
+
+
+        if(isset($_POST["btnEnvioAsign"]) && $id_Asign && !isset($_POST["BOOL"]))
+        {
+            $sql = "SELECT fecha_asignacion FROM ASIGNACION WHERE ID_ASIGN = $id_Asign";
+            $res = mysqli_query($con, $sql);
+            $row = mysqli_fetch_assoc($res);
+
+            if($row != NULL)
+            {
+                $fechaAsign = $row["fecha_asignacion"];                                        
+                $fecha_actual = date_create("now");
+
+
+                $edoEntrega = 1;
+                if($fecha_actual > $fechaAsign)
+                {
+                    $edoEntrega = 2;
+                    //echo "SI";
+                }        
+
+                $date1 = date('y-m-d');
+                $date2 = date('H:i:s');
+
+                //$fechaAct = date();                
+                $fechaEntrega = $date1."T".$date2;
+
+                $sql = "INSERT INTO USER_HAS_ASIGNACION (ID_UHA, ID_USUARIO, ID_ASIGN, ID_ESTADO_ENTREGA, fecha_entrega) 
+                        VALUES (0, $id_U, $id_Asign, $edoEntrega, '$fechaEntrega')";
+
+                //$sql = "DELETE FROM USER_HAS_ASIGNACION WHERE ID_USUARIO = $id_U && ID_ASIGNACION"
+            
+                //INSERT INTO ASIGNACION (ID_ASIGN, titulo, indicaciones, ID_USUARIO, puntos, fecha_asignacion, fecha_limite, ID_BLOQUE, ID_TEMA, ID_AULA, ID_TIPO_ASIGN) VALUES (0, 'SI', 'HOLA', 1, 777, '2022-02-16T22:03:16','2022-02-16T22:03:16' , NULL, NULL, 'AGIPe8', 3)";                        
+                $res = mysqli_query($con, $sql);
+                //$row = mysqli_fetch_array($res);
+                if($res != false)
+                {
+                    $respuesta = array("ok" => true, "texto" => "Marcaste tu tarea como completada");
+                    echo json_encode($respuesta);
+                }
+                else
+                {
+                    $respuesta = array("ok" => false, "texto" => "No se pudo ingresar los datos");
+                    echo json_encode($respuesta);
+                }
+
+            }
+            else
+            {
+                $respuesta = array("ok" => false, "texto" => "No sllego alguna variable");
+                echo json_encode($respuesta);
+            }
         }
-        else
+        else if(!isset($_POST["btnEnvioAsign"]))
         {
             if($nombreArch && $doc && $typeDoc == true)
             {
@@ -126,6 +180,10 @@
             {
                 echo "Hubo un error";
             }
+
+        }
+        else if(isset($_POST["BOOL"]))
+        {
 
         }
         
