@@ -103,31 +103,36 @@ window.addEventListener("load", ()=>{
     btnEnvioAsign.addEventListener("click", (evento) =>{
         if(boolEntregada == true)
         {
+            console.log("Ya la habias entregado");
             let infoUsuario = new FormData();
             infoUsuario.append("id_U", inputH_id.value);        
             infoUsuario.append("id_Asign", userH_As_asign.value);                     
             infoUsuario.append("btnEnvioAsign", boolEntregada); 
-            infoUsuario.append("BOOL", boolEntregada);          
+            infoUsuario.append("BOOL", boolEntregada);     
             
-            fetch("../../js_queries/AULAS/realizarEnvio.php", {
-                method:"POST", 
-                body: infoUsuario,
-            }).then((response)=>{            
-                return response.json();            
-            }).then((datosJSON) =>{
-    
-                console.log(datosJSON);
-                if(datosJSON.ok == true)
-                {
-                    alert(datosJSON.texto);
-                    refreshValues();
-                }
-                else
-                {
-                    alert(datosJSON.texto);
-                }
-                
-            })            
+            if(confirm("Esta a punto de marcar su tarea como NO COMPLETADA, ¿desea continuar?"))
+            {
+                fetch("../../js_queries/AULAS/realizarEnvio.php", {
+                    method:"POST", 
+                    body: infoUsuario,
+                }).then((response)=>{            
+                    return response.json();            
+                }).then((datosJSON) =>{
+        
+                    console.log(datosJSON);
+                    if(datosJSON.ok == true)
+                    {
+                        alert(datosJSON.texto);
+                        //refreshValues();
+                        window.location="./insideAsignacion.php?asign="+userH_As_asign.value;
+                    }
+                    else
+                    {
+                        alert(datosJSON.texto);
+                    }                    
+                })            
+            }
+            
         }
         else
         {
@@ -146,7 +151,8 @@ window.addEventListener("load", ()=>{
                 if(datosJSON.ok == true)
                 {
                     alert(datosJSON.texto);
-                    refreshValues();
+                    //refreshValues();
+                    window.location="./insideAsignacion.php?asign="+userH_As_asign.value;
                 }
                 else
                 {

@@ -6,6 +6,8 @@ window.addEventListener("load", ()=>{
     const formulario = document.getElementById("div_formAlum");
     const cunata_or_rfc = document.getElementById("cuenta_or_rfc");
 
+    const fakeLink = document.getElementById("fakeLink");
+
     console.log("NoPAPU");
     let tipoBoton = 1;/*1 = alumno, 2 profesor, 3 mod, 4 admin*/
     hidden_input.value = 1;
@@ -111,7 +113,7 @@ window.addEventListener("load", ()=>{
     
     contenedor.addEventListener("click", (evento) =>{
                 
-        console.log(hidden_input.value);
+        //console.log(hidden_input.value);
         /*
         if(evento.target.id == "reset")
         {
@@ -128,13 +130,14 @@ window.addEventListener("load", ()=>{
                 tipoBtn.children[2].style.border = "4px solid #eeb02d";
                 tipoBtn.children[3].style.border = "none";
             }
-            console.log(tipoBoton);
-
+            console.log(tipoBoton);            
             
-            
-        }*/
+        }*/        
+    });
 
-        //if(evento.target.id == "enviar_alumnos")
+
+    fakeLink.addEventListener("click", (evento) =>{                        
+        window.location = "./registroUsuarios.php?user="+tipoBoton;        
     });
 
 
