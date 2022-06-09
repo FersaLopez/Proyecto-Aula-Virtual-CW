@@ -87,7 +87,7 @@
                                 <div class="aside_li_cuadros">Foro</div>
                             </li>
                         </a>
-                        <a href="">
+                        <a href="../videojuego/Esa_es_la_Question.php">
                             <li class="aside_li">
                                 <div class="aside_li_cuadros">Mis juegos</div>
                             </li>
@@ -135,7 +135,7 @@
                             <div class="aside_li_cuadros">f</div><!--FORO-->
                         </li>
                     </a>
-                    <a href="">
+                    <a href="../videojuego/Esa_es_la_Question.php">
                         <li class="aside_li">
                             <div class="aside_li_cuadros">J</div><!--JUEGOS-->
                         </li>
@@ -194,7 +194,7 @@
                 <!-- No se si es el link correcto :0 -->
                 <div id="aulas" class="multiBlocks"><a href="./AULAS/aulas.php"><span>Mis Aulas</span></a></div>
                 <div id="perfil" class="multiBlocks"><a href=""><span>Mi Perfil</span></a></div>
-                <div id="juegos" class="multiBlocks"><a href=""><span>Mis Juegos</span></a></div>
+                <div id="juegos" class="multiBlocks"><a href="../videojuego/Esa_es_la_Question.php"><span>Mis Juegos</span></a></div>
                 <div id="foro" class="multiBlocks"><a href=""><span>Foro</span></a></div>
                 <div id="descubre" class="multiBlocks"><a href=""><span>Descubre</span></a></div>
                 
