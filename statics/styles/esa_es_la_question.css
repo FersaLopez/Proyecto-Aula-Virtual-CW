@@ -84,7 +84,28 @@ h4{
     justify-items: center;
 
 }
+#crear,.start_asignacion{
+    
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 250px 250px 250px;
+    justify-items: center;
+    align-items: center;
 
+}
+.choose{
+    display: grid;
+    /* grid-template-areas: 
+    ""; */
+}
+.tbtn{
+    background-color: var(--var-colorAmarillo1);
+    padding: 10%;
+    border-radius: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 250%;
+    color:#14002a;
+}
 .secciones_workSpace{    
     min-height: 100vh;
     padding: 7% 10%;
@@ -97,7 +118,11 @@ h4{
 ---------------------------------------------------------------------------------------------------------------------------------
  => COMPONENTS <=
 ---------------------------------------------------------------------------------------------------------------------------------*/
-
+#cursos_disponibles{
+    background-color: azure;
+    width: 70%;
+    height: 10%;
+}
 #right_sect{
     display: grid;  
     gap: 4vh;

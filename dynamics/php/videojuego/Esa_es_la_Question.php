@@ -36,11 +36,8 @@
                     </div>
                 ";        
         ?>
-        
-        
-        
         <!-- <div class="secciones_workSpace"></div> -->
-        <div id="menu" class="contenedor" style = "display: on">
+        <div id="menu" class="contenedor" style = "display: grid">
             <div class="principal">
                 <div><h1>Esa</h1></div>
                 <div><h1>es la</h1></div>
@@ -48,6 +45,36 @@
                 <div id="clase"><h4>Clase</h4></div>
                 <div></div>
                 <div id="privado"><h4>Privado</h4></div>
+            </div>
+        </div>
+        <!-- Si es docente y da a clase-->
+        <div id="crear" class="contenedor" style = "display: none">
+            <div class="principal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div><h1>Crear +</h1></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!-- Si es alumno y da a clase -->
+        <div id="elegir_asignacion" class="contenedor" style = "display: none">
+            <div class="choose">
+                <div><h4>Elige tu curso: </h4></div> <div><div id="cursos_disponibles"></div></div> <div></div> <div></div>
+                <div></div> <div></div> <div></div> <div></div>
+                <div></div> <div></div> <div></div> <div></div>
+                <div></div> <div></div> <div></div> <div></div>
+            </div>            
+        </div>
+        <div id="start_asignacion_e" class="contenedor" style = "display: none">
+            <div class="start_asignacion">
+                <div></div> <div></div> <div></div>
+                <div></div> <div class="tbtn">Empezar</div> <div></div>
+                <div></div> <div></div> <div class="tbtn" id="regresar_aA">Regresar</div>
             </div>
         </div>
     </section>
