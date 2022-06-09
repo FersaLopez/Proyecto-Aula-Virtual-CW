@@ -48,8 +48,7 @@
                     
                     //echo "<br/><br/><br/>";
                     //var_dump($row);                    
-
-
+                    
                     $ID_GRADO = $row["ID_GRADO"];
                     $nombre = $row["nombre"];
                     $reuniones_id= $row["reuniones_id"];
@@ -112,6 +111,7 @@
             </div>
             <span id="privA"></span>
             <p></p>
+            <div></div>
         </section>
         
 
@@ -120,14 +120,7 @@
 
             </section>
             <section id="asign_Blocks">
-                <!-- <div class="AulaBlock">
-                    <h4 class="AulaBlock_tipo">Tipo Aula</h4>
-                    <h3 class="AulaBlock_nombre">NOMBRE MATERIA</h3>
-                    <div class="AulaBlock_footer">
-                        <span class="AulaBlock_profesor">Profesor</span>
-                        <span class="AulaBlock_grado">Grado</span>
-                    </div>
-                </div>                -->                
+<!--                                 
                 <div class="asignacion">
                     <h3 class="titulo_asign"></h3>
                     <span class="tipoAsign"></span>
@@ -142,7 +135,7 @@
                     <h3 class="titulo_asign"></h3>
                     <span class="tipoAsign"></span>
                     <span class="fechaEntrega"></span>                
-                </div>
+                </div> -->
                         
                 
             </section>

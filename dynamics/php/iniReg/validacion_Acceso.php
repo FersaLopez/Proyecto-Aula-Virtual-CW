@@ -28,7 +28,7 @@
         $ident = (isset($_POST["identIdent"]) && $_POST["identIdent"] != "")? $_POST["identIdent"] : false;
         $contra = (isset($_POST["contrasena"]) && $_POST["contrasena"] != "")? $_POST["contrasena"] : false;
 
-        if(mysqlExistRegistroAll($ident, $con, "usuario", "num_identificador") == NULL)
+        if(mysqlExistRegistroAll($ident, $con, "usuario", "num_identificador", true) == NULL)
         {
             header("location: ./registroUsuarios.php?user=$tipo_U");
         }
@@ -96,7 +96,7 @@
         {
             echo "¡Bienvenido Docente! <br/>";
 
-        }
+        }*/
         
     }
     else

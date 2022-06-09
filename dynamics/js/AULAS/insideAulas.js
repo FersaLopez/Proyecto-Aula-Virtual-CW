@@ -89,11 +89,13 @@ window.addEventListener("load", ()=>{
     InformacionAula.children[1].innerHTML = "Materia: "+userH_A_materia.value;
     InformacionAula.children[3].innerHTML = "Privacidad del Aula: "+userH_A_priv.value;
     InformacionAula.children[4].innerHTML = userH_A_desc.value;
+    InformacionAula.children[5].innerHTML = "Clave de Inscripción: "+inputH_idAula.value;
 
 
     sect1InfoA.children[0].innerHTML = "Grupo: "+userH_A_grupo.value;
     sect1InfoA.children[1].innerHTML = "Tipo de Aula: "+userH_A_tipo.value;
-    sect1InfoA.children[2].innerHTML = "Grado :"+userH_A_idgrado.value+"°";    
+    sect1InfoA.children[2].innerHTML = "Grado :"+userH_A_idgrado.value+"°";
+    
 
 
     if(inputH_tipo != 1)
@@ -108,7 +110,7 @@ window.addEventListener("load", ()=>{
         if(evento.target.id == "CrearAsign")
         {
             InformacionAula.style.display = "none";
-            sec_Form_CrearAsignacion.innerHTML += "<form id='formCrearAsign'>"+
+            sec_Form_CrearAsignacion.innerHTML += "<form id='formCrearAsign' enctype='multipart/form-data' multipart=''>"+
                     "<fieldset>"+                                                
                         "<div class='in_formCA'><label>Título de la Asignacion: <input name='tituloA' id='tituloA' type='text' required></label></div>"+
                         "<div class='in_formCA'><label>Puntos: <input name='puntosA' id='puntosA' type='number' required></label></div>"+
@@ -120,10 +122,21 @@ window.addEventListener("load", ()=>{
                             "<option value='3'>Pregunta</option>"+
                             "<option value='4'>Material</option>"+
                             "<option value='5'>Aviso</option>"+
-                        "</select></label></div>"+
-                        "<button type='submit'>Crear Asignacion</button>"
+                        "</select></label></div><br><br>"+
+                        "<div>"+                        
+                            "<label>Nombre del archivo: "+
+                                "<input id='nombreArch' type='text' name='nombreArch'>"+
+                            "</label>"+
+                        "</div>"+
+                        "<label for='archivo'>Sube un material de trabajo: </label>"+
+                        "<input type='file' name='archivo'><br><br><br>"+                        
+                        "<input type='reset' value='Borrar'>"+
+                        "<button type='submit'>Crear Asignacion</button>"+
                     "</fieldset>"+
-                "</form>";
+                "</form>";                                                            
+
+
+
 
             asign_Blocks.innerHTML = "";
             asignaciones.style.display = "none";
@@ -186,7 +199,7 @@ window.addEventListener("load", ()=>{
                     return response.json();
                 }).then((datosJSON) =>{
                     if(datosJSON.ok == true){
-                        //alert("Todo bien");
+                        alert("Asignación creada con éxito");
                         // console.log(inputH_id.value);
                         refreshValues();                        
                     }else{
@@ -196,6 +209,7 @@ window.addEventListener("load", ()=>{
                 
             }
         }
+        console.log(evento.target)
     });
 
 
