@@ -41,7 +41,10 @@
             </a>
             <a href="">
                 <div class="nav_IconContent">
-                    N
+                    <?php
+                        echo "<span ">$_SESSION["tipo_U"]"</span>";
+                    
+                    ?>
                 </div>
             </a>
             <a href="">
