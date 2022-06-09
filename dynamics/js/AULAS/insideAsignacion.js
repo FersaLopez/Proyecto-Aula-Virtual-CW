@@ -29,6 +29,8 @@ window.addEventListener("load", ()=>{
     const infoAsign = document.getElementById("infoAsign");    
     const tuEntrega = document.getElementById("tuEntrega");
 
+    let boolEntregada = false;
+
     tituloNombreAsign.innerHTML = userH_As_titulo.value;
 
     infoAsign.children[0].innerHTML = userH_As_tipo_asign.value;
@@ -40,6 +42,19 @@ window.addEventListener("load", ()=>{
     infoAsign.children[4].children[2].innerHTML = "Grado: "+userH_As_ID_GRADO.value+"°";    
 
 
+    const formEnvioArchivo = document.getElementById("formEnvioArchivo");
+    const btnEnvioAsign = document.getElementById("btnEnvioAsign");
+
+    /*if(userH_As_id_edo_entrega.value != "No entregado")
+    {
+        formEnvioArchivo.style.display = "none";
+        btnEnvioAsign.style.backgroundColor = "black";
+        btnEnvioAsign.style.color = "white";
+        btnEnvioAsign.innerHTML = "Completada";
+        btnEnvioAsign.style.border = "none";
+        btnEnvioAsign.style.borderColor = "white";
+
+    }*/
 
     function refreshValues()
     {
@@ -47,6 +62,24 @@ window.addEventListener("load", ()=>{
         tuEntrega.children[3].innerHTML = userH_As_calificacion.value;
         tuEntrega.children[4].innerHTML = userH_As_fecha_entrega.value;
         tuEntrega.children[5].innerHTML = userH_As_texto_tarea.value;
+        if(userH_As_id_edo_entrega.value != "No entregado")//Si la asignacion esta entregada de cualquier forma
+        {
+            formEnvioArchivo.style.display = "none";
+            btnEnvioAsign.style.backgroundColor = "black";
+            btnEnvioAsign.style.color = "white";
+            btnEnvioAsign.innerHTML = "Completada";
+            btnEnvioAsign.style.border = "none";
+            btnEnvioAsign.style.borderColor = "white";
+            boolEntregada = true;    
+        }           
+        /*
+        if(userH_As_id_edo_entrega.value != "No entregado")     
+        {
+
+        }
+        console.log(userH_As_id_edo_entrega.value);*/
+            
+        
         //sec_form_CreacionAula.innerHTML = "";
 
         //formAula = 0;
@@ -64,8 +97,65 @@ window.addEventListener("load", ()=>{
                 
         //buscarAsignaciones();
     }
-
+    
     refreshValues();
+
+    btnEnvioAsign.addEventListener("click", (evento) =>{
+        if(boolEntregada == true)
+        {
+            let infoUsuario = new FormData();
+            infoUsuario.append("id_U", inputH_id.value);        
+            infoUsuario.append("id_Asign", userH_As_asign.value);                     
+            infoUsuario.append("btnEnvioAsign", boolEntregada); 
+            infoUsuario.append("BOOL", boolEntregada);          
+            
+            fetch("../../js_queries/AULAS/realizarEnvio.php", {
+                method:"POST", 
+                body: infoUsuario,
+            }).then((response)=>{            
+                return response.json();            
+            }).then((datosJSON) =>{
+    
+                console.log(datosJSON);
+                if(datosJSON.ok == true)
+                {
+                    alert(datosJSON.texto);
+                    refreshValues();
+                }
+                else
+                {
+                    alert(datosJSON.texto);
+                }
+                
+            })            
+        }
+        else
+        {
+            let infoUsuario = new FormData();
+            infoUsuario.append("id_U", inputH_id.value);        
+            infoUsuario.append("id_Asign", userH_As_asign.value);        
+            infoUsuario.append("btnEnvioAsign", boolEntregada);               
+            fetch("../../js_queries/AULAS/realizarEnvio.php", {
+                method:"POST", 
+                body: infoUsuario,
+            }).then((response)=>{            
+                return response.json();            
+            }).then((datosJSON) =>{
+    
+                console.log(datosJSON);
+                if(datosJSON.ok == true)
+                {
+                    alert(datosJSON.texto);
+                    refreshValues();
+                }
+                else
+                {
+                    alert(datosJSON.texto);
+                }
+                
+            })            
+        }
+    });
 
 
 
