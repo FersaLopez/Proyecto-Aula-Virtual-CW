@@ -28,6 +28,7 @@ window.addEventListener("load", ()=>{
     const tituloNombreAsign = document.getElementById("tituloNombreAsign");
     const infoAsign = document.getElementById("infoAsign");    
     const tuEntrega = document.getElementById("tuEntrega");
+    const sec_Calificaciones = document.getElementById("sec_Calificaciones");
 
     let boolEntregada = false;
 
@@ -71,7 +72,93 @@ window.addEventListener("load", ()=>{
             btnEnvioAsign.style.border = "none";
             btnEnvioAsign.style.borderColor = "white";
             boolEntregada = true;    
-        }           
+        }         
+        if(inputH_idTU.value == 2)
+        {
+            tuEntrega.style.display = "none";    
+            sec_Calificaciones.style.display = "flex";
+            console.log("aaa");
+            let infoUsuario = new FormData();
+            infoUsuario.append("id_U", inputH_id.value);
+            infoUsuario.append("id_Asign", userH_As_asign.value);
+            fetch("../../js_queries/AULAS/busquedaEntregasAlumnos.php", {
+                method:"POST", 
+                body: infoUsuario,
+            }).then((response)=>{            
+                return response.json();            
+            }).then((datosJSON) =>{
+                console.log(datosJSON);
+                if(datosJSON.ok == true)
+                {
+                    console.log(datosJSON);
+                    //alert(datosJSON.texto);   /* 
+                    for(valor of datosJSON.datos)
+                    {                                        
+                        let doc = 0;
+                        if(valor.ARCH == null)
+                            doc = "<h2>Sin archivos adjuntos</h2>";
+                        else
+                            doc =                             
+                                "<a class='infoArchDesc' download href='"+valor.ARCH.ruta_archivo+"'>"+
+                                    "<h4 class='infoArchnombre'>"+valor.ARCH.nombre+"</h4>"+
+                                    "<iframe src='"+valor.ARCH.ruta_archivo+"'>"+
+                                    "</iframe>"+
+                                    "<div class='infoArchext'>"+"<u>Archivo: "+valor.ARCH.tipo_extension+"</u></div>"+
+                                "</a>";                        
+                        opciones = 
+                                "<form class='formCalif' method='post'>"+
+                                    "<label>Calificación: "+
+                                        "<input id='calificacion' name='calificacion' class='calif' type='number' required></input>"+
+                                    "</label>"+
+                                    "<button class='btncalif' type='submit'>Calificar</button>"+
+                                "</form>";                    
+                        opciones2 = 
+                                "<div>Calificación: <strong>"+valor.UHA_related.calificacion+"</strong></div>";
+                        
+                        if(valor.UHA_related.calificacion == null)                    
+                            opcion = opciones;                    
+                        else
+                            opcion = opciones2;                        
+                        sec_Calificaciones.innerHTML += 
+                        "<div class='archivosSubidos'>"+
+                            "<h2>Entrega de:</h2>"+
+                            "<div class='infoAlumno' data-id='"+valor.UHA_related.ID_UHA+"'>"+
+                                "<h3 class='infoAnombre'>"+valor.UHA_related.apellido_paterno+" "+valor.UHA_related.apellido_materno+" "+" "+valor.UHA_related.nombre+"</h3>"+
+                                "<h4 class='infoAclave'>"+valor.UHA_related.num_identificador+"</h4>"+
+                                "<span class='infoAcorreo'>"+"Correo del alumno: "+valor.UHA_related.correo+"</span>"+
+                                "<h3 class='infoAEedo'>"+valor.UHA_related.estado+"</h3>"+
+                                "<div class='infoAEfecha'>"+"Entregado el: "+valor.UHA_related.fecha_entrega+"</div>"+
+                            "</div>"+
+                            "<div class='contenedorArchivos'>"+
+                                doc+
+                                // "<a class='infoArchDesc' download href='"+valor.ARCH.ruta_archivo+"'>"+
+                                //     "<h4 class='infoArchnombre'>"+valor.ARCH.nombre+"</h4>"+
+                                //     "<iframe src='"+valor.ARCH.ruta_archivo+"'>"+
+                                //     "</iframe>"+
+                                //     "<div class='infoArchext'>"+"<u>Archivo: "+valor.ARCH.tipo_extension+"</u></div>"+
+                                // "</a>"+
+                            "</div>"+
+                            "<div class='AreaCalificacion'>"+
+                                opcion+
+                            /*
+                                "<form class='formCalif' action='' method='post'>"+
+                                    "<label>Calificación: "+
+                                        "<input class='calif' type='number' required></input>"+
+                                    "</label>"+
+                                    "<button class='btncalif' type='submit'>Calificar</button>"+
+                                "</form>"+*/
+                            "</div>"+
+                        "</div>";
+                    }                
+
+                }
+                else
+                {
+                    alert(datosJSON.texto);
+                }
+                
+            })                    
+        }  
         /*
         if(userH_As_id_edo_entrega.value != "No entregado")     
         {
@@ -162,6 +249,127 @@ window.addEventListener("load", ()=>{
             })            
         }
     });
+
+    
+    // if(inputH_idTU.value == 2)
+    // {
+    //     tuEntrega.style.display = "none";    
+    //     sec_Calificaciones.style.display = "flex";
+    //     console.log("aaa");
+    //     let infoUsuario = new FormData();
+    //     infoUsuario.append("id_U", inputH_id.value);
+    //     infoUsuario.append("id_Asign", userH_As_asign.value);
+    //     fetch("../../js_queries/AULAS/busquedaEntregasAlumnos.php", {
+    //         method:"POST", 
+    //         body: infoUsuario,
+    //     }).then((response)=>{            
+    //         return response.json();            
+    //     }).then((datosJSON) =>{
+    //         console.log(datosJSON);
+    //         if(datosJSON.ok == true)
+    //         {
+    //             console.log(datosJSON);
+    //             //alert(datosJSON.texto);   /* 
+    //             for(valor of datosJSON.datos)
+    //             {                                        
+    //                 opciones = 
+    //                         "<form class='formCalif' method='post'>"+
+    //                             "<label>Calificación: "+
+    //                                 "<input id='calificacion' name='calificacion' class='calif' type='number' required></input>"+
+    //                             "</label>"+
+    //                             "<button class='btncalif' type='submit'>Calificar</button>"+
+    //                         "</form>";                    
+    //                 opciones2 = 
+    //                         "<div>Calificación: <strong>"+valor.calificacion+"</strong></div>";
+                    
+    //                 if(valor.calificacion == null)                    
+    //                     opcion = opciones;                    
+    //                 else
+    //                     opcion = opciones2;
+    //                 sec_Calificaciones.innerHTML += 
+    //                 "<div class='archivosSubidos'>"+
+    //                     "<h2>Entrega de:</h2>"+
+    //                     "<div class='infoAlumno' data-id='"+valor.UHA_related.ID_UHA+"'>"+
+    //                         "<h3 class='infoAnombre'>"+valor.UHA_related.apellido_paterno+" "+valor.UHA_related.apellido_materno+" "+" "+valor.UHA_related.nombre+"</h3>"+
+    //                         "<h4 class='infoAclave'>"+valor.UHA_related.num_identificador+"</h4>"+
+    //                         "<span class='infoAcorreo'>"+"Correo del alumno: "+valor.UHA_related.correo+"</span>"+
+    //                         "<h3 class='infoAEedo'>"+valor.UHA_related.estado+"</h3>"+
+    //                         "<div class='infoAEfecha'>"+"Entregado el: "+valor.UHA_related.fecha_entrega+"</div>"+
+    //                     "</div>"+
+    //                     "<div class='contenedorArchivos'>"+
+    //                         "<a class='infoArchDesc' download href='"+valor.ARCH.ruta_archivo+"'>"+
+    //                             "<h4 class='infoArchnombre'>"+valor.ARCH.nombre+"</h4>"+
+    //                             "<iframe src='"+valor.ARCH.ruta_archivo+"'>"+
+    //                             "</iframe>"+
+    //                             "<div class='infoArchext'>"+"<u>Archivo: "+valor.ARCH.tipo_extension+"</u></div>"+
+    //                         "</a>"+
+    //                     "</div>"+
+    //                     "<div class='AreaCalificacion'>"+
+    //                         opcion+
+    //                     /*
+    //                         "<form class='formCalif' action='' method='post'>"+
+    //                             "<label>Calificación: "+
+    //                                 "<input class='calif' type='number' required></input>"+
+    //                             "</label>"+
+    //                             "<button class='btncalif' type='submit'>Calificar</button>"+
+    //                         "</form>"+*/
+    //                     "</div>"+
+    //                 "</div>";
+    //             }                
+
+    //         }
+    //         else
+    //         {
+    //             alert(datosJSON.texto);
+    //         }
+            
+    //     })                    
+    // }
+    sec_Calificaciones.addEventListener("click", (evento) =>{
+        if(evento.target.className == "btncalif")
+        {
+            evento.preventDefault();
+            if(evento.target.parentElement[0].value != "")
+            {
+                console.log(evento.target);
+                console.log(evento.target.form.parentElement.parentElement.children[1].dataset.id);                    
+                let formCalif = evento.target.form;
+                let id_UHA = evento.target.form.parentElement.parentElement.children[1].dataset.id;
+                let infoUsuario = new FormData(formCalif);
+                infoUsuario.append("id_UHA", id_UHA);
+                //infoUsuario.append("bool", );
+                
+                fetch("../../js_queries/AULAS/asignarCalificacion.php", {
+                    method:"POST", 
+                    body: infoUsuario,
+                }).then((response)=>{            
+                    return response.json();            
+                }).then((datosJSON) =>{
+        
+                    console.log(datosJSON);
+                    if(datosJSON.ok == true)
+                    {
+                        alert("Se ha asignado una calificación");
+                        //refreshValues();
+                        //window.location="./insideAsignacion.php?asign="+userH_As_asign.value;
+                    }
+                    else
+                    {
+                        alert(datosJSON.texto);
+                        refreshValues();
+                    }
+                    
+                })            
+
+
+            }
+            else
+                alert("Ingresa una calificacion a la entrega");
+
+        }
+    });
+
+
 
 
 
