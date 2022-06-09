@@ -170,9 +170,9 @@
                 <!-- eventos de un solo dia -->
             </div>
                 
-            <div id="eventosMesRang" class="divEventos">
-                <!-- eventos de mas de un dia -->
-            </div>
+            <!-- <div id="eventosMesRang" class="divEventos">
+                eventos de mas de un dia 
+            </div> -->
         </div>
 
 

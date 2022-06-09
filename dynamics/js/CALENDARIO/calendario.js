@@ -43,7 +43,8 @@ window.addEventListener("load", ()=>{
         {
             for(valor of datosJson)
             {
-                 eventosMes.innerHTML += "<div class='textoEvento'>"+valor.dia+" : " + valor.titulo+"</div>"
+                
+                 eventosMes.innerHTML += "<div class='textoEvento'>"+valor.dia+" de " +valor.mes +" : "+ valor.titulo+"</div>"
             }
         }         
                 
@@ -65,7 +66,7 @@ window.addEventListener("load", ()=>{
         {
             for(valor of datosJson)
             {
-                eventosMesRang.innerHTML += "<div class='textoEvento'>"+valor.dia_inicio+" : " + valor.titulo+"</div>"
+                eventosMes.innerHTML += "<div class='textoEvento'>"+valor.dia_inicio+" de " + valor.mes_inicio+ " al " +valor.dia_fin+" de " + valor.mes_fin+ " : " + valor.titulo + "</div>"
             }
         }        
                 
