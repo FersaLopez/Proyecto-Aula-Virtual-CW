@@ -11,8 +11,8 @@ window.addEventListener("load", ()=>{
     // diaMes.value = 29
     // diaSem.value = 8
     // mes.value= 2
-    //     year.value = 2024
-    //     // aBisiesto = year
+    //     year.value = 2025
+  
     // aBisiesto.value = 2024
     
     
@@ -22,62 +22,17 @@ window.addEventListener("load", ()=>{
     let gridCalen = document.getElementById("gridCalen")
     let fila6 = document.getElementById("fila6")
     const eventosMes = document.getElementById("eventosMes")
-    const eventosMesRang = document.getElementById("eventosMesRang");
+    const divEventos = document.getElementById("divEventos");
     
     
     
-//Peticiones fetch
 
-    //eventos de un dia
-    fetch("../../../php/pageGates/CALENDARIO/eventos.php")
-    .then((response)=>{
-        return response.json();
-    })
-    .then((datosJson)=>{
-        console.log(datosJson)
-        if(datosJson == 0)
-        {
-            eventosMes.innerHTML += "<div class='textoEvento'>no hay eventos</div>"
-        }
-        else
-        {
-            for(valor of datosJson)
-            {
-                
-                 eventosMes.innerHTML += "<div class='textoEvento'>"+valor.dia+" de " +valor.mes +" : "+ valor.titulo+"</div>"
-            }
-        }         
-                
-                
-    })
-
-    //eventos rangos
-    fetch("../../../php/pageGates/CALENDARIO/eventos_rang.php")
-    .then((response)=>{
-        return response.json();
-    })
-    .then((datosJson)=>{
-        console.log(datosJson)
-        if(datosJson == 0)
-        {
-            eventosMesRang.innerHTML += "<div class='textoEvento'>no hay eventos</div>"
-        }
-        else
-        {
-            for(valor of datosJson)
-            {
-                eventosMes.innerHTML += "<div class='textoEvento'>"+valor.dia_inicio+" de " + valor.mes_inicio+ " al " +valor.dia_fin+" de " + valor.mes_fin+ " : " + valor.titulo + "</div>"
-            }
-        }        
-                
-                
-    })
     
     
     
     
     
-    
+    // aBisiesto = year
     
     
     // const agregarEvento = document.getElementById("agregarEvento")
@@ -258,10 +213,10 @@ window.addEventListener("load", ()=>{
             {
                 if(ponerID==diaMes.value)
                 {
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='hoy'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='hoy'>"+ponerID+"</div>";
                 }
                 else{
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='dias'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='dias'>"+ponerID+"</div>";
                 }
                 contDiasAntes--
                 ponerID++
@@ -272,10 +227,10 @@ window.addEventListener("load", ()=>{
             {
                 if(ponerID==diaMes.value)
                 {
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='hoy'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='hoy'>"+ponerID+"</div>";
                 }
                 else{
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='dias'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='dias'>"+ponerID+"</div>";
                 }            
                 ponerDiasFilas--
                 ponerID++ 
@@ -287,10 +242,10 @@ window.addEventListener("load", ()=>{
             {
                 if(ponerID==diaMes.value)
                 {
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='hoy'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='hoy'>"+ponerID+"</div>";
                 }
                 else{
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='dias'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='dias'>"+ponerID+"</div>";
                 }            
                 ponerDiasFilas--
                 ponerID++ 
@@ -302,10 +257,10 @@ window.addEventListener("load", ()=>{
             {
                 if(ponerID==diaMes.value)
                 {
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='hoy'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='hoy'>"+ponerID+"</div>";
                 }
                 else{
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='dias'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='dias'>"+ponerID+"</div>";
                 }            
                 ponerDiasFilas--
                 ponerID++ 
@@ -316,10 +271,10 @@ window.addEventListener("load", ()=>{
             {
                 if(ponerID==diaMes.value)
                 {
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='hoy'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='hoy'>"+ponerID+"</div>";
                 }
                 else{
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='dias'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='dias'>"+ponerID+"</div>";
                 }
                 ponerDiasFilas--
                 ponerID++ 
@@ -341,10 +296,10 @@ window.addEventListener("load", ()=>{
             {
                 if(ponerID==diaMes.value)
                 {
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='hoy'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='hoy'>"+ponerID+"</div>";
                 }
                 else{
-                    fila6.innerHTML += "<div id='"+ponerID +"' class='dias'>"+ponerID+"</div>";
+                    fila6.innerHTML += "<div id='dia"+ponerID +"' class='dias'>"+ponerID+"</div>";
                 }
                 ponerID++ 
             }
@@ -352,8 +307,107 @@ window.addEventListener("load", ()=>{
      
     
     }
+
+
+    //ver como optimizar este código    
+    const dia1 = document.getElementById("dia1")
+    const dia2 = document.getElementById("dia2")
+    const dia3 = document.getElementById("dia3")
+    const dia4 = document.getElementById("dia4")
+    const dia5 = document.getElementById("dia5")
+    const dia6 = document.getElementById("dia6")
+    const dia7 = document.getElementById("dia7")
+    const dia8 = document.getElementById("dia8")
+    const dia9 = document.getElementById("dia9")
+    const dia10 = document.getElementById("dia10")
+    const dia11= document.getElementById("dia11")
+    const dia12 = document.getElementById("dia12")
+    const dia13 = document.getElementById("dia13")
+    const dia14 = document.getElementById("dia14")
+    const dia15 = document.getElementById("dia15")
+    const dia16 = document.getElementById("dia16")
+    const dia17 = document.getElementById("dia17")
+    const dia18 = document.getElementById("dia18")
+    const dia19 = document.getElementById("dia19")
+    const dia20 = document.getElementById("dia20")
+    const dia21 = document.getElementById("dia21")
+    const dia22 = document.getElementById("dia22")
+    const dia23 = document.getElementById("dia13")
+    const dia24 = document.getElementById("dia14")
+    const dia25 = document.getElementById("dia15")
+    const dia26 = document.getElementById("dia16")
+    const dia27 = document.getElementById("dia27")
+    const dia28 = document.getElementById("dia28")
+    const dia29 = document.getElementById("dia29")
+    const dia30 = document.getElementById("dia30")
+    const dia31 = document.getElementById("dia31")
+
+
+    // console.log(idDiaCal)
+//Peticiones fetch
+
+let hay1
+let hay2
+    //eventos de un dia
+    fetch("../../../php/pageGates/CALENDARIO/eventos.php")
+    .then((response)=>{
+        return response.json();
+    })
+    .then((datosJson)=>{
+        console.log(datosJson)
+        if(datosJson == 0)
+        {
+            divEventos.style="display:none"
+            
+        }
+        else
+        {
+            for(valor of datosJson)
+            {
+                divEventos.style="display:block"
+                 eventosMes.innerHTML += "<div class='textoEvento'>"+valor.dia+" de " +valor.mes +" : "+ valor.titulo+"</div>"
+
+            }
+        }  
+               
+                
+    })
+
+
     
+    //eventos rangos
+    fetch("../../../php/pageGates/CALENDARIO/eventos_rang.php")
+    .then((response)=>{
+        return response.json();
+    })
+    .then((datosJson)=>{
+        console.log(datosJson)
+        if(datosJson == 0)
+        {
+            divEventos.style="display:none"
+        }
+        else
+        {
+            for(valor of datosJson)
+            {
+                divEventos.style="display:block"
+                eventosMes.innerHTML += "<div class='textoEvento'>"+valor.dia_inicio+" de " + valor.mes_inicio+ " al " +valor.dia_fin+" de " + valor.mes_fin+ " : " + valor.titulo + "</div>"
+            }
+        }        
+                
+                
+    })
+
+    // console.log(hayEv)
+    // console.log(hayEvRang)
+
+    // }
+
+
+
     });
     
     
+
+
     
