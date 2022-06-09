@@ -286,17 +286,17 @@
                             
                         
                     ?>                
-            </div>      
+            </div>                  
+
+        </div>
+
+        <div id='sec_Calificaciones' class="secciones_workSpace" style="display: none">
+            <!-- <section id="aula_tools" class="Aulas_toolsAula">
+            </section> -->
             
 
-
         </div>
-
 <!--         
-        <div class="secciones_workSpace">
-
-        </div>
-
         <div class="secciones_workSpace">
 
         </div> -->
