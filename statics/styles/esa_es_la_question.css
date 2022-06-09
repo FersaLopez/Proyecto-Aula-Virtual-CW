@@ -94,9 +94,9 @@ h4{
 
 }
 .choose{
-    display: grid;
-    /* grid-template-areas: 
-    ""; */
+    display: flex;
+    flex-direction: column;
+    
 }
 .tbtn{
     background-color: var(--var-colorAmarillo1);
