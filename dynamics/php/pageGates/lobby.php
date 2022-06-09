@@ -211,7 +211,7 @@
                 
                 <!-- No se si es el link correcto :0 -->
                 <div id="aulas" class="multiBlocks"><a href="./AULAS/aulas.php"><span>Mis Aulas</span></a></div>
-                <div id="perfil" class="multiBlocks"><a href=""><span>Mi Perfil</span></a></div>
+                <div id="perfil" class="multiBlocks"><a href="./PERFIL/subir_archivos.php"><span>Mi Perfil</span></a></div>
                 <div id="juegos" class="multiBlocks"><a href=""><span>Mis Juegos</span></a></div>
                 <div id="foro" class="multiBlocks"><a href=""><span>Foro</span></a></div>
                 <div id="descubre" class="multiBlocks"><a href=""><span>Descubre</span></a></div>
