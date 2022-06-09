@@ -72,35 +72,37 @@
         echo "Algo salió mal";
     }
     
-        
-    //     if($tipo_U == 1)
-    //     {
-    //         // echo "¡Bienvenido Alumno! <br/>";            
-    //         // $sql = "SELECT * FROM privacidad WHERE ID_PRIV = 3";
-    //         // $res = mysqli_query($con, $sql);
-    //         // $row = mysqli_fetch_array($res);
-    //         // var_dump($row);
-    //         echo $ident."<br/>";
-    //         //var_dump(mysqlExistRegistro($ident, $con, "usuario", "num_identificador"));
-    //         if(mysqlExistRegistro($ident, $con, "usuario", "num_identificador") == NULL)
-    //         {
-    //             header("location: ./registroUsuarios.php?user=$tipo_U");
-    //         }
+        /*
+        if($tipo_U == 1)
+        {
+            // echo "¡Bienvenido Alumno! <br/>";            
+            // $sql = "SELECT * FROM privacidad WHERE ID_PRIV = 3";
+            // $res = mysqli_query($con, $sql);
+            // $row = mysqli_fetch_array($res);
+            // var_dump($row);
+            echo $ident."<br/>";
+            //var_dump(mysqlExistRegistro($ident, $con, "usuario", "num_identificador"));
+            if(mysqlExistRegistro($ident, $con, "usuario", "num_identificador") == NULL)
+            {
+                header("location: ./registroUsuarios.php?user=$tipo_U");
+            }
             
-    //     }//los else ifs son para verificar entrada al sistema, todos tendran header
-    //     else if($tipo_U == 2)
-    //     {
-    //         echo "¡Bienvenido Docente! <br/>";
+        }//los else ifs son para verificar entrada al sistema, todos tendran header
+        else if($tipo_U == 2)
+        {
+            echo "¡Bienvenido Docente! <br/>";
 
-    //     }
+        }*/
         
-    
-    // else
-    // {
-    //     echo "Algo salio Mal";
-    // }
+    /*
+    else
+    {
+        echo "Algo salio Mal";
+    }
+*/
     
 
 
         // $peticion2 = "SELECT * FROM USUARIO WHERE password = '".$concat_acceso."' AND Sal = '".$sal_base."' ";
 ?>
+
